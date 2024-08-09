@@ -35,7 +35,7 @@ keymap("n", "<Space>h", "^", opts)
 keymap("n", "<Space>l", "$", opts)
 
 -- Insert --
--- Press jj fast to exit insert mode
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 
 -- コンマの後に自動的にスペースを挿入
