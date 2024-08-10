@@ -1,7 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
 local opts = { noremap = true, silent = true }
 
 --local keymap = vim.keymap
@@ -13,34 +9,34 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
--- Better window navigation
+-- window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- New tab
 keymap("n", "te", ":tabedit", opts)
--- 新しいタブを一番右に作る
 keymap("n", "gn", ":tabnew<Return>", opts)
-
 -- Split window
 keymap("n", "ss", ":split<Return><C-w>w", opts)
 keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
-
--- Do not yank with x
-keymap("n", "x", '"_x', opts)
-
+keymap("n", "x", '"_x', opts) -- Do not yank with x
 keymap("n", "<Space>h", "^", opts)
 keymap("n", "<Space>l", "$", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
-
--- コンマの後に自動的にスペースを挿入
-keymap("i", ",", ",<Space>", opts)
+keymap("i", ",", ",<Space>", opts) -- insert Space automatically after ","
 
 -- Visual --
--- 0番レジスタを使いやすくした
 keymap("v", "<C-p>", '"0p', opts)
+
+-- telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set("n", "ff", builtin.live_grep, {})
+vim.keymap.set("v", "ff", builtin.grep_string, {})
+vim.keymap.set({ "n", "v" }, "cc", builtin.commands, {})
+vim.keymap.set({ "n", "v" }, "<C-g>c", builtin.git_commits, {})
+vim.keymap.set({ "n", "v" }, "<C-g>s", builtin.git_status, {})
+vim.keymap.set({ "n", "v" }, "<C-g>b", builtin.git_branche, {})
