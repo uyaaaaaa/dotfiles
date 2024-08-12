@@ -10,7 +10,7 @@ return {
         prompt_position = "top",
       },
       sorting_strategy = "ascending",
-      winblend = 40,
+      winblend = 30,
       dynamic_preview_title = true,
       cache_picker = {
         num_pickers = 10,

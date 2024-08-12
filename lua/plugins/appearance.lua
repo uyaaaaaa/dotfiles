@@ -1,13 +1,32 @@
 return {
-  { "shaunsingh/nord.nvim" }, -- nord
-  { "ellisonleao/gruvbox.nvim" }, -- gruvbox
-  { "folke/tokyonight.nvim" }, -- tokyonight
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nord",
-      -- colorscheme = "tokyonight",
-      -- colorscheme = "gruvbox",
-    },
+    "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("bamboo").setup({
+        highlights = {
+          ["@comment"] = { fg = "$grey" },
+        },
+      })
+      require("bamboo").load()
+    end,
   },
+  -- {
+  -- "catppuccin/nvim",
+  -- name = "catppuccin",
+  -- priority = 1000,
+  -- config = function()
+  -- require("catppuccin").setup({
+  -- flavour = "mocha",
+  -- transparent_background = true,
+  -- })
+  -- end,
+  -- },
+  -- {
+  -- "LazyVim/LazyVim",
+  -- opts = {
+  -- colorscheme = "catppuccin",
+  -- },
+  -- },
 }
