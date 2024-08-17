@@ -15,6 +15,23 @@ return {
       cache_picker = {
         num_pickers = 10,
       },
+      mappings = {
+        i = {
+          ["<C-j>"] = "preview_scrolling_down",
+          ["<C-k>"] = "preview_scrolling_up",
+          ["<C-h>"] = "preview_scrolling_left",
+          ["<C-l>"] = "preview_scrolling_right",
+          ["<C-q>"] = "close", -- close telescope
+        },
+        n = {
+          ["<C-j>"] = "preview_scrolling_down",
+          ["<C-k>"] = "preview_scrolling_up",
+          ["<C-h>"] = "preview_scrolling_left",
+          ["<C-l>"] = "preview_scrolling_right",
+          ["<C-q>"] = "close", -- close telescope
+          ["l"] = "select_default", -- select buffer
+        },
+      },
     },
   },
 }

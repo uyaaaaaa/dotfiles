@@ -66,7 +66,8 @@ config.keys = {
 		key = "w",
 		mods = "CTRL",
 	}) },
+	-- quick select mode
+	{ key = "f", mods = "CTRL", action = wezterm.action.QuickSelect },
 }
 
 return config
-
