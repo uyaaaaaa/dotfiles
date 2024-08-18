@@ -49,8 +49,8 @@ config.keys = {
 	-- close tab
 	{ key = "w", mods = "CTRL|SHIFT", action = act.CloseCurrentTab({ confirm = false }) },
 	-- open new pane
-	{ key = "d", mods = "CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "d", mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "n", mods = "CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "n", mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	-- activate pane
 	{ key = "h", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },

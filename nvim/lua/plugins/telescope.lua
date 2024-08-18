@@ -21,14 +21,14 @@ return {
           ["<C-k>"] = "preview_scrolling_up",
           ["<C-h>"] = "preview_scrolling_left",
           ["<C-l>"] = "preview_scrolling_right",
-          ["<C-q>"] = "close", -- close telescope
+          ["<C-c>"] = "close", -- close telescope
         },
         n = {
           ["<C-j>"] = "preview_scrolling_down",
           ["<C-k>"] = "preview_scrolling_up",
           ["<C-h>"] = "preview_scrolling_left",
           ["<C-l>"] = "preview_scrolling_right",
-          ["<C-q>"] = "close", -- close telescope
+          ["<C-c>"] = "close", -- close telescope
           ["l"] = "select_default", -- select buffer
         },
       },
