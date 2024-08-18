@@ -33,13 +33,3 @@ keymap("v", "<C-p>", '"0p', opts)
 
 -- Command --
 keymap("c", "qq", "qa", opts) -- delete all windows
-
--- telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-vim.keymap.set("n", "ff", builtin.live_grep, {})
-vim.keymap.set("v", "ff", builtin.grep_string, {})
-vim.keymap.set({ "n", "v" }, "cc", builtin.command_history, {})
-vim.keymap.set({ "n", "v" }, "<C-g>c", builtin.git_commits, { desc = "Git Commit Logs" })
-vim.keymap.set({ "n", "v" }, "<C-g>s", builtin.git_status, { desc = "Git Status" })
-vim.keymap.set({ "n", "v" }, "<C-g>b", builtin.git_branches, { desc = "Git Branch" })

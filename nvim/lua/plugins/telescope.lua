@@ -1,3 +1,14 @@
+local keymap = require("vim.keymap")
+local builtin = require("telescope.builtin")
+
+keymap.set("n", "<C-p>", builtin.find_files, {})
+keymap.set("n", "ff", builtin.live_grep, {})
+keymap.set("v", "ff", builtin.grep_string, {})
+keymap.set({ "n", "v" }, "cc", builtin.command_history, {})
+keymap.set({ "n", "v" }, "<C-g>c", builtin.git_commits, { desc = "Git Commit Logs" })
+keymap.set({ "n", "v" }, "<C-g>s", builtin.git_status, { desc = "Git Status" })
+keymap.set({ "n", "v" }, "<C-g>b", builtin.git_branches, { desc = "Git Branch" })
+
 return {
   "nvim-telescope/telescope.nvim",
   opts = {
