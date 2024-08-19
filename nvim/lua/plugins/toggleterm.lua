@@ -4,9 +4,10 @@ return {
     open_mapping = [[<c-t>]],
     close_on_exit = true,
     direction = "float",
+    hidden = true,
     float_opts = {
       border = "curved",
-      winblend = 35,
+      winblend = 15,
     },
   },
 }
