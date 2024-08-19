@@ -1,4 +1,4 @@
-if true then
+if false then
   return {
     "ribru17/bamboo.nvim",
     lazy = false,
