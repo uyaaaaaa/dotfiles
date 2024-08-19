@@ -3,3 +3,5 @@ gui:
   nerdFontsVersion: "3"
   commitAuthorShortLength: 10
   commitAuthorLongLength: 10
+git:
+  branchLogCmd: git log --graph --pretty=format:'[%ad %Cgreen%ar%Creset] %C(yellow)%h%Creset %s %Cblue%d' --date=format:'%Y-%m-%d %H:%M'
