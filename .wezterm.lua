@@ -12,7 +12,7 @@ config.check_for_updates_interval_seconds = 86400
 config.window_background_opacity = 0.80
 config.macos_window_background_blur = 60
 
-config.color_scheme = "Obsidian"
+config.color_scheme = "ayu"
 
 config.font = wezterm.font("JetBrains Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
