@@ -1,0 +1,6 @@
+[core]
+	editor = nvim
+[alias]
+  lo = log -n 15 --oneline
+  lp = log -n 15 --pretty=oneline
+  graph = log -n 40 --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
