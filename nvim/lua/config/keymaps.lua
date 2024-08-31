@@ -32,6 +32,8 @@ keymap("i", ",", ",<Space>", opts) -- insert Space automatically after ","
 
 -- Visual --
 keymap("v", "<C-p>", '"0p', opts)
+keymap("v", "<Space>h", "^", opts)
+keymap("v", "<space>l", "$", opts)
 
 -- Command --
 keymap("c", "qq", "qa", opts) -- delete all windows

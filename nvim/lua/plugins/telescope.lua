@@ -42,5 +42,13 @@ return {
         },
       },
     },
+    pickers = {
+      find_files = {
+        hidden = true,
+      },
+      live_grep = {
+        use_regex = true,
+      },
+    },
   },
 }
