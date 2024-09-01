@@ -16,9 +16,6 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 -- yank
 keymap("n", "<S-y>", "y$", opts)
--- New tab
-keymap("n", "te", ":tabedit", opts)
-keymap("n", "gn", ":tabnew<Return>", opts)
 -- Split window
 keymap("n", "ss", ":split<Return><C-w>w", opts)
 keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
