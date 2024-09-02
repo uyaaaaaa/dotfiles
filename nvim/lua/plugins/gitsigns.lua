@@ -10,7 +10,7 @@ return {
     on_attach = function()
       local keymap = require("vim.keymap")
       local gitsigns = require("gitsigns")
-      keymap.set("n", "<leader>gd", gitsigns.preview_hunk, { desc = "Preview diff", noremap = true, silent = true })
+      keymap.set("n", "<C-g>d", gitsigns.preview_hunk_inline, { desc = "Preview diff", noremap = true, silent = true })
       keymap.set("n", "gn", gitsigns.next_hunk, { desc = "Move to next hunk", noremap = true, silent = true })
       keymap.set("n", "gb", gitsigns.prev_hunk, { desc = "Move to prev hunk", noremap = true, silent = true })
     end,

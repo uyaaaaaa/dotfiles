@@ -12,7 +12,13 @@ return {
         require("luasnip").lsp_expand(args.body)
       end,
       window = {
-        completion = cmp.config.window.bordered(),
+        completion = {
+          border = "rounded",
+          zindex = 1000,
+          scrolloff = 0,
+          side_padding = 1,
+          winblend = 20,
+        },
         documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({

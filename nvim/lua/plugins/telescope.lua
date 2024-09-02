@@ -40,19 +40,12 @@ return {
     opts = {
       defaults = {
         initial_mode = "normal",
-        path_display = {
-          "filename_first",
-        },
-        layout_config = {
-          preview_width = 0.70,
-          prompt_position = "top",
-        },
+        path_display = { "filename_first" },
+        layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
-        winblend = 30,
+        winblend = 20,
         dynamic_preview_title = true,
-        cache_picker = {
-          num_pickers = 10,
-        },
+        cache_picker = { num_pickers = 10 },
         mappings = {
           i = {
             ["<C-j>"] = "move_selection_next",
@@ -71,19 +64,25 @@ return {
       },
       pickers = {
         find_files = {
+          theme = "dropdown",
           previewer = false,
           initial_mode = "insert",
           hidden = true,
-          layout_config = {
-            width = 0.45,
-          },
         },
         live_grep = {
           initial_mode = "insert",
           use_regex = true,
+          theme = "ivy",
+          layout_config = {
+            preview_width = 0.70,
+          },
         },
         grep_string = {
           prompt_prefix = "",
+          theme = "ivy",
+          layout_config = {
+            preview_width = 0.70,
+          },
         },
       },
     },

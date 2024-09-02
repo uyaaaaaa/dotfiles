@@ -1,1 +1,3 @@
-return { require("plugins.colorscheme.onedark") }
+return {
+  { require("plugins.colorscheme.onedark") },
+}
