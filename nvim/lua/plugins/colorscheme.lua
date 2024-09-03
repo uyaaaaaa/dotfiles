@@ -1,3 +1,3 @@
 return {
-  { require("plugins.colorscheme.catppuccin") },
+  { require("plugins.theme.kanagawa") },
 }
