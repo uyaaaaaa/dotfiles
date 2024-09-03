@@ -4,6 +4,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
   },
   config = function()
     local cmp = require("cmp")
@@ -11,6 +12,9 @@ return {
       expand = function(args)
         require("luasnip").lsp_expand(args.body)
       end,
+      experimental = {
+        ghost_text = true,
+      },
       window = {
         completion = {
           border = "rounded",
@@ -36,13 +40,14 @@ return {
       }, {
         { name = "buffer" },
         { name = "path" },
+        { name = "cmdline" },
       }),
     })
     -- -- Set up lspconfig.
-    -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
     -- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-    -- require("lspconfig")["<YOUR_LSP_SERVER>"].setup({
-    --   capabilities = capabilities,
-    -- })
+    require("lspconfig")["php-language-server"].setup({
+      capabilities = capabilities,
+    })
   end,
 }

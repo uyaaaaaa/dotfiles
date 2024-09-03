@@ -1,3 +1,3 @@
 return {
-  { require("plugins.colorscheme.onedark") },
+  { require("plugins.colorscheme.catppuccin") },
 }

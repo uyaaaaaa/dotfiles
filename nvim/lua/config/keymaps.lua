@@ -22,7 +22,7 @@ keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
 keymap("n", "x", '"_x', opts) -- Do not yank with x
 keymap("n", "<Space>h", "^", opts)
 keymap("n", "<Space>l", "$", opts)
-keymap("n", "<C-f>", "/", opts)
+keymap("n", "st", ":TodoTelescope<CR>", opts)
 
 -- Insert --
 keymap("i", "jk", "<ESC>", opts)

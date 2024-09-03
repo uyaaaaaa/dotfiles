@@ -3,6 +3,9 @@ local builtin = require("telescope.builtin")
 
 keymap.set("n", "ff", builtin.live_grep, {})
 keymap.set("v", "ff", builtin.grep_string, {})
+keymap.set("n", "<leader>fa", function()
+  builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
+end, { noremap = true })
 
 return {
   {
@@ -29,13 +32,6 @@ return {
       { "<C-g>c", require("telescope.builtin").git_commits, desc = "Git Commit Logs" },
       { "<C-g>s", require("telescope.builtin").git_status, desc = "Git Status" },
       { "<C-g>b", require("telescope.builtin").git_branches, desc = "Git Branch" },
-      {
-        "<C-p>",
-        function()
-          require("telescope.builtin").find_files()
-        end,
-        desc = "Search File",
-      },
     },
     opts = {
       defaults = {
@@ -63,26 +59,28 @@ return {
         },
       },
       pickers = {
+        current_buffer_fuzzy_find = {
+          initial_mode = "insert",
+          previewer = false,
+          skip_empty_lines = true,
+        },
         find_files = {
           theme = "dropdown",
           previewer = false,
           initial_mode = "insert",
           hidden = true,
+          layout_config = { height = 0.6, width = 0.5 },
         },
         live_grep = {
           initial_mode = "insert",
           use_regex = true,
           theme = "ivy",
-          layout_config = {
-            preview_width = 0.70,
-          },
+          layout_config = { preview_width = 0.75 },
         },
         grep_string = {
           prompt_prefix = "",
           theme = "ivy",
-          layout_config = {
-            preview_width = 0.70,
-          },
+          layout_config = { preview_width = 0.75 },
         },
       },
     },
