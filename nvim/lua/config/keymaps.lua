@@ -35,3 +35,7 @@ keymap("v", "<space>l", "$", opts)
 
 -- Command --
 keymap("c", "qq", "qa", opts) -- delete all windows
+-- completation
+keymap("c", "<C-j>", "<C-z>", opts)
+keymap("c", "<C-k>", "<S-tab>", opts)
+keymap("c", "<Tab>", "<Nop>", opts)
