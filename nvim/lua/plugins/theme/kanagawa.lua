@@ -8,6 +8,6 @@ return {
       keywordStyle = { italic = false },
       -- transparent = true,
     })
-    require("kanagawa").load("dragon")
+    require("kanagawa").load("wave")
   end,
 }
