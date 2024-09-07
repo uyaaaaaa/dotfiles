@@ -24,6 +24,10 @@ return {
       },
       opts = { skip = true },
     })
-    opts.presets.lsp_doc_border = true
+  end,
+  config = function()
+    require("noice").setup({
+      presets = { lsp_doc_border = true },
+    })
   end,
 }
