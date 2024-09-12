@@ -9,7 +9,7 @@ end
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.68
 config.macos_window_background_blur = 60
 
 config.color_scheme = "ayu"
@@ -18,6 +18,12 @@ config.font = wezterm.font("JetBrains Mono", { weight = "Medium", stretch = "Nor
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font_size = 11
 config.adjust_window_size_when_changing_font_size = false
+config.window_padding = {
+	left = 10,
+	right = 10,
+	top = 8,
+	bottom = 8,
+}
 
 -- default open wsl if exec by windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then

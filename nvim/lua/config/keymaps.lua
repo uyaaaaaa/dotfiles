@@ -28,6 +28,7 @@ keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Insert --
 keymap.set("i", "jk", "<ESC>", opts)
 keymap.set("i", ",", ",<Space>", opts) -- insert Space automatically after ","
+keymap.set("i", "<C-h>", "<C-w>", opts)
 
 -- Visual --
 keymap.set("v", "<C-p>", '"0p', opts)
