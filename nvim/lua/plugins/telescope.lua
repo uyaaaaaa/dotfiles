@@ -28,7 +28,6 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
-      { "cc", require("telescope.builtin").command_history },
       { "<C-g>c", require("telescope.builtin").git_commits, desc = "Git Commit Logs" },
       { "<C-g>s", require("telescope.builtin").git_status, desc = "Git Status" },
       { "<C-g>b", require("telescope.builtin").git_branches, desc = "Git Branch" },
