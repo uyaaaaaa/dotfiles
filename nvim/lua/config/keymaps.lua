@@ -37,7 +37,9 @@ keymap.set("n", "<Space>k", "<Cmd>copy-1<CR>", opts)
 -- Insert --
 keymap.set("i", "jk", "<ESC>", opts)
 keymap.set("i", ",", ",<Space>", opts) -- insert Space automatically after ","
-keymap.set("i", "<C-h>", "<C-w>", opts)
+keymap.set("i", "<C-d>", "<C-w>", opts)
+keymap.set("i", "<C-h>", "<BS>", opts)
+keymap.set("i", "<C-l>", "<Del>", opts)
 
 -- Visual --
 keymap.set("v", "<C-p>", '"0p', opts)
