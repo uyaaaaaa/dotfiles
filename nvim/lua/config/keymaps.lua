@@ -37,6 +37,9 @@ keymap.set("n", "<Space>k", "<Cmd>copy-1<CR>", opts)
 keymap.set("n", "gh", "H", opts)
 keymap.set("n", "gm", "M", opts)
 keymap.set("n", "gl", "L", opts)
+-- Move indent
+keymap.set("n", ">", ">>", opts)
+keymap.set("n", "<", "<<", opts)
 
 -- Insert --
 keymap.set("i", "jk", "<ESC>", opts)
