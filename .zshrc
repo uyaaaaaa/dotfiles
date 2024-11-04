@@ -21,7 +21,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export LESS="-im"
-
 alias ll="ls -la"
 alias dots="cd ~/dotfiles"
+
+unset LESS
