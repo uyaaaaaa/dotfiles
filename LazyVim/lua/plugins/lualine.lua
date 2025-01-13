@@ -6,7 +6,7 @@ return {
       winbar = {
         "help",
         "dashboard",
-        "NvimTree",
+        "neo-tree",
         "Trouble",
         "toggleterm",
       },

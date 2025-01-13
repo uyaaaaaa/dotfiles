@@ -31,6 +31,7 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+        -- TODO: change keybind
         ["<C-l>"] = cmp.mapping.scroll_docs(-4),
         ["<C-h>"] = cmp.mapping.scroll_docs(4),
       }),
