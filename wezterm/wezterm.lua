@@ -17,7 +17,6 @@ config.color_scheme = "ayu"
 config.font = wezterm.font("JetBrains Mono", { weight = "Medium", stretch = "Normal", style = "Normal" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font_size = 11
-config.adjust_window_size_when_changing_font_size = false
 config.use_ime = true
 config.window_padding = {
 	left = 10,
