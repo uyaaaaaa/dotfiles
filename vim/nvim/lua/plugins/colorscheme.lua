@@ -1,3 +1,3 @@
 return {
-    { require('plugins.theme.night-owl') }
+    { require("plugins.theme.nightfox") }
 }
