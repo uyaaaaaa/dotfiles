@@ -17,8 +17,6 @@ return {
             icons = {},
         },
         code = {
-            -- Additional modes to render code blocks
-            render_modes = true,
             sign = false,
             width = "block",
             left_pad = 2,
