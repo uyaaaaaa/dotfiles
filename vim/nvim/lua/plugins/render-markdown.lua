@@ -6,9 +6,10 @@ return {
         "nvim-treesitter/nvim-treesitter",
     },
     ft = { "markdown", "norg", "rmd", "org" },
+    cmd = { "RenderMarkdown" },
     opts = {
         enabled = true,  -- Whether Markdown should be rendered by default or not
-        render_modes = { "n", "c", "t", "v", "V", "i" },
+        render_modes = { "n", "no", "c", "t", "v", "V", "i" },
         heading = {
             sign = false,
             width = "block",
