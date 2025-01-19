@@ -23,5 +23,9 @@ autocmd("BufEnter", {
         end
     end,
 })
-
-
+-- Set Color Of Folded Text
+autocmd("BufEnter", {
+    group = augroup("Folded_colorscheme", { clear = true } ),
+    once = true,
+    command = "highlight Folded guibg=none guifg=#00A7DB gui=italic"
+})
