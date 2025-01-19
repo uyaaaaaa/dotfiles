@@ -26,6 +26,10 @@ keymap.set("n", "<Space>k", "<Cmd>copy-1<CR>", opts)
 -- Move inside line
 keymap.set("n", "<Space>h", "^", opts)
 keymap.set("n", "<Space>l", "$", opts)
+-- Move cursor
+keymap.set("n", "gh", "<S-H>", opts)
+keymap.set("n", "gm", "<S-m>", opts)
+keymap.set("n", "gl", "<S-l>", opts)
 -- Copy current buffer path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Yank to last
