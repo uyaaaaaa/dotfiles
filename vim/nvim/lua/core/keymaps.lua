@@ -36,11 +36,11 @@ keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 keymap.set("n", "Y", "y$", opts)
 -- Do not yank with x,c
 keymap.set("n", "x", '"_x', opts)
-keymap.set('n', 'c', '"_c', opts)
-keymap.set('n', 'C', '"_C', opts)
-keymap.set('n', 'ciw', '"_ciw', opts)
-keymap.set('n', 'cw', '"_cw', opts)
-keymap.set('n', 'ce', '"_ce', opts)
+keymap.set("n", "c", '"_c', opts)
+keymap.set("n", "C", '"_C', opts)
+keymap.set("n", "ciw", '"_ciw', opts)
+keymap.set("n", "cw", '"_cw', opts)
+keymap.set("n", "ce", '"_ce', opts)
 -- Fold
 keymap.set("n", "<CR>", "za", opts)
 
