@@ -23,21 +23,20 @@ opt.undolevels = 10000
 opt.wrap = false
 
 -- Fold
-function Foldtext()
-    local line = vim.fn.getline(vim.v.foldstart)
-    return string.format("%s", line)
-end
-opt.foldlevel = 99
-opt.foldmethod = "expr"
-opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.foldtext = "v:lua.Foldtext()"
 opt.fillchars = {
-    fold = " ",
     foldopen = "",
     foldclose = "",
+    fold = " ",
     foldsep = " ",
+    diff = "╱",
+    eob = " ",
 }
+opt.foldlevel = 99
 opt.foldcolumn = "1"
+opt.smoothscroll = true
+opt.foldexpr = "v:lua.require'util.ui'.foldexpr()"
+opt.foldmethod = "expr"
+opt.foldtext = ""
 
 -- Search
 opt.ignorecase = true

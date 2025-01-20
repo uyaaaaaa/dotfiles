@@ -23,6 +23,12 @@ autocmd("BufEnter", {
         end
     end,
 })
+-- Set Color Of Folded Text
+autocmd("BufEnter", {
+    group = augroup("Folded_colorscheme", { clear = true } ),
+    once = true,
+    command = "highlight Folded gui=italic"
+})
 -- Highlight on yank
 autocmd("TextYankPost", {
     group = augroup("highlight_yank", { clear = true }),
