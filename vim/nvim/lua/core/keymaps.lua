@@ -15,6 +15,8 @@ keymap.set("n", "ss", ":vsplit<Return><C-w>w", opts)
 -- Move active pane
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
+keymap.set("n", "sj", "<C-w>j", opts)
+keymap.set("n", "sk", "<C-w>k", opts)
 -- Close pane
 -- keymap.set("n", "<C-w>", ":close<CR>", opts)
 -- Move current line
@@ -48,6 +50,8 @@ keymap.set("n", "<CR>", "za", opts)
 -- Emacs like commands
 keymap.set("i", "<C-f>", "<Right>", opts)
 keymap.set("i", "<C-b>", "<Left>", opts)
+keymap.set("i", "<C-j>", "<Down>", opts)
+keymap.set("i", "<C-k>", "<Up>", opts)
 -- Delete character
 keymap.set("i", "<C-l>", "<Del>", opts)
 

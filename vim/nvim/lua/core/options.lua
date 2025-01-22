@@ -48,6 +48,11 @@ opt.cursorline = true
 opt.background = 'dark'
 opt.mouse = 'a'
 opt.clipboard = 'unnamedplus'
+opt.termguicolors = true
+opt.winblend = 10
+opt.pumblend = 10  -- popup window
+opt.signcolumn = 'yes'
+opt.showtabline = 2
 
 opt.iskeyword:append("-")
 
