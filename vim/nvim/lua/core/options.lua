@@ -64,7 +64,7 @@ local function get_fold(lnum)
 end
 
 _G.get_statuscol = function()
-	return "%s%=%T%l │ " .. get_fold(vim.v.lnum) .. " "
+	return "%s%=%T%l " .. get_fold(vim.v.lnum) .. "  "
 end
 
 opt.statuscolumn = "%!v:lua.get_statuscol()"
