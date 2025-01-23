@@ -27,7 +27,7 @@ autocmd("BufEnter", {
 autocmd("BufEnter", {
     group = augroup("Folded_colorscheme", { clear = true } ),
     once = true,
-    command = "highlight Folded gui=italic"
+    command = "highlight Folded guibg=none gui=italic"
 })
 -- Highlight on yank
 autocmd("TextYankPost", {

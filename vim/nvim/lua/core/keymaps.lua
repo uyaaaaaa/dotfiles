@@ -44,7 +44,7 @@ keymap.set("n", "ciw", '"_ciw', opts)
 keymap.set("n", "cw", '"_cw', opts)
 keymap.set("n", "ce", '"_ce', opts)
 -- Fold
-keymap.set("n", "<CR>", "za", opts)
+keymap.set("n", "zf", "za", opts)
 
 -- INSERT MODE --
 -- Emacs like commands
