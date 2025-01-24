@@ -29,6 +29,16 @@ autocmd("BufEnter", {
     once = true,
     command = "highlight Folded gui=italic"
 })
+-- Disable 'statuscolumn' in NeoTree
+autocmd("BufEnter", {
+    group = augroup("disable_statuscolumn", { clear = true } ),
+    desc = "Disable Statuscolumn",
+    callback = function()
+        if vim.bo.filetype == 'neo-tree' then
+            vim.wo.statuscolumn = ""
+        end
+    end,
+})
 -- Highlight on yank
 autocmd("TextYankPost", {
     group = augroup("highlight_yank", { clear = true }),
