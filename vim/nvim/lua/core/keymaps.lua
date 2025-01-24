@@ -45,7 +45,10 @@ keymap.set("n", "ciw", '"_ciw', opts)
 keymap.set("n", "cw", '"_cw', opts)
 keymap.set("n", "ce", '"_ce', opts)
 -- Fold
-keymap.set("n", "zf", "za", opts)
+keymap.set("n", "zf", "za", opts)  -- Toggle
+keymap.set("n", "zz", "zO", opts)  -- Open Fold Under level
+-- Decrement
+keymap.set("n", "<C-f>", "<C-x>", opts)
 
 -- INSERT MODE --
 -- Emacs like commands
@@ -66,3 +69,5 @@ keymap.set("v", "<Space>k", ":copy'>+0<CR>gv", opts)
 -- Select inside line
 keymap.set("v", "<Space>h", "^", opts)
 keymap.set("v", "<Space>l", "$", opts)
+-- Not Overwrite register when paste in visual mode
+keymap.set("v", "p", "P", opts)
