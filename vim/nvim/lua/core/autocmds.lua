@@ -23,6 +23,12 @@ autocmd("BufEnter", {
         end
     end,
 })
+-- Open Markdown with Close All Fold
+autocmd("BufRead", {
+    pattern = "*.md",
+    group = augroup("Start_with_close_fold", { clear = true } ),
+    command = "normal! zM"
+})
 -- Set Color Of Folded Text
 autocmd("BufEnter", {
     group = augroup("Folded_colorscheme", { clear = true } ),
