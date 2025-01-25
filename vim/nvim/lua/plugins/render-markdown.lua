@@ -1,6 +1,7 @@
 -- Markdown
 return {
     "MeanderingProgrammer/render-markdown.nvim",
+    lazy = true,
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "nvim-treesitter/nvim-treesitter",
