@@ -48,6 +48,8 @@ keymap.set("n", "ce", '"_ce', opts)
 keymap.set("n", "zf", "za", opts)  -- Toggle
 keymap.set("n", "zr", "zO", opts)  -- Open Fold Under level
 keymap.set("n", "zz", "zR", opts)  -- Open All Fold
+keymap.set("n", "<Nop>", "zm", opts)  -- Disable zm
+keymap.set("n", "zm", "zM", opts)  -- Close All Fold
 -- Decrement
 keymap.set("n", "<C-f>", "<C-x>", opts)
 
