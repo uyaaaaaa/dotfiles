@@ -1,12 +1,13 @@
 return {
     "oxfist/night-owl.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
-    config = function()
-        require("night-owl").setup({
-            itaric = false,
-            transparent_background = true,
-        })
+    opts = {
+        itaric = false,
+        transparent_background = true,
+    },
+    config = function(_, opts)
+        require("night-owl").setup(opts)
         vim.cmd.colorscheme("night-owl")
     end,
 }
