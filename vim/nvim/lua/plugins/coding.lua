@@ -4,7 +4,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         version = false, -- last release is way too old and doesn't work on Windows
         build = ":TSUpdate",
-        event = { "VeryLazy" },
+        event = "BufRead",
         lazy = vim.fn.argc(-1) == 0,
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts_extend = { "ensure_installed" },

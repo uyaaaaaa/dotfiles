@@ -80,9 +80,9 @@ return {
     {
         "MagicDuck/grug-far.nvim",
         lazy = true,
-        opts = { headerMaxWidth = 40 },
-        event = { "VeryLazy" },
+        event = "VeryLazy",
         cmd = "GrugFar",
+        opts = { headerMaxWidth = 40 },
         keys = {
             {
                 "<leader>ss",
@@ -102,7 +102,7 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         lazy = true,
-        event = { "VeryLazy" },
+        event = "BufRead",
         main = "ibl",
         opts = {
             indent = {

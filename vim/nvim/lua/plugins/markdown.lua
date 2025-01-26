@@ -3,7 +3,7 @@ return {
     {
         "bullets-vim/bullets.vim",
         lazy = true,
-        event = { "VeryLazy" },
+        event = "VeryLazy",
         ft = { "markdown" },
     },
 
@@ -11,7 +11,7 @@ return {
     {
         "roodolv/markdown-toggle.nvim",
         ft = { "markdown" },
-        event = { "VeryLazy" },
+        event = "VeryLazy",
         cmd = { "MarkdownToggle" },
         opts = {
             box_table = { "x" },
@@ -39,7 +39,7 @@ return {
     {
         "MeanderingProgrammer/render-markdown.nvim",
         lazy = true,
-        event = { "VeryLazy" },
+        event = "VeryLazy",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
             "nvim-treesitter/nvim-treesitter",
