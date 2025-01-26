@@ -53,4 +53,14 @@ autocmd("TextYankPost", {
         (vim.hl or vim.highlight).on_yank()
     end,
 })
+-- Open with cursor focusing on the line at last time
+autocmd("BufRead", {
+    group = augroup("last_row", { clear = true }),
+    desc = "Open last row of buffer",
+    callback = function()
+        if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+            vim.cmd("normal g`\"")
+        end
+    end,
+})
 
