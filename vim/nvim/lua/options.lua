@@ -31,10 +31,11 @@ opt.fillchars = {
     diff = "╱",
     eob = " ",
 }
+_G.fcs = opt.fillchars:get()
 opt.foldlevel = 99
 opt.foldcolumn = "1"
 opt.smoothscroll = true
-opt.foldexpr = "v:lua.require'util.ui'.foldexpr()"
+opt.foldexpr = "v:lua.require'utils.ui'.foldexpr()"
 opt.foldmethod = "expr"
 opt.foldtext = ""
 
@@ -52,22 +53,7 @@ opt.termguicolors = true
 opt.winblend = 10
 opt.pumblend = 20  -- popup window
 opt.signcolumn = 'yes'
-
-local fcs = opt.fillchars:get()
-
--- Stolen from Akinsho
-local function get_fold(lnum)
-	if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
-        return ' '
-    end
-	return vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
-end
-
-_G.get_statuscol = function()
-	return "%s%=%T%l " .. get_fold(vim.v.lnum) .. "  "
-end
-
-opt.statuscolumn = "%!v:lua.get_statuscol()"
+opt.statuscolumn = "%!v:lua.require'utils.ui'.get_statuscol()"
 
 -- tabline (Over Neotree)
 opt.showtabline = 2
