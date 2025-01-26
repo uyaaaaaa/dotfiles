@@ -50,7 +50,7 @@ opt.mouse = 'a'
 opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
 opt.winblend = 10
-opt.pumblend = 10  -- popup window
+opt.pumblend = 20  -- popup window
 opt.signcolumn = 'yes'
 
 local fcs = opt.fillchars:get()
