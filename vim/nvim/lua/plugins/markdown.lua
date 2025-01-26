@@ -3,15 +3,43 @@ return {
     {
         "bullets-vim/bullets.vim",
         lazy = true,
-        event = { "BufRead" },
+        event = { "VeryLazy" },
         ft = { "markdown" },
+    },
+
+    -- toggle checkbox
+    {
+        "roodolv/markdown-toggle.nvim",
+        ft = { "markdown" },
+        event = { "VeryLazy" },
+        cmd = { "MarkdownToggle" },
+        opts = {
+            box_table = { "x" },
+            list_table = { "*" },
+        },
+        config = function()
+            -- Keymap of markdown-toggle
+            local toggle = require("markdown-toggle")
+            toggle.setup({
+                vim.api.nvim_create_autocmd("FileType", {
+                    desc = "markdown-toggle.nvim keymaps",
+                    pattern = { "markdown", "markdown.mdx" },
+                    callback = function(args)
+                        local opts = { silent = true, noremap = true, buffer = args.buf, expr = true }
+                        vim.keymap.set("n", "<C-c>", toggle.checkbox_dot, opts)
+                        opts.expr = false
+                        vim.keymap.set("v", "<C-c>", toggle.checkbox, opts)
+                    end,
+                })
+            })
+        end,
     },
 
     -- render-markdown
     {
         "MeanderingProgrammer/render-markdown.nvim",
         lazy = true,
-        event = { "VeryLazy", "BufRead" },
+        event = { "VeryLazy" },
         dependencies = {
             "nvim-tree/nvim-web-devicons",
             "nvim-treesitter/nvim-treesitter",
