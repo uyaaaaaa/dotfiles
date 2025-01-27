@@ -1,4 +1,57 @@
 return {
+    {
+        -- treesitter
+        "nvim-treesitter/nvim-treesitter",
+        version = false, -- last release is way too old and doesn't work on Windows
+        build = ":TSUpdate",
+        event = "BufRead",
+        lazy = true,
+        cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+        opts_extend = { "ensure_installed" },
+        ---@type TSConfig
+        ---@diagnostic disable-next-line: missing-fields
+        opts = {
+            highlight = { enable = true },
+            indent = { enable = true },
+            ensure_installed = {  -- if needed, add language.
+                "bash",
+                "jsdoc",
+                "json",
+                "markdown",
+                "printf",
+                "python",
+                "lua",
+                "vim",
+                "query",
+                "sql",
+                "php",
+                "tsx",
+                "javascript",
+                "typescript",
+                "html",
+                "css",
+                "diff",
+                "xml",
+                "yaml",
+            },
+        },
+        ---@param opts TSConfig
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+        end,
+    },
+
+    -- treesitter-context
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        lazy = true,
+        event = { "BufNewFile", "BufReadPre" },
+        cmd = { "TSContextEnable" },
+        config = function(_, opts)
+            require("treesitter-context").setup(opts)
+        end,
+    },
+
     -- NeoTree
     {
         "nvim-neo-tree/neo-tree.nvim",
