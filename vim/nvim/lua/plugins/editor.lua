@@ -57,6 +57,11 @@ return {
         "lewis6991/gitsigns.nvim",
         event = { "VeryLazy", "BufReadPre" },
         opts = {
+            attach_to_untracked = true,
+            current_line_blame = true,
+            current_line_blame_opts = {
+                delay = 750,
+            },
             signs = {
                 add = { text = "▎" },
                 change = { text = "▎" },
