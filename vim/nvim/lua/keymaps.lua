@@ -52,6 +52,8 @@ keymap.set("n", "<Nop>", "zm", opts)  -- Disable zm
 keymap.set("n", "zm", "zM", opts)  -- Close All Fold
 -- Decrement
 keymap.set("n", "<C-f>", "<C-x>", opts)
+-- Copy current buffer path(relative)
+keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 
 -- INSERT MODE --
 -- Emacs like commands
