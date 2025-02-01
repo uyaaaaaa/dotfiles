@@ -179,6 +179,26 @@ return {
         },
     },
 
+    -- telescope-all-recent
+    {
+        "prochri/telescope-all-recent.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "kkharji/sqlite.lua",
+        },
+        opts = {
+            database = {
+                folder = vim.fn.stdpath("data"),
+                file = "telescope-all-recent.sqlite3",
+                max_timestamps = 5,
+            },
+            default = {
+                sorting = "recent",
+            },
+        },
+    },
+
     {
         "nvim-telescope/telescope.nvim",
         tag = '0.1.8',
