@@ -28,7 +28,7 @@ function M.get_statuscol()
         fold = vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
     end
 
-	return "%s%=%T%l " .. fold .. "  "
+	return " %T%=%l %s" .. fold .. " "
 end
 
 return M
