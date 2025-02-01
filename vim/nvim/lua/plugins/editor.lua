@@ -179,6 +179,74 @@ return {
         },
     },
 
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = '0.1.8',
+        event = "VeryLazy",
+        opts = {
+            defaults = {
+                initial_mode = "normal",
+                path_display = { "filename_first" },
+                layout_config = { prompt_position = "top" },
+                sorting_strategy = "ascending",
+                winblend = 20,
+                dynamic_preview_title = true,
+                cache_picker = { num_pickers = 10 },
+                -- hl_result_eol = true,
+                mappings = {
+                    i = {
+                        ["<C-j>"] = "move_selection_next",
+                        ["<C-k>"] = "move_selection_previous",
+                    },
+                    n = {
+                        ["<S-j>"] = "preview_scrolling_down",
+                        ["<S-k>"] = "preview_scrolling_up",
+                        ["q"] = "close",
+                    },
+                },
+            },
+            pickers = {
+                current_buffer_fuzzy_find = {
+                    initial_mode = "insert",
+                    previewer = false,
+                    skip_empty_lines = true,
+                },
+                find_files = {
+                    initial_mode = "insert",
+                    sorting_strategy = "descending",
+                    layout_config = { prompt_position = "bottom" },
+                },
+                live_grep = {
+                    initial_mode = "insert",
+                    use_regex = true,
+                    theme = "ivy",
+                    layout_config = { height = 0.45, preview_width = 0.75 },
+                },
+                grep_string = {
+                    prompt_prefix = "",
+                    theme = "ivy",
+                    layout_config = { height = 0.45, preview_width = 0.75 },
+                },
+                lsp_references = {
+                    prompt_prefix = "",
+                    theme = "ivy",
+                    layout_config = { height = 0.45, preview_width = 0.75 },
+                },
+            },
+        },
+        config = function(_, opts)
+            local builtin = require("telescope.builtin")
+
+            vim.keymap.set({ "n", "i", "x" }, "<C-p>", builtin.find_files, { desc = "Find file" })
+            vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Grep in project" })
+            vim.keymap.set("v", "<leader>ff", builtin.grep_string, { desc = "Grep by selected string" })
+            vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Git Commit Logs" })
+            vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "Git Status" })
+
+            require('telescope').setup(opts)
+        end,
+    },
+
     -- Indent line
     {
         "lukas-reineke/indent-blankline.nvim",
