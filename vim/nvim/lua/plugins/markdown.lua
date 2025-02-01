@@ -2,9 +2,8 @@ return {
     -- bullet
     {
         "bullets-vim/bullets.vim",
-        lazy = true,
-        event = "VeryLazy",
         ft = { "markdown" },
+        event = "VeryLazy",
     },
 
     -- toggle checkbox
@@ -12,7 +11,6 @@ return {
         "roodolv/markdown-toggle.nvim",
         ft = { "markdown" },
         event = "VeryLazy",
-        cmd = { "MarkdownToggle" },
         opts = {
             box_table = { "x" },
             list_table = { "*" },
@@ -25,10 +23,8 @@ return {
                     desc = "markdown-toggle.nvim keymaps",
                     pattern = { "markdown", "markdown.mdx" },
                     callback = function(args)
-                        local opts = { silent = true, noremap = true, buffer = args.buf, expr = true }
-                        vim.keymap.set("n", "<C-c>", toggle.checkbox_dot, opts)
-                        opts.expr = false
-                        vim.keymap.set("v", "<C-c>", toggle.checkbox, opts)
+                        vim.keymap.set("n", "<C-c>", toggle.checkbox_dot, { silent = true, noremap = true, buffer = args.buf, expr = true })
+                        vim.keymap.set("v", "<C-c>", toggle.checkbox, { silent = true, noremap = true, buffer = args.buf, expr = false })
                     end,
                 })
             })
@@ -38,16 +34,13 @@ return {
     -- render-markdown
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        lazy = true,
         event = "VeryLazy",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
             "nvim-treesitter/nvim-treesitter",
         },
         ft = { "markdown", "norg", "rmd", "org" },
-        cmd = { "RenderMarkdown" },
         opts = {
-            enabled = true,  -- Whether Markdown should be rendered by default or not
             render_modes = { "n", "no", "c", "t", "v", "V", "i" },
             heading = {
                 sign = false,
