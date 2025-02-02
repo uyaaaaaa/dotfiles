@@ -76,3 +76,7 @@ keymap.set("v", "<Space>h", "^", opts)
 keymap.set("v", "<Space>l", "$", opts)
 -- Not Overwrite register when paste in visual mode
 keymap.set("v", "p", "P", opts)
+
+-- TERMINAL MODE
+keymap.set("t", "<C-j><C-k>", "<C-\\><C-n>", opts)
+
