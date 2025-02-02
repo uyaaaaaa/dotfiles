@@ -199,6 +199,7 @@ return {
         },
     },
 
+    -- Telescope
     {
         "nvim-telescope/telescope.nvim",
         tag = '0.1.8',
@@ -297,5 +298,40 @@ return {
                 },
             },
         },
+    },
+
+    -- Terminal
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        event = "VeryLazy",
+        opts = {
+            size = function(term)
+                if term.direction == "horizontal" then
+                    return vim.o.lines * 0.4
+                elseif term.direction == "vertical" then
+                    return vim.o.columns * 0.35
+                end
+            end,
+            direction = "horizontal",  -- vertical, horizontal, float, tab
+            open_mapping = [[<c-t>]],
+            close_on_exit = true,
+            hidden = true,
+        },
+        config = function(_, opts)
+            local lg = require("toggleterm.terminal").Terminal:new({
+                cmd = "lazygit",
+                dir = "git_dir",
+                direction = "float",
+                hidden = true,
+                float_opts = {
+                    border = "curved",
+                    winblend = 20,
+                },
+            })
+            vim.keymap.set("n", "<leader>gg", function() lg:toggle() end, { noremap = true, silent = true })
+
+            require("toggleterm").setup(opts)
+        end,
     },
 }
