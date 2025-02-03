@@ -3,38 +3,25 @@ return {
     {
         "bullets-vim/bullets.vim",
         ft = { "markdown" },
-        event = "VeryLazy",
     },
 
     -- toggle checkbox
     {
         "roodolv/markdown-toggle.nvim",
         ft = { "markdown" },
-        event = "VeryLazy",
         opts = {
             box_table = { "x" },
             list_table = { "*" },
         },
         config = function()
-            -- Keymap of markdown-toggle
-            local toggle = require("markdown-toggle")
-            toggle.setup({
-                vim.api.nvim_create_autocmd("FileType", {
-                    desc = "markdown-toggle.nvim keymaps",
-                    pattern = { "markdown", "markdown.mdx" },
-                    callback = function(args)
-                        vim.keymap.set("n", "<leader>d", toggle.checkbox_dot, { silent = true, noremap = true, buffer = args.buf, expr = true })
-                        vim.keymap.set("v", "<leader>d", toggle.checkbox, { silent = true, noremap = true, buffer = args.buf, expr = false })
-                    end,
-                })
-            })
+            vim.keymap.set("n", "<leader>d", require("markdown-toggle").checkbox_dot, { silent = true, noremap = true, expr = true })
+            vim.keymap.set("v", "<leader>d", require("markdown-toggle").checkbox, { silent = true, noremap = true, expr = false })
         end,
     },
 
     -- render-markdown
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        event = "VeryLazy",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
             "nvim-treesitter/nvim-treesitter",
