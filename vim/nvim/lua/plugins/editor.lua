@@ -5,7 +5,6 @@ return {
         version = false, -- last release is way too old and doesn't work on Windows
         build = ":TSUpdate",
         event = "BufRead",
-        lazy = true,
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts_extend = { "ensure_installed" },
         ---@type TSConfig
@@ -44,9 +43,7 @@ return {
     -- treesitter-context
     {
         "nvim-treesitter/nvim-treesitter-context",
-        lazy = true,
         event = { "BufNewFile", "BufReadPre" },
-        cmd = { "TSContextEnable" },
         config = function(_, opts)
             require("treesitter-context").setup(opts)
         end,
@@ -160,8 +157,6 @@ return {
     -- Search and Replace
     {
         "MagicDuck/grug-far.nvim",
-        lazy = true,
-        event = "VeryLazy",
         cmd = "GrugFar",
         opts = { headerMaxWidth = 40 },
         keys = {
@@ -182,7 +177,7 @@ return {
     -- telescope-all-recent
     {
         "prochri/telescope-all-recent.nvim",
-        event = "VeryLazy",
+        cmd = "Telescope",
         dependencies = {
             "nvim-telescope/telescope.nvim",
             "kkharji/sqlite.lua",
@@ -203,7 +198,14 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = '0.1.8',
-        event = "VeryLazy",
+        cmd = { "Telescope" },
+        keys = {
+            { "<C-p>", mode = { "n", "x" }, function() require("telescope.builtin").find_files() end, desc = "Find file" },
+            { "<leader>ff", mode = { "n" }, function() require("telescope.builtin").live_grep() end, desc = "Grep word" },
+            { "<leader>ff", mode = { "x" }, function() require("telescope.builtin").grep_string() end, desc = "Grep by selected word" },
+            { "<leader>gc", mode = { "n" }, function() require("telescope.builtin").git_commits() end, desc = "Git Commit Logs" },
+            { "<leader>gs", mode = { "n" }, function() require("telescope.builtin").git_status() end, desc = "Git Status" },
+        },
         opts = {
             defaults = {
                 initial_mode = "normal",
@@ -256,14 +258,6 @@ return {
             },
         },
         config = function(_, opts)
-            local builtin = require("telescope.builtin")
-
-            vim.keymap.set({ "n", "i", "x" }, "<C-p>", builtin.find_files, { desc = "Find file" })
-            vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Grep in project" })
-            vim.keymap.set("v", "<leader>ff", builtin.grep_string, { desc = "Grep by selected string" })
-            vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Git Commit Logs" })
-            vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "Git Status" })
-
             require('telescope').setup(opts)
         end,
     },
@@ -304,7 +298,29 @@ return {
     {
         "akinsho/toggleterm.nvim",
         version = "*",
-        event = "VeryLazy",
+        cmd = "ToggleTerm",
+        keys = {
+            { "<C-t>", function() require("toggleterm.terminal").Terminal:new():toggle() end, desc = "Open Terminal" },
+            {
+                "<leader>gg",
+                mode = { "n" },
+                function()
+                    local lg = require("toggleterm.terminal").Terminal:new({
+                        cmd = "lazygit",
+                        dir = "git_dir",
+                        direction = "float",
+                        hidden = true,
+                        float_opts = {
+                            border = "curved",
+                            winblend = 20,
+                        },
+                    })
+
+                    lg:toggle()
+                end,
+                desc = "Open lazygit"
+            },
+        },
         opts = {
             size = function(term)
                 if term.direction == "horizontal" then
@@ -319,18 +335,6 @@ return {
             hidden = true,
         },
         config = function(_, opts)
-            local lg = require("toggleterm.terminal").Terminal:new({
-                cmd = "lazygit",
-                dir = "git_dir",
-                direction = "float",
-                hidden = true,
-                float_opts = {
-                    border = "curved",
-                    winblend = 20,
-                },
-            })
-            vim.keymap.set("n", "<leader>gg", function() lg:toggle() end, { noremap = true, silent = true })
-
             require("toggleterm").setup(opts)
         end,
     },
