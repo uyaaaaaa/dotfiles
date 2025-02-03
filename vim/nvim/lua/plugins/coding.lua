@@ -24,13 +24,13 @@ return {
     -- flash.nvim
     {
         "folke/flash.nvim",
-        event = "VeryLazy",
+        event = "BufRead",
         vscode = true,
         ---@type Flash.Config
         opts = {},
         keys = {
-            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+            { "s", mode = { "n", "x" }, function() require("flash").jump() end, desc = "Flash" },
+            { "S", mode = { "n", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
             -- Flash With Motion (move and operation)
             { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
             { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
@@ -95,4 +95,5 @@ return {
             -- })
         end,
     }
+    },
 }
