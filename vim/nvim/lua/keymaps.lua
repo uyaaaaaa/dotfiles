@@ -17,6 +17,8 @@ keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
 keymap.set("n", "sj", "<C-w>j", opts)
 keymap.set("n", "sk", "<C-w>k", opts)
+-- Close tab
+keymap.set("n", "<C-w><C-t>", "<Cmd>tabclose<CR>", opts)
 
 -- Close pane
 -- keymap.set("n", "<C-w>", ":close<CR>", opts)
