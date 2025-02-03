@@ -77,6 +77,49 @@ return {
         },
     },
 
+    -- git diff
+    {
+        "sindrets/diffview.nvim",
+        cmd = { "DiffviewOpen", "DiffiviewFileHistory" },
+        keys = {
+            -- `gt`: Go to Next Tab
+            { "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
+            { "<leader>gq", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
+            { "<leader>gf", "<cmd>DiffviewFileHistory<CR>", desc = "Open File History" },
+        },
+        opts = {
+            enhanced_diff_hl = false,
+            show_help_hints = true,
+            watch_index = true,
+            view = {
+                default = {
+                    winbar_info = true,
+                },
+                merge_tool = {
+                    layout = "diff3_mixed",
+                },
+                file_history = {
+                    winbar_info = true,
+                },
+            },
+            file_panel = {
+                listing_style = "list",
+                win_config = {
+                    position = "left",
+                    width = 40,
+                },
+            },
+            file_history_panel = {
+                win_config = {
+                    height = 14,
+                },
+            },
+        },
+        config = function(_, opts)
+            require("diffview").setup(opts)
+        end,
+    },
+
     -- NeoTree
     {
         "nvim-neo-tree/neo-tree.nvim",
