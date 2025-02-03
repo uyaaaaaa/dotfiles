@@ -23,8 +23,8 @@ return {
                     desc = "markdown-toggle.nvim keymaps",
                     pattern = { "markdown", "markdown.mdx" },
                     callback = function(args)
-                        vim.keymap.set("n", "<C-c>", toggle.checkbox_dot, { silent = true, noremap = true, buffer = args.buf, expr = true })
-                        vim.keymap.set("v", "<C-c>", toggle.checkbox, { silent = true, noremap = true, buffer = args.buf, expr = false })
+                        vim.keymap.set("n", "<leader>d", toggle.checkbox_dot, { silent = true, noremap = true, buffer = args.buf, expr = true })
+                        vim.keymap.set("v", "<leader>d", toggle.checkbox, { silent = true, noremap = true, buffer = args.buf, expr = false })
                     end,
                 })
             })
