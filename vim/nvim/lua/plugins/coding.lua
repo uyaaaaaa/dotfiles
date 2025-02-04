@@ -11,6 +11,13 @@ return {
         },
     },
 
+    -- auto-indent
+    {
+        "VidocqH/auto-indent.nvim",
+        event = "InsertEnter",
+        opts = {},
+    },
+
     -- surround
     {
         "kylechui/nvim-surround",
