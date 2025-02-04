@@ -102,4 +102,13 @@ return {
             -- })
         end,
     },
+
+    -- cursorword
+    {
+        "xiyaowong/nvim-cursorword",
+        event = "BufRead",
+        config = function()
+            vim.cmd("hi default CursorWord cterm=underline gui=underline")
+        end,
+    },
 }

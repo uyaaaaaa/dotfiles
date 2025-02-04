@@ -45,6 +45,8 @@ opt.hlsearch = true
 
 -- View
 opt.cursorline = true
+opt.termguicolors = true
+opt.guicursor="n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait300-blinkoff200-blinkon150-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 opt.background = 'dark'
 opt.mouse = 'a'
 opt.clipboard = 'unnamedplus'
