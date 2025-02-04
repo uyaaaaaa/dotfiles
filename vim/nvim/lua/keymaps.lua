@@ -19,6 +19,8 @@ keymap.set("n", "sj", "<C-w>j", opts)
 keymap.set("n", "sk", "<C-w>k", opts)
 -- Close tab
 keymap.set("n", "<C-w><C-t>", "<Cmd>tabclose<CR>", opts)
+-- Copy current path(relative)
+keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 
 -- Close pane
 -- keymap.set("n", "<C-w>", ":close<CR>", opts)
