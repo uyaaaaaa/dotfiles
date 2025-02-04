@@ -94,6 +94,5 @@ return {
             --     capabilities = capabilities,
             -- })
         end,
-    }
     },
 }
