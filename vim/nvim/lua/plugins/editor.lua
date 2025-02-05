@@ -381,4 +381,20 @@ return {
             require("toggleterm").setup(opts)
         end,
     },
+
+    -- scrollbar
+    {
+        "petertriho/nvim-scrollbar",
+        event = "WinScrolled",
+        opts = {
+            marks = {
+                Cursor = {
+                    text = "",
+                },
+            },
+        },
+        config = function(_, opts)
+            require("scrollbar").setup(opts)
+        end,
+    },
 }
