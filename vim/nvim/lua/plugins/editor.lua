@@ -387,10 +387,11 @@ return {
         "petertriho/nvim-scrollbar",
         event = "WinScrolled",
         opts = {
-            marks = {
-                Cursor = {
-                    text = "",
-                },
+            handlers = {
+                cursor = false,
+                gitsigns = true,
+                search = true,
+                -- ale = false, -- Requires ALE
             },
         },
         config = function(_, opts)
