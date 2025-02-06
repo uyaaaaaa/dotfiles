@@ -13,11 +13,14 @@ autocmd("BufRead", {
     group = augroup("Start_with_close_fold", { clear = true } ),
     command = "normal! zM"
 })
--- Set Color Of Folded Text
+-- Set Color
 autocmd("BufEnter", {
-    group = augroup("Folded_colorscheme", { clear = true } ),
+    group = augroup("Colorscheme of Fold and Cursor", { clear = true } ),
     once = true,
-    command = "highlight Folded gui=italic"
+    callback = function()
+        vim.cmd("highlight Folded gui=italic")
+        vim.cmd("highlight Cursor guifg=black guibg=#B4DC00")
+    end,
 })
 -- Disable 'statuscolumn' in NeoTree
 autocmd("BufEnter", {
