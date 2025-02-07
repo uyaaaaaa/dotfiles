@@ -2,7 +2,7 @@ return {
     {
         -- treesitter
         "nvim-treesitter/nvim-treesitter",
-        version = false, -- last release is way too old and doesn't work on Windows
+        version = false, -- last release is way too old and doesn"t work on Windows
         build = ":TSUpdate",
         event = "BufRead",
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
@@ -240,7 +240,7 @@ return {
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        tag = '0.1.8',
+        tag = "0.1.8",
         cmd = { "Telescope" },
         keys = {
             { "<C-p>", mode = { "n", "x" }, function() require("telescope.builtin").find_files() end, desc = "Find file" },
@@ -284,7 +284,6 @@ return {
                 },
                 live_grep = {
                     initial_mode = "insert",
-                    use_regex = true,
                     theme = "ivy",
                     layout_config = { height = 0.45, preview_width = 0.75 },
                 },
@@ -301,7 +300,7 @@ return {
             },
         },
         config = function(_, opts)
-            require('telescope').setup(opts)
+            require("telescope").setup(opts)
         end,
     },
 
