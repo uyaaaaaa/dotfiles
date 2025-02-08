@@ -1,13 +1,13 @@
 return {
-    -- auto pairs
+    -- autopair
     {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = true,
+        "altermo/ultimate-autopair.nvim",
+        event= { "InsertEnter", "CmdlineEnter" },
+        branch = "v0.6",
         opts = {
-            disable_filetype = { "TelescopePrompt", "spectre_panel" },
-            map_c_h = true, -- Map the <C-h> key to delete a pair
-            map_c_w = true, -- Map <c-w> to delete a pair if possible
+            bs = {
+                map = { "<bs>", "<C-h>", "<C-w>" },
+            },
         },
     },
 
