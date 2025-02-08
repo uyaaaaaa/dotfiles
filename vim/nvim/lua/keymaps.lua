@@ -56,6 +56,8 @@ keymap.set("n", "zm", "zM", opts)  -- Close All Fold
 keymap.set("n", "<C-f>", "<C-x>", opts)
 -- Copy current buffer path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
+-- Escape hlslens
+keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 
 -- INSERT MODE --
 -- Emacs like commands

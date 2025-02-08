@@ -381,6 +381,18 @@ return {
         end,
     },
 
+    -- hlslens
+    {
+        "kevinhwang91/nvim-hlslens",
+        event = "VeryLazy",
+        config = function()
+            require("hlslens").setup({
+                nearest_only = { default = true },
+                nearest_float_when = { default = "never" },
+            })
+        end,
+    },
+
     -- scrollbar
     {
         "petertriho/nvim-scrollbar",
