@@ -24,7 +24,7 @@ return {
                 "query",
                 "sql",
                 "php",
-                "tsx",
+                "vue",
                 "javascript",
                 "typescript",
                 "html",
