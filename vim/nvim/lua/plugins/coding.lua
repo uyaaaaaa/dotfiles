@@ -103,12 +103,16 @@ return {
         end,
     },
 
-    -- cursorword
+    -- highlighting other uses of the word under the cursor
     {
-        "xiyaowong/nvim-cursorword",
+        "RRethy/vim-illuminate",
         event = "BufRead",
-        config = function()
-            vim.cmd("hi default CursorWord cterm=underline gui=underline")
+        opts = {
+            delay = 150,
+            filetypes_denylist = { "dirbuf", "dirvish", "fugitive" },
+        },
+        config = function(_, opts)
+            require("illuminate").configure(opts)
         end,
     },
 }
