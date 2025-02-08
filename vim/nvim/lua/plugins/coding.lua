@@ -11,6 +11,15 @@ return {
         },
     },
 
+    -- autotag
+    {
+        "windwp/nvim-ts-autotag",
+        ft = { "html", "xml", "js", "jsx", "tsx", "vue" },
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    },
+
     -- auto-indent
     {
         "VidocqH/auto-indent.nvim",
