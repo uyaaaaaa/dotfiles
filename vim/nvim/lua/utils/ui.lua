@@ -1,8 +1,6 @@
 ---@class lazyvim.util.ui
 local M = {}
 
-local fcs = _G.fcs
-
 -- optimized treesitter foldexpr for Neovim >= 0.10.0
 function M.foldexpr()
     local buf = vim.api.nvim_get_current_buf()
