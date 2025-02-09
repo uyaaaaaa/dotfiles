@@ -5,6 +5,7 @@ return {
         event= { "InsertEnter", "CmdlineEnter" },
         branch = "v0.6",
         opts = {
+            pair_cmap = false,
             bs = {
                 map = { "<bs>", "<C-h>", "<C-w>" },
             },
