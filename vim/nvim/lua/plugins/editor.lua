@@ -40,15 +40,6 @@ return {
         end,
     },
 
-    -- treesitter-context
-    {
-        "nvim-treesitter/nvim-treesitter-context",
-        event = { "BufNewFile", "BufReadPre" },
-        config = function(_, opts)
-            require("treesitter-context").setup(opts)
-        end,
-    },
-
     -- gitsigns
     {
         "lewis6991/gitsigns.nvim",
@@ -142,6 +133,8 @@ return {
         opts = {
             sources = { "filesystem", "buffers", "git_status" },
             open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+            hide_root_node = true,
+            retain_hidden_root_indent = true,
             window = {
                 mappings = {
                     ["<Space>"] = "none",
@@ -387,8 +380,8 @@ return {
         event = "VeryLazy",
         config = function()
             require("hlslens").setup({
-                nearest_only = { default = true },
-                nearest_float_when = { default = "never" },
+                nearest_only = true,
+                calm_down = true,
             })
         end,
     },

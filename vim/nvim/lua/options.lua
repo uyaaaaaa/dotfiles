@@ -60,3 +60,4 @@ opt.statuscolumn = "%!v:lua.require'utils.ui'.get_statuscol()"
 opt.showtabline = 2
 
 opt.iskeyword:append("-")
+opt.wildignore:append({ "*/node_modules/*" })
