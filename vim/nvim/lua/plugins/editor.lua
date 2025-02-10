@@ -265,11 +265,6 @@ return {
                 },
             },
             pickers = {
-                current_buffer_fuzzy_find = {
-                    initial_mode = "insert",
-                    previewer = false,
-                    skip_empty_lines = true,
-                },
                 find_files = {
                     initial_mode = "insert",
                     sorting_strategy = "descending",
@@ -278,17 +273,17 @@ return {
                 live_grep = {
                     initial_mode = "insert",
                     theme = "ivy",
-                    layout_config = { height = 0.45, preview_width = 0.75 },
+                    layout_config = { height = 0.45, preview_width = 0.6 },
                 },
                 grep_string = {
                     prompt_prefix = "",
                     theme = "ivy",
-                    layout_config = { height = 0.45, preview_width = 0.75 },
+                    layout_config = { height = 0.45, preview_width = 0.6 },
                 },
                 lsp_references = {
                     prompt_prefix = "",
                     theme = "ivy",
-                    layout_config = { height = 0.45, preview_width = 0.75 },
+                    layout_config = { height = 0.45, preview_width = 0.6 },
                 },
             },
         },
