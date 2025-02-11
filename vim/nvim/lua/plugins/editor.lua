@@ -401,10 +401,12 @@ return {
     {
         "rcarriga/nvim-notify",
         event = "VeryLazy",
-        config = function()
-            require("notify").setup({
-                background_colour = "#000000",
-            })
+        opts = {
+            background_colour = "#000000",
+            stages = "fade",
+        },
+        config = function(_, opts)
+            require("notify").setup(opts)
         end,
     },
 
