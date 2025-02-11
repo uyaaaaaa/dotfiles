@@ -373,11 +373,12 @@ return {
     {
         "kevinhwang91/nvim-hlslens",
         event = "VeryLazy",
-        config = function()
-            require("hlslens").setup({
-                nearest_only = true,
-                calm_down = true,
-            })
+        opts = {
+            nearest_only = true,
+            calm_down = true,
+        },
+        config = function(_, opts)
+            require("hlslens").setup(opts)
         end,
     },
 
