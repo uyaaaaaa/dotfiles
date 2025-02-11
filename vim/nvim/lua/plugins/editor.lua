@@ -211,6 +211,7 @@ return {
     },
 
     -- telescope-all-recent
+    -- FIXME: sort by recently
     {
         "prochri/telescope-all-recent.nvim",
         cmd = "Telescope",
@@ -429,19 +430,14 @@ return {
                 {
                     filter = {
                         event = "msg_show",
-                        kind = "",
                         any = {
                             { find = "%d+L, %d+B" },
                             { find = "; after #%d+" },
                             { find = "; before #%d+" },
+                            { find = "/" },
+                            { find = "Pattern not found:" },
+                            { find = "No information available" },
                         },
-                    },
-                    opts = { skip = true },
-                },
-                {
-                    filter = {
-                        event = "notify",
-                        find = "No information available",
                     },
                     opts = { skip = true },
                 },
