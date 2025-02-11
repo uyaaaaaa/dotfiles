@@ -406,6 +406,7 @@ return {
         opts = {
             background_colour = "#000000",
             stages = "fade",
+            timeout = 3000,
         },
         config = function(_, opts)
             require("notify").setup(opts)
