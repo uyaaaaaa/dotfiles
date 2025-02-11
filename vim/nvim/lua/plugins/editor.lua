@@ -441,6 +441,7 @@ return {
                             { find = "fewer lines" },
                             { find = "/" },
                             { find = "No information available" },
+                            { find = "1 time" },
                         },
                     },
                     opts = { skip = true },
