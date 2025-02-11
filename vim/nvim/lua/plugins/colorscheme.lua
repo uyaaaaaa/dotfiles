@@ -1,3 +1,3 @@
 return {
-    require("plugins.theme.neomodern")
+    require("plugins.theme.onedark")
 }
