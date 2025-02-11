@@ -240,7 +240,6 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        lazy = true,
         opts = {
             defaults = {
                 initial_mode = "normal",
@@ -434,8 +433,9 @@ return {
                             { find = "%d+L, %d+B" },
                             { find = "; after #%d+" },
                             { find = "; before #%d+" },
+                            { find = "more lines" },
+                            { find = "fewer lines" },
                             { find = "/" },
-                            { find = "Pattern not found:" },
                             { find = "No information available" },
                         },
                     },
