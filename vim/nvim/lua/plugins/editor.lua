@@ -211,13 +211,18 @@ return {
     },
 
     -- telescope-all-recent
-    -- FIXME: sort by recently
     {
         "prochri/telescope-all-recent.nvim",
-        cmd = "Telescope",
         dependencies = {
             "nvim-telescope/telescope.nvim",
             "kkharji/sqlite.lua",
+        },
+        keys = {
+            { "<C-p>", mode = { "n", "x" }, function() require("telescope.builtin").find_files() end, desc = "Find file" },
+            { "<leader>ff", mode = { "n" }, function() require("telescope.builtin").live_grep() end, desc = "Grep word" },
+            { "<leader>ff", mode = { "x" }, function() require("telescope.builtin").grep_string() end, desc = "Grep by selected word" },
+            { "<leader>gc", mode = { "n" }, function() require("telescope.builtin").git_commits() end, desc = "Git Commit Logs" },
+            { "<leader>gs", mode = { "n" }, function() require("telescope.builtin").git_status() end, desc = "Git Status" },
         },
         opts = {
             database = {
@@ -235,14 +240,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        cmd = { "Telescope" },
-        keys = {
-            { "<C-p>", mode = { "n", "x" }, function() require("telescope.builtin").find_files() end, desc = "Find file" },
-            { "<leader>ff", mode = { "n" }, function() require("telescope.builtin").live_grep() end, desc = "Grep word" },
-            { "<leader>ff", mode = { "x" }, function() require("telescope.builtin").grep_string() end, desc = "Grep by selected word" },
-            { "<leader>gc", mode = { "n" }, function() require("telescope.builtin").git_commits() end, desc = "Git Commit Logs" },
-            { "<leader>gs", mode = { "n" }, function() require("telescope.builtin").git_status() end, desc = "Git Status" },
-        },
+        lazy = true,
         opts = {
             defaults = {
                 initial_mode = "normal",
