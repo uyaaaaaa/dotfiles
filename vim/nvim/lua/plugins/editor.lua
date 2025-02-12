@@ -412,6 +412,20 @@ return {
                 search = true,
                 -- ale = false, -- Requires ALE
             },
+            marks = {
+                Search = {
+                    text = "▁",
+                },
+                Error = {
+                    text = "▁",
+                },
+                GitAdd = {
+                    text = "▁",
+                },
+                GitChange = {
+                    text = "▁",
+                },
+            },
         },
         config = function(_, opts)
             require("scrollbar").setup(opts)
