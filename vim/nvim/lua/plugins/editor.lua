@@ -239,8 +239,8 @@ return {
         },
         keys = {
             { "<C-p>", mode = { "n", "x" }, function() require("telescope.builtin").find_files() end, desc = "Find file" },
-            { "<leader>ff", mode = { "n" }, function() require("telescope.builtin").live_grep() end, desc = "Grep word" },
-            { "<leader>ff", mode = { "x" }, function() require("telescope.builtin").grep_string() end, desc = "Grep by selected word" },
+            { "<leader><leader>", mode = { "n" }, function() require("telescope.builtin").live_grep() end, desc = "Grep word" },
+            { "<leader><leader>", mode = { "x" }, function() require("telescope.builtin").grep_string() end, desc = "Grep by selected word" },
             { "<leader>gc", mode = { "n" }, function() require("telescope.builtin").git_commits() end, desc = "Git Commit Logs" },
             { "<leader>gs", mode = { "n" }, function() require("telescope.builtin").git_status() end, desc = "Git Status" },
         },
@@ -286,13 +286,12 @@ return {
             pickers = {
                 find_files = {
                     initial_mode = "insert",
-                    sorting_strategy = "descending",
-                    layout_config = { prompt_position = "bottom" },
                 },
                 live_grep = {
                     initial_mode = "insert",
-                    theme = "ivy",
-                    layout_config = { height = 0.45, preview_width = 0.6 },
+                    theme = "dropdown",
+                    prompt_position = "top",
+                    layout_config = { width = 0.7 },
                 },
                 grep_string = {
                     prompt_prefix = "",
