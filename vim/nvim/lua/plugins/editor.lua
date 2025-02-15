@@ -412,10 +412,10 @@ return {
                 -- ale = false, -- Requires ALE
             },
             marks = {
-                Search = { text = "▁" },
-                Error = { text = "▁" },
-                GitAdd = { text = "▁" },
-                GitChange = { text = "▁" },
+                Search = { text = "▌" },
+                Error = { text = "▌" },
+                GitAdd = { text = "▌" },
+                GitChange = { text = "▌" },
             },
         },
         config = function(_, opts)
