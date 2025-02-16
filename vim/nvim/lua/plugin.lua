@@ -22,6 +22,7 @@ require("lazy").setup({
         { import = "plugins.coding" },
         { import = "plugins.markdown" },
         { import = "plugins.lspconfig" },
+        { import = "plugins.snacks" },
     },
     diff = {
         cmd = "terminal_git"
