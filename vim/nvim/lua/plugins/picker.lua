@@ -1,81 +1,111 @@
 return {
-    -- telescope-all-recent
+    -- snacks
     {
-        "prochri/telescope-all-recent.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "kkharji/sqlite.lua",
-        },
+        "folke/snacks.nvim",
         keys = {
-            { "<c-p>", mode = { "n", "x" }, function() require("telescope.builtin").find_files() end, desc = "find file" },
-            { "<leader><leader>", mode = { "n" }, function() require("telescope.builtin").live_grep() end, desc = "grep word" },
-            { "<leader><leader>", mode = { "x" }, function() require("telescope.builtin").grep_string() end, desc = "grep by selected word" },
-            { "<leader>gc", mode = { "n" }, function() require("telescope.builtin").git_commits() end, desc = "git commit logs" },
-            { "<leader>gs", mode = { "n" }, function() require("telescope.builtin").git_status() end, desc = "git status" },
+            {
+                "ff",
+                mode = "n",
+                function()
+                    Snacks.picker.grep({
+                        finder = "grep",
+                        format = "file",
+                        layout = "ivy",
+                    })
+                end,
+                desc = "Grep"
+            },
+            {
+                "ff",
+                mode = "x",
+                function()
+                    Snacks.picker.grep_word({
+                        finder = "grep",
+                        format = "file",
+                        layout = "ivy",
+                        search = function(picker)
+                            return picker:word()
+                        end,
+                    })
+                end,
+                desc = "Grep"
+            },
+            {
+                "<C-p>",
+                function()
+                    Snacks.picker.files({
+                        finder = "files",
+                        format = "file",
+                        layout = "vscode",
+                    })
+                end,
+                desc = "Find Files",
+            },
         },
         opts = {
-            database = {
-                folder = vim.fn.stdpath("data"),
-                file = "telescope-all-recent.sqlite3",
-                max_timestamps = 5,
-            },
-            default = {
-                sorting = "recent",
+            picker = {
+                layout = {
+                    cycle = true,
+                    preset = "vertical",
+                },
+                layouts = {
+                    ivy = {
+                        layout = {
+                            box = "vertical",
+                            backdrop = false,
+                            row = -1,
+                            height = 0.45,
+                            border = "top",
+                            title = " {title} {live} {flags}",
+                            title_pos = "left",
+                            { win = "input", height = 1, border = "bottom" },
+                            {
+                                box = "horizontal",
+                                { win = "list", border = "none" },
+                                { win = "preview", title = "{preview}", width = 0.6, border = "left" },
+                            },
+                        },
+                    },
+                    vertical = {
+                        layout = {
+                            backdrop = false,
+                            width = 0.8,
+                            min_width = 80,
+                            height = 0.8,
+                            min_height = 30,
+                            box = "vertical",
+                            border = "rounded",
+                            title = "{title} {live} {flags}",
+                            title_pos = "center",
+                            { win = "input", height = 1, border = "bottom" },
+                            { win = "list", border = "none", height = 0.3 },
+                            { win = "preview", title = "{preview}", border = "top" },
+                        },
+                    },
+                    vscode = {
+                        layout = {
+                            width = 0.6,
+                            min_height = 24,
+                            border = "rounded",
+                        },
+                    }
+                },
+                matcher = {
+                    frecency = true,
+                    sort_empty = true,
+                },
+                win = {
+                    input = {
+                        keys = {
+                            ["<Esc>"] = { "close", mode = { "n", "i" } },
+                            ["J"] = { "preview_scroll_down", mode = { "i", "n" } },
+                            ["K"] = { "preview_scroll_up", mode = { "i", "n" } },
+                            ["H"] = { "preview_scroll_left", mode = { "i", "n" } },
+                            ["L"] = { "preview_scroll_right", mode = { "i", "n" } },
+                        },
+                    },
+                },
             },
         },
-    },
-
-    -- telescope
-    {
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
-        lazy = true,
-        opts = {
-            defaults = {
-                initial_mode = "normal",
-                path_display = { "filename_first" },
-                layout_config = { prompt_position = "top" },
-                sorting_strategy = "ascending",
-                winblend = 20,
-                dynamic_preview_title = true,
-                cache_picker = { num_pickers = 10 },
-                -- hl_result_eol = true,
-                mappings = {
-                    i = {
-                        ["<C-j>"] = "move_selection_next",
-                        ["<C-k>"] = "move_selection_previous",
-                    },
-                    n = {
-                        ["<S-j>"] = "preview_scrolling_down",
-                        ["<S-k>"] = "preview_scrolling_up",
-                        ["q"] = "close",
-                    },
-                },
-            },
-            pickers = {
-                find_files = {
-                    initial_mode = "insert",
-                },
-                live_grep = {
-                    initial_mode = "insert",
-                    theme = "dropdown",
-                    prompt_position = "top",
-                    layout_config = { width = 0.7 },
-                },
-                grep_string = {
-                    prompt_prefix = "",
-                    theme = "ivy",
-                    layout_config = { height = 0.45, preview_width = 0.6 },
-                },
-                lsp_references = {
-                    prompt_prefix = "",
-                    theme = "ivy",
-                    layout_config = { height = 0.45, preview_width = 0.6 },
-                },
-            },
-        },
-        config = function(_, opts)
-            require("telescope").setup(opts)
-        end,
     },
 }
