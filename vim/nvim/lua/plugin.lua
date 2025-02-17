@@ -21,7 +21,7 @@ require("lazy").setup({
         { import = "plugins.editor" },
         { import = "plugins.coding" },
         { import = "plugins.markdown" },
-        { import = "plugins.lspconfig" },
+        { import = "plugins.completion" },
         { import = "plugins.picker" },
     },
     diff = {
