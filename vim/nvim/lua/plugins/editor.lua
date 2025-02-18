@@ -400,4 +400,9 @@ return {
             require("noice").setup(opts)
         end,
     },
+    -- trouble
+    {
+        "folke/trouble.nvim",
+        cmd = { "Trouble" },
+    },
 }
