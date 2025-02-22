@@ -56,11 +56,11 @@ return {
                 }),
             })
             -- Set up lspconfig.
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-            require("lspconfig")["php-cs-fixer"].setup({
-                capabilities = capabilities,
-            })
+            -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            -- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+            -- require("lspconfig")["php-cs-fixer"].setup({
+            --     capabilities = capabilities,
+            -- })
         end,
     },
 
@@ -73,8 +73,7 @@ return {
             "williamboman/mason-lspconfig.nvim",
         },
         keys = {
-            -- { "gd", function() require("telescope.builtin").lsp_definitions() end, mode = "n", desc = "Go to definition" }
-            { "gd", function() Snacks.picker.lsp_definitions() end, mode = "n", desc = "Go to definition" }
+            { "gd", function() vim.lsp. end, mode = "n", desc = "Go to definition" },
         },
         config = function()
             -- local lspconfig = require('lspconfig')
