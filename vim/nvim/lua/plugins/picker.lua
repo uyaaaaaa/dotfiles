@@ -10,7 +10,6 @@ return {
                     Snacks.picker.grep({
                         finder = "grep",
                         format = "file",
-                        layout = "ivy",
                     })
                 end,
                 desc = "Grep"
@@ -22,7 +21,6 @@ return {
                     Snacks.picker.grep_word({
                         finder = "grep",
                         format = "file",
-                        layout = "ivy",
                         search = function(picker)
                             return picker:word()
                         end,
@@ -71,14 +69,14 @@ return {
                             backdrop = false,
                             width = 0.8,
                             min_width = 80,
-                            height = 0.8,
+                            height = 0.9,
                             min_height = 30,
                             box = "vertical",
                             border = "rounded",
                             title = "{title} {live} {flags}",
                             title_pos = "center",
                             { win = "input", height = 1, border = "bottom" },
-                            { win = "list", border = "none", height = 0.3 },
+                            { win = "list", border = "none", height = 0.4 },
                             { win = "preview", title = "{preview}", border = "top" },
                         },
                     },
