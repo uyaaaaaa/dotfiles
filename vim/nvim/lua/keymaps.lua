@@ -57,8 +57,8 @@ keymap.set("n", "<C-f>", "<C-x>", opts)
 -- Copy current buffer path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Indent
-keymap.set("n", ">", ">>", opts)
-keymap.set("n", "<", "<<", opts)
+keymap.set("n", "<Tab>", ">>", opts)
+keymap.set("n", "<S-Tab>", "<<", opts)
 -- Escape hlslens
 keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 
@@ -84,8 +84,8 @@ keymap.set("v", "<Space>l", "$", opts)
 -- Not Overwrite register when paste in visual mode
 keymap.set("v", "p", "P", opts)
 -- Indent
-keymap.set("v", ">", ">gv", opts)
-keymap.set("v", "<", "<gv", opts)
+keymap.set("v", "<Tab>", ">gv", opts)
+keymap.set("v", "<S-Tab>", "<gv", opts)
 
 -- TERMINAL MODE
 keymap.set("t", "<leader>q", "<C-\\><C-n>", opts)
