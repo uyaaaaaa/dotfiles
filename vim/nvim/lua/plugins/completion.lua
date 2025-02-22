@@ -3,12 +3,13 @@ return {
     {
         "hrsh7th/nvim-cmp",
         version = false,
-        event = "InsertEnter",
+        event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
-            "onsails/lspkind.nvim",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
         },
         config = function()
             local cmp = require("cmp")
@@ -30,12 +31,7 @@ return {
                     }),
                 },
                 window = {
-                    completion = {
-                        border = "rounded",
-                        zindex = 1000,
-                        side_padding = 1,
-                        winblend = 20,
-                    },
+                    completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
                 mapping = cmp.mapping.preset.insert({
@@ -44,6 +40,8 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
@@ -52,87 +50,17 @@ return {
                 }, {
                     { name = "buffer" },
                     { name = "path" },
-                    { name = "cmd"},
                 }),
             })
-            -- Set up lspconfig.
-            -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            -- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-            -- require("lspconfig")["php-cs-fixer"].setup({
-            --     capabilities = capabilities,
-            -- })
-        end,
-    },
 
-    -- lspconfig
-    {
-        "neovim/nvim-lspconfig",
-        event = "BufRead",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-        },
-        keys = {
-            { "gd", function() vim.lsp. end, mode = "n", desc = "Go to definition" },
-        },
-        config = function()
-            -- local lspconfig = require('lspconfig')
-            -- lspconfig.pyright.setup{}
-            -- lspconfig.phpactor.setup{}
-            -- lspconfig.intelephense.setup{}
-        end,
-    },
-
-    -- mason
-    {
-        "williamboman/mason.nvim",
-        cmd = "Mason",
-        keys = {
-            { "<leader>mm", "<cmd>Mason<cr>", desc = "Mason" }
-        },
-        build = ":MasonUpdate",
-        opts_extend = { "ensure_installed" },
-        opts = {
-            ensure_installed = {
-                "stylua",
-                "shfmt",
-            },
-        },
-        ---@param opts MasonSettings | {ensure_installed: string[]}
-        config = function(_, opts)
-            require("mason").setup(opts)
-            local mr = require("mason-registry")
-            mr:on("package:install:success", function()
-                vim.defer_fn(function()
-                    -- trigger FileType event to possibly load this newly installed LSP server
-                    require("lazy.core.handler.event").trigger({
-                        event = "FileType",
-                        buf = vim.api.nvim_get_current_buf(),
-                    })
-                end, 100)
-            end)
-
-            mr.refresh(function()
-                for _, tool in ipairs(opts.ensure_installed) do
-                    local p = mr.get_package(tool)
-                    if not p:is_installed() then
-                        p:install()
-                    end
-                end
-            end)
-        end,
-    },
-
-    {
-        "williamboman/mason-lspconfig.nvim",
-        event = "LspAttach",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "neovim/nvim-lspconfig",
-        },
-        config = function()
-            require("mason").setup()
-            require("mason-lspconfig").setup()
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = "path" },
+                }, {
+                    { name = "cmdline" },
+                }),
+            })
         end
     },
 }
