@@ -30,16 +30,16 @@ function M.foldexpr()
     return vim.b[buf].ts_folds and vim.treesitter.foldexpr() or "0"
 end
 
--- set statuscolumn with fold
-function M.get_statuscol()
-    local lnum = vim.v.lnum
-    local fold = " "
-
-	if vim.fn.foldlevel(lnum) > vim.fn.foldlevel(lnum - 1) then
-        fold = vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
-    end
-
-	return " %T%=%l %s" .. fold .. " "
-end
+-- -- set statuscolumn with fold
+-- function M.get_statuscol()
+--     local lnum = vim.v.lnum
+--     local fold = " "
+--
+-- 	if vim.fn.foldlevel(lnum) > vim.fn.foldlevel(lnum - 1) then
+--         fold = vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
+--     end
+--
+-- 	return " %T%=%l %s" .. fold .. " "
+-- end
 
 return M

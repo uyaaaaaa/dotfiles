@@ -31,7 +31,7 @@ opt.fillchars = {
     diff = "╱",
     eob = " ",
 }
-_G.fcs = opt.fillchars:get()
+-- _G.fcs = opt.fillchars:get()
 opt.foldlevel = 99
 opt.foldcolumn = "1"
 opt.smoothscroll = true
