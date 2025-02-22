@@ -1,6 +1,19 @@
 ---@class lazyvim.util.ui
 local M = {}
 
+-- set diagnostic icons
+local icons = require("utils.icons")
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = icons.error_icon,
+            [vim.diagnostic.severity.WARN] = icons.warn_icon,
+            [vim.diagnostic.severity.INFO] = icons.info_icon,
+            [vim.diagnostic.severity.HINT] = icons.hint_icon,
+        },
+    },
+})
+
 -- optimized treesitter foldexpr for Neovim >= 0.10.0
 function M.foldexpr()
     local buf = vim.api.nvim_get_current_buf()
