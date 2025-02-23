@@ -22,7 +22,7 @@ require("lazy").setup({
         { import = "plugins.coding" },
         { import = "plugins.markdown" },
         { import = "plugins.completion" },
-        { import = "plugins.lsp" },
+        { import = "plugins.lspconfig" },
         { import = "plugins.picker" },
     },
     diff = {
