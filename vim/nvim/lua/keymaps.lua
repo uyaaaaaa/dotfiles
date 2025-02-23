@@ -47,11 +47,11 @@ keymap.set("n", "ciw", '"_ciw', opts)
 keymap.set("n", "cw", '"_cw', opts)
 keymap.set("n", "ce", '"_ce', opts)
 -- Fold
-keymap.set("n", "zf", "za", opts)  -- Toggle
-keymap.set("n", "zr", "zO", opts)  -- Open Fold Under level
-keymap.set("n", "zz", "zR", opts)  -- Open All Fold
-keymap.set("n", "<Nop>", "zm", opts)  -- Disable zm
-keymap.set("n", "zm", "zM", opts)  -- Close All Fold
+keymap.set("n", "zf", "za", opts)    -- Toggle
+keymap.set("n", "zr", "zO", opts)    -- Open Fold Under level
+keymap.set("n", "zz", "zR", opts)    -- Open All Fold
+keymap.set("n", "<Nop>", "zm", opts) -- Disable zm
+keymap.set("n", "zm", "zM", opts)    -- Close All Fold
 -- Decrement
 keymap.set("n", "<C-f>", "<C-x>", opts)
 -- Copy current buffer path(relative)
@@ -59,6 +59,16 @@ keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Indent
 keymap.set("n", ">", ">>", opts)
 keymap.set("n", "<", "<<", opts)
+-- Jump By Lsp
+keymap.set("n", "gd", function()
+    return Snacks.picker.lsp_definitions()
+end, opts)
+keymap.set("n", "gr", function()
+    return Snacks.picker.lsp_references()
+end, opts)
+keymap.set("n", "<leader>ll", function()
+    return require("lspsaga")
+end, opts)
 -- Escape hlslens
 keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 
@@ -89,4 +99,3 @@ keymap.set("v", "<", "<gv", opts)
 
 -- TERMINAL MODE
 keymap.set("t", "<leader>q", "<C-\\><C-n>", opts)
-
