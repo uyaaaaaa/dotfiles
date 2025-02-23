@@ -10,17 +10,23 @@ autocmd("BufWritePre", {
 -- Open Markdown with Close All Fold
 autocmd("BufRead", {
     pattern = "*.md",
-    group = augroup("Start_with_close_fold", { clear = true } ),
-    command = "normal! zM"
+    group = augroup("Start_with_close_fold", { clear = true }),
+    command = "normal! zM",
 })
 -- Set Color
 autocmd("BufEnter", {
-    group = augroup("Colorscheme of Fold and Cursor", { clear = true } ),
+    group = augroup("Colorscheme of Fold and Cursor", { clear = true }),
     once = true,
     callback = function()
         vim.cmd("highlight Folded gui=italic")
         vim.cmd("highlight Cursor guifg=black guibg=#B4DC00")
     end,
+})
+-- Format when save files.
+autocmd("BufWritePre", {
+    group = augroup("Save with format", { clear = true }),
+    desc = "Save with format",
+    command = ":lua vim.lsp.buf.format()",
 })
 -- Highlight on yank
 autocmd("TextYankPost", {
@@ -36,8 +42,7 @@ autocmd("BufRead", {
     desc = "Open last row of buffer",
     callback = function()
         if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
-            vim.cmd("normal g`\"")
+            vim.cmd('normal g`"')
         end
     end,
 })
-
