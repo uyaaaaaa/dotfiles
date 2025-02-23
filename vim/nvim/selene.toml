@@ -1,4 +1,9 @@
-std = "neovim"
+[config]
+std = "lua51"
+exclude = ["tests/", "vendor/"]
+
+[globals]
+vim = true
 
 [rules]
 global_usage = "allow"
