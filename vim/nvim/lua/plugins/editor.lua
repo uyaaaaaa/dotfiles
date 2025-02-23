@@ -13,7 +13,7 @@ return {
         opts = {
             highlight = { enable = true },
             indent = { enable = true },
-            ensure_installed = {  -- if needed, add language.
+            ensure_installed = { -- if needed, add language.
                 "bash",
                 "jsdoc",
                 "json",
@@ -33,6 +33,7 @@ return {
                 "diff",
                 "xml",
                 "yaml",
+                "toml",
             },
         },
         ---@param opts TSConfig
@@ -75,8 +76,8 @@ return {
         cmd = { "DiffviewOpen", "DiffiviewFileHistory" },
         keys = {
             -- `gt`: Go to Next Tab
-            { "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Open Diffview" },
-            { "<leader>gq", "<cmd>DiffviewClose<CR>", desc = "Close Diffview" },
+            { "<leader>gd", "<cmd>DiffviewOpen<CR>",        desc = "Open Diffview" },
+            { "<leader>gq", "<cmd>DiffviewClose<CR>",       desc = "Close Diffview" },
             { "<leader>gf", "<cmd>DiffviewFileHistory<CR>", desc = "Open File History" },
         },
         opts = {
@@ -190,7 +191,7 @@ return {
                     },
                     never_show = {
                         ".DS_Store",
-                        "thumbs.db"
+                        "thumbs.db",
                     },
                 },
             },
@@ -222,7 +223,7 @@ return {
                 function()
                     require("grug-far").open({
                         transient = true,
-                        prefills = { search = vim.fn.expand("<cword>") }
+                        prefills = { search = vim.fn.expand("<cword>") },
                     })
                 end,
                 mode = { "n", "v" },
@@ -269,7 +270,13 @@ return {
         version = "*",
         cmd = "ToggleTerm",
         keys = {
-            { "<C-t>", function() require("toggleterm.terminal").Terminal:new():toggle() end, desc = "Open Terminal" },
+            {
+                "<C-t>",
+                function()
+                    require("toggleterm.terminal").Terminal:new():toggle()
+                end,
+                desc = "Open Terminal",
+            },
             {
                 "<leader>gg",
                 mode = { "n" },
@@ -287,7 +294,7 @@ return {
 
                     lg:toggle()
                 end,
-                desc = "Open lazygit"
+                desc = "Open lazygit",
             },
         },
         opts = {
@@ -298,7 +305,7 @@ return {
                     return vim.o.columns * 0.35
                 end
             end,
-            direction = "horizontal",  -- vertical, horizontal, float, tab
+            direction = "horizontal", -- vertical, horizontal, float, tab
             open_mapping = [[<c-t>]],
             close_on_exit = true,
             hidden = true,
@@ -409,7 +416,7 @@ return {
         opts = {
             modes = {
                 lsp = {
-                   win = { position = "right" },
+                    win = { position = "right" },
                 },
             },
         },
