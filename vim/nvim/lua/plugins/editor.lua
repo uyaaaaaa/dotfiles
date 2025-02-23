@@ -398,6 +398,16 @@ return {
                     },
                     opts = { skip = true },
                 },
+                {
+                    filter = {
+                        event = "notify",
+                        any = {
+                            { find = "hover is not supported by the servers of the current buffer" },
+                            { find = "No information available" },
+                        },
+                    },
+                    opts = { skip = true },
+                },
             },
             presets = {
                 command_palette = true,
