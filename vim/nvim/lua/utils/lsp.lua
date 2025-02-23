@@ -15,4 +15,18 @@ M.lsp_servers = {
     "cssls",
 }
 
+M.formatters = {
+    "djlint",
+    "black",
+    "isort",
+    "stylua",
+    "shfmt",
+    "prettier",
+}
+
+M.diagnostics = {
+    "yamllint",
+    "selene",
+}
+
 return M
