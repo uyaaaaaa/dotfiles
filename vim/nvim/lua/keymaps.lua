@@ -66,9 +66,6 @@ end, opts)
 keymap.set("n", "gr", function()
     return Snacks.picker.lsp_references()
 end, opts)
-keymap.set("n", "<leader>ll", function()
-    return require("lspsaga")
-end, opts)
 -- Escape hlslens
 keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 

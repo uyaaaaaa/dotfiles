@@ -6,12 +6,13 @@ opt.number = true
 opt.relativenumber = false
 opt.confirm = true
 opt.clipboard = 'unnamedplus'
+opt.updatetime = 800
 -- Tab & Indent
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.shiftround = true
 opt.expandtab = true
-opt.autoindent = true  -- apply indent for new line
+opt.autoindent = true -- apply indent for new line
 opt.laststatus = 3
 opt.linebreak = true
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
@@ -53,7 +54,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = 'dark'
 opt.mouse = 'a'
-opt.pumblend = 20  -- popup window
+opt.pumblend = 20 -- popup window
 
 -- completion
 opt.completeopt = { "menu", "menuone", "noselect" }
