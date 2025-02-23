@@ -63,5 +63,19 @@ return {
             })
         end
     },
-}
 
+    -- lspsaga
+    {
+        "nvimdev/lspsaga.nvim",
+        event = "WinScrolled",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("lspsaga").setup({
+                ui = { code_action = "" },
+            })
+        end,
+    },
+}
