@@ -1,3 +1,4 @@
+---@class lazyvim.util.lsp
 local M = {}
 
 M.lsp_servers = {
