@@ -22,12 +22,12 @@ autocmd("BufEnter", {
         vim.cmd("highlight Cursor guifg=black guibg=#B4DC00")
     end,
 })
--- Format when save files.
-autocmd("BufWrite", {
-    group = augroup("Save with format", { clear = true }),
-    desc = "Save with format",
-    command = ":lua vim.lsp.buf.format()",
-})
+-- -- Format when save files.
+-- autocmd("BufWrite", {
+--     group = augroup("Save with format", { clear = true }),
+--     desc = "Save with format",
+--     command = ":lua vim.lsp.buf.format()",
+-- })
 -- Hover Lsp Document
 autocmd("CursorHold", {
     group = augroup("Hover Doc", { clear = true }),
