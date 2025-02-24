@@ -8,7 +8,7 @@ autocmd("BufWritePre", {
     command = ":%s/\\s\\+$//e",
 })
 -- Open Markdown with Close All Fold
-autocmd("BufRead", {
+autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*.md",
     group = augroup("Start_with_close_fold", { clear = true }),
     command = "normal! zM",
