@@ -167,6 +167,14 @@ return {
                             require("neo-tree")
                         end
                     end
+                    require('nvim-web-devicons').set_icon({
+                        ['blade.php'] = {
+                            icon = require("utils.icons").blade_icon,
+                            color = "#f9322c",
+                            cterm_color = "Red",
+                            name = "Blade",
+                        }
+                    })
                 end,
             })
         end,

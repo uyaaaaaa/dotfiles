@@ -21,5 +21,6 @@ M.linux_icon = " "
 M.mac_icon = " "
 M.readonly_icon = "󰌾 "
 M.branch_icon = " "
+M.blade_icon = "󰫐 "
 
 return M

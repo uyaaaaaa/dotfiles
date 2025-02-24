@@ -5,6 +5,11 @@ return {
     {
         "onsails/lspkind.nvim",
         event = "InsertEnter",
+        opts = {
+            symbol_map = {
+                BladeNav = require("utils.icons").blade_icon,
+            },
+        },
     },
 
     -- mason / mason-lspconfig / lspconfig
