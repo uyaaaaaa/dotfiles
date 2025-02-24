@@ -1,12 +1,12 @@
 local opt = vim.opt
 
-opt.encoding = 'utf-8'
-opt.fileencoding = 'utf-8'
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
 opt.number = true
 opt.relativenumber = false
 opt.confirm = true
-opt.clipboard = 'unnamedplus'
-opt.updatetime = 800
+opt.clipboard = "unnamedplus"
+opt.updatetime = 1000
 -- Tab & Indent
 opt.tabstop = 4
 opt.shiftwidth = 4
@@ -41,7 +41,7 @@ opt.foldmethod = "expr"
 opt.foldtext = ""
 
 -- statuscol
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.statuscolumn = "%!v:lua.require'snacks.statuscolumn'.get()"
 
 -- Search
@@ -52,8 +52,8 @@ opt.hlsearch = true
 -- View
 opt.cursorline = true
 opt.termguicolors = true
-opt.background = 'dark'
-opt.mouse = 'a'
+opt.background = "dark"
+opt.mouse = "a"
 opt.pumblend = 20 -- popup window
 
 -- completion
