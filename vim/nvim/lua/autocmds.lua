@@ -23,7 +23,7 @@ autocmd("BufEnter", {
     end,
 })
 -- Format when save files.
-autocmd("BufWritePre", {
+autocmd("BufWrite", {
     group = augroup("Save with format", { clear = true }),
     desc = "Save with format",
     command = ":lua vim.lsp.buf.format()",
