@@ -488,4 +488,17 @@ return {
             },
         },
     },
+
+    -- bufferline
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        event = "VeryLazy",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function(_, opts)
+            require("bufferline").setup(opts)
+        end,
+    }
 }
