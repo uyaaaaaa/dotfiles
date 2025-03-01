@@ -96,7 +96,7 @@ return {
         keys = {
             -- `gt`: Go to Next Tab
             { "<leader>gd", "<cmd>DiffviewOpen<CR>",        desc = "Open Diffview" },
-            { "<leader>gq", "<cmd>DiffviewClose<CR>",       desc = "Close Diffview" },
+            { "<leader>gq", "<cmd>tabclose<CR>",       desc = "Close Diffview" },
             { "<leader>gf", "<cmd>DiffviewFileHistory<CR>", desc = "Open File History" },
         },
         opts = {
