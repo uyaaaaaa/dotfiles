@@ -66,4 +66,15 @@ alias la='ls -lAG'
 alias ll='ls -lG'
 alias dots="cd ~/dotfiles"
 
+################ fzf #################
+
+# You should install fzf
+# Github: `https://github.com/junegunn/fzf?tab=readme-ov-file#installation`
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--height 40% --layout reverse --border"
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+function fd() {
+    local dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) &&
+    cd "$dir"
+}
 
