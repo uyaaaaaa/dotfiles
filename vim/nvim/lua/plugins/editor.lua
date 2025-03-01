@@ -497,13 +497,13 @@ return {
         keys = {
             { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
             { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+            { "<leader>w", function() Snacks.bufdelete() end, desc = "Next Buffer" },
         },
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
         opts = {
             options = {
-                close_command = function(n) Snacks.bufdelete(n) end,
                 right_mouse_command = function(n) Snacks.bufdelete(n) end,
                 diagnostics = "nvim_lsp",
                 always_show_bufferline = false,
