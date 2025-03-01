@@ -96,7 +96,7 @@ return {
         keys = {
             -- `gt`: Go to Next Tab
             { "<leader>gd", "<cmd>DiffviewOpen<CR>",        desc = "Open Diffview" },
-            { "<leader>gq", "<cmd>tabclose<CR>",       desc = "Close Diffview" },
+            { "<leader>gq", "<cmd>tabclose<CR>",            desc = "Close Diffview" },
             { "<leader>gf", "<cmd>DiffviewFileHistory<CR>", desc = "Open File History" },
         },
         opts = {
@@ -493,20 +493,22 @@ return {
     {
         "akinsho/bufferline.nvim",
         version = "*",
-        event = "VeryLazy",
-        keys = {
-            { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
-            { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
-            { "<leader>w", function() Snacks.bufdelete() end, desc = "Next Buffer" },
-        },
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
+        event = { "BufEnter", "BufNew" },
+        keys = {
+            { "<S-h>",     "<cmd>BufferLineCyclePrev<cr>",    desc = "Prev Buffer" },
+            { "<S-l>",     "<cmd>BufferLineCycleNext<cr>",    desc = "Next Buffer" },
+            { "<leader>w", function() Snacks.bufdelete() end, desc = "Next Buffer" },
+            { "<leader>b", "<cmd>BufferLinePickClose<cr>",    desc = "" }
+        },
         opts = {
             options = {
+                show_close_icon = false,
                 right_mouse_command = function(n) Snacks.bufdelete(n) end,
                 diagnostics = "nvim_lsp",
-                always_show_bufferline = false,
+                always_show_bufferline = true,
                 offsets = {
                     {
                         filetype = "neo-tree",
@@ -517,8 +519,5 @@ return {
                 },
             },
         },
-        config = function(_, opts)
-            require("bufferline").setup(opts)
-        end,
-    }
+    },
 }
