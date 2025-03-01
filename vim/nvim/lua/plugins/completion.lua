@@ -61,16 +61,19 @@ return {
                     { name = "cmdline" },
                 }),
             })
-        end
+        end,
     },
 
     -- lspsaga
     {
         "nvimdev/lspsaga.nvim",
-        event = "WinScrolled",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
+        },
+        event = "WinScrolled",
+        keys = {
+            { "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
         },
         config = function()
             require("lspsaga").setup({

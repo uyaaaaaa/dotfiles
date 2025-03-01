@@ -28,12 +28,6 @@ autocmd("BufEnter", {
 --     desc = "Save with format",
 --     command = ":lua vim.lsp.buf.format()",
 -- })
--- Hover Lsp Document
-autocmd("CursorHold", {
-    group = augroup("Hover Doc", { clear = true }),
-    desc = "Hover Doc",
-    command = ":Lspsaga hover_doc",
-})
 -- Highlight on yank
 autocmd("TextYankPost", {
     group = augroup("highlight_yank", { clear = true }),
