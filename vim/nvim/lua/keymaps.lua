@@ -76,7 +76,7 @@ keymap.set("i", "<C-b>", "<Left>", opts)
 keymap.set("i", "<C-j>", "<Down>", opts)
 keymap.set("i", "<C-k>", "<Up>", opts)
 -- Delete character
-keymap.set("i", "<C-l>", "<Del>", opts)
+keymap.set("i", "<C-d>", "<Del>", opts)
 
 -- VISUAL MODE --
 -- Move selected line
