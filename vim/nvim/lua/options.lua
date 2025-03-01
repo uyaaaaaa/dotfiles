@@ -59,8 +59,5 @@ opt.pumblend = 20 -- popup window
 -- completion
 opt.completeopt = { "menu", "menuone", "noselect" }
 
--- tabline (Over Neotree)
-opt.showtabline = 2
-
 opt.iskeyword:append("-")
 opt.wildignore:append({ "*/node_modules/*" })
