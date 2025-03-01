@@ -59,7 +59,7 @@ return {
                             { win = "input", height = 1, border = "bottom" },
                             {
                                 box = "horizontal",
-                                { win = "list", border = "none" },
+                                { win = "list",    border = "none" },
                                 { win = "preview", title = "{preview}", width = 0.6, border = "left" },
                             },
                         },
@@ -75,15 +75,15 @@ return {
                             border = "rounded",
                             title = "{title} {live} {flags}",
                             title_pos = "center",
-                            { win = "input", height = 1, border = "bottom" },
-                            { win = "list", border = "none", height = 0.4 },
+                            { win = "input",   height = 1,          border = "bottom" },
+                            { win = "list",    border = "none",     height = 0.4 },
                             { win = "preview", title = "{preview}", border = "top" },
                         },
                     },
                     vscode = {
                         layout = {
                             width = 0.6,
-                            min_height = 24,
+                            min_height = 35,
                             border = "rounded",
                         },
                     }
