@@ -496,12 +496,12 @@ return {
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
-        event = { "BufEnter", "BufNew" },
+        event = { "BufRead", "BufNew" },
         keys = {
             { "<S-h>",     "<cmd>BufferLineCyclePrev<cr>",    desc = "Prev Buffer" },
             { "<S-l>",     "<cmd>BufferLineCycleNext<cr>",    desc = "Next Buffer" },
             { "<leader>w", function() Snacks.bufdelete() end, desc = "Next Buffer" },
-            { "<leader>b", "<cmd>BufferLinePickClose<cr>",    desc = "" }
+            { "<leader>b", "<cmd>BufferLinePickClose<cr>",    desc = "Close Buffer With Select" }
         },
         opts = {
             options = {
