@@ -10,7 +10,7 @@ ls.add_snippets("php", {
     s("lg", { t("\\Log::info(\""), i(1, "title"), t(": \" + "), i(2), t(");") }),
     -- function template
     s("fn", {
-        t("public function "), i(1, "fnName"), t("()"),
+        t("public function "), i(1, "fnName"), t("(): "), i(2, "void"),
         t({"", "{", "    "}),
         i(0),
         t({"", "}"})
