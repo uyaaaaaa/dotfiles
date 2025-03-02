@@ -16,8 +16,7 @@ ls.add_snippets("php", {
         t({"", "public function "}), i(2, "fnName"), t("(): "), i(3, "void"),
         t({"", "{", "    "}),
         i(0),
-        t({"", "}"}),
-        t({""}),
+        t({"", "}", ""}),
     }),
     -- return value
     s("return", { t("return "), i(1), t(";")}),
