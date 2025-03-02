@@ -7,7 +7,7 @@ return {
         event = "InsertEnter",
         opts = {
             symbol_map = {
-                BladeNav = require("utils.icons").blade_icon,
+                BladeNav = require("utils.icons").blade,
             },
         },
     },

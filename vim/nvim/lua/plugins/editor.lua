@@ -169,7 +169,7 @@ return {
                     end
                     require('nvim-web-devicons').set_icon({
                         ['blade.php'] = {
-                            icon = require("utils.icons").blade_icon,
+                            icon = require("utils.icons").blade,
                             color = "#f9322c",
                             cterm_color = "Red",
                             name = "Blade",
@@ -231,8 +231,13 @@ return {
                 },
                 git_status = {
                     symbols = {
-                        unstaged = "󰄱",
-                        staged = "󰱒",
+                        modified = "M",
+                        deleted = "D",
+                        renamed = "R",
+                        untracked = "A",
+                        unstaged = "",
+                        ignored = require("utils.icons").ignored,
+                        staged = require("utils.icons").added,
                     },
                 },
             },
