@@ -100,10 +100,8 @@ return {
         keys = {
             { "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
         },
-        config = function()
-            require("lspsaga").setup({
-                ui = { code_action = "" },
-            })
-        end,
+        opts = {
+            ui = { code_action = "" },
+        },
     },
 }
