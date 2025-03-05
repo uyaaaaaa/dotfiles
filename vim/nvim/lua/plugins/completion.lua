@@ -82,7 +82,7 @@ return {
         version = "v2.*",
         build = "make install_jsregexp",
         event = { "InsertEnter", "CmdlineEnter" },
-        config = function ()
+        config = function()
             require("luasnip.loaders.from_lua").load({
                 paths = "~/.config/nvim/lua/snippets/"
             })

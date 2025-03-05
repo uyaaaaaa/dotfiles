@@ -11,14 +11,14 @@ ls.add_snippets("php", {
     -- function template
     s("fn", {
         t("/**"),
-        t({"", " * "}), i(1, "description"),
-        t({"", " */"}),
-        t({"", "public function "}), i(2, "fnName"), t("(): "), i(3, "void"),
-        t({"", "{", "    "}),
+        t({ "", " * " }), i(1, "description"),
+        t({ "", " */" }),
+        t({ "", "public function " }), i(2, "fnName"), t("(): "), i(3, "void"),
+        t({ "", "{", "    " }),
         i(0),
-        t({"", "}", ""}),
+        t({ "", "}", "" }),
     }),
     -- return value
-    s("return", { t("return "), i(1), t(";")}),
+    s("return", { t("return "), i(1), t(";") }),
 })
 

@@ -10,7 +10,7 @@ M.info = " "
 -- git
 M.github = ""
 M.repository = ""
-M.branch =  ""
+M.branch = ""
 M.modified = " "
 M.added = " "
 M.removed = " "

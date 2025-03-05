@@ -14,10 +14,8 @@ return {
             list_table = { "*" },
         },
         config = function()
-            vim.keymap.set("n", "<leader>d", require("markdown-toggle").checkbox_dot,
-                { silent = true, noremap = true, expr = true })
-            vim.keymap.set("v", "<leader>d", require("markdown-toggle").checkbox,
-                { silent = true, noremap = true, expr = false })
+            vim.keymap.set("n", "<leader>d", require("markdown-toggle").checkbox_dot, { silent = true, noremap = true, expr = true })
+            vim.keymap.set("v", "<leader>d", require("markdown-toggle").checkbox, { silent = true, noremap = true, expr = false })
         end,
     },
 
