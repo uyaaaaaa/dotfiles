@@ -48,13 +48,11 @@ return {
             "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim",
         },
-        config = function()
-            require("mason-null-ls").setup({
-                automatic_setup = true,
-                ensure_installed = vim.tbl_flatten({ lsp.formatters, lsp.diagnostics }),
-                -- handlers = {},
-            })
-        end,
+        opts = {
+            automatic_setup = true,
+            ensure_installed = vim.tbl_flatten({ lsp.formatters, lsp.diagnostics }),
+            -- handlers = {},
+        },
     },
 
     -- none-ls

@@ -127,9 +127,6 @@ return {
                 },
             },
         },
-        config = function(_, opts)
-            require("diffview").setup(opts)
-        end,
     },
 
     -- NeoTree
@@ -342,9 +339,6 @@ return {
             close_on_exit = true,
             hidden = true,
         },
-        config = function(_, opts)
-            require("toggleterm").setup(opts)
-        end,
     },
 
     -- hlslens
@@ -355,9 +349,6 @@ return {
             nearest_only = true,
             calm_down = true,
         },
-        config = function(_, opts)
-            require("hlslens").setup(opts)
-        end,
     },
 
     -- scrollbar
@@ -378,9 +369,6 @@ return {
                 GitChange = { text = "▌" },
             },
         },
-        config = function(_, opts)
-            require("scrollbar").setup(opts)
-        end,
     },
 
     -- notify
@@ -392,9 +380,6 @@ return {
             stages = "fade",
             timeout = 3000,
         },
-        config = function(_, opts)
-            require("notify").setup(opts)
-        end,
     },
 
     -- noice
@@ -446,9 +431,6 @@ return {
                 lsp_doc_border = true,
             },
         },
-        config = function(_, opts)
-            require("noice").setup(opts)
-        end,
     },
 
     -- trouble
