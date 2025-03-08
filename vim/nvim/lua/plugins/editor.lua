@@ -4,42 +4,15 @@ return {
         -- treesitter
         "nvim-treesitter/nvim-treesitter",
         version = false, -- last release is way too old and doesn"t work on Windows
+        lazy = true,
         build = ":TSUpdate",
-        event = "BufRead",
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts_extend = { "ensure_installed" },
-        ---@type TSConfig
-        ---@diagnostic disable-next-line: missing-fields
         opts = {
             highlight = { enable = true },
             indent = { enable = true },
-            ensure_installed = { -- if needed, add language.
-                "bash",
-                "jsdoc",
-                "json",
-                "markdown",
-                "printf",
-                "python",
-                "lua",
-                "vim",
-                "query",
-                "sql",
-                "php",
-                "php_only",
-                "blade",
-                "phpdoc",
-                "vue",
-                "javascript",
-                "typescript",
-                "html",
-                "css",
-                "diff",
-                "xml",
-                "yaml",
-                "toml",
-            },
+            ensure_installed = require("utils.treesitter").list
         },
-        ---@param opts TSConfig
         config = function(_, opts)
             vim.filetype.add({
                 pattern = {
@@ -64,7 +37,7 @@ return {
     -- gitsigns
     {
         "lewis6991/gitsigns.nvim",
-        event = { "VeryLazy", "BufReadPre" },
+        event = "VeryLazy",
         opts = {
             attach_to_untracked = true,
             current_line_blame = true,
@@ -179,7 +152,6 @@ return {
             enable_diagnostics = false,
             sources = { "filesystem", "buffers", "git_status" },
             open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
-            hide_root_node = true,
             retain_hidden_root_indent = true,
             window = {
                 mappings = {

@@ -24,15 +24,14 @@ return {
     -- auto-indent
     {
         "VidocqH/auto-indent.nvim",
-        event = "InsertEnter",
-        opts = {},
+        event = { "BufRead", "BufNewFile" },
     },
 
     -- surround
     {
         "kylechui/nvim-surround",
         version = "*",
-        event = "InsertEnter",
+        event = { "BufRead", "BufNewFile" },
         config = function()
             require("nvim-surround").setup()
         end,
@@ -41,49 +40,19 @@ return {
     -- flash.nvim
     {
         "folke/flash.nvim",
-        event = "BufRead",
-        vscode = true,
         keys = {
-            {
-                "s",
-                mode = { "n", "x" },
-                function()
-                    require("flash").jump()
-                end,
-                desc = "Flash",
-            },
-            {
-                "S",
-                mode = { "n", "x" },
-                function()
-                    require("flash").treesitter()
-                end,
-                desc = "Flash Treesitter",
-            },
+            { "s", mode = { "n", "x" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S", mode = { "n", "x" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
             -- Flash With Motion (move and operation)
-            {
-                "r",
-                mode = "o",
-                function()
-                    require("flash").remote()
-                end,
-                desc = "Remote Flash",
-            },
-            {
-                "R",
-                mode = { "o", "x" },
-                function()
-                    require("flash").treesitter_search()
-                end,
-                desc = "Treesitter Search",
-            },
+            { "r", mode = { "o", "x" }, function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
         },
     },
 
     -- highlighting other uses of the word under the cursor
     {
         "RRethy/vim-illuminate",
-        event = "BufRead",
+        event = { "BufRead", "BufNewFile" },
         opts = {
             delay = 150,
             filetypes_denylist = { "dirbuf", "dirvish", "fugitive" },

@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
+        { "nvim-lua/plenary.nvim", lazy = true },
         { import = "plugins.colorscheme" },
         { import = "plugins.editor" },
         { import = "plugins.coding" },

@@ -58,17 +58,10 @@ return {
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "render-markdown" },
+                    { name = "path" },
                 }, {
                     { name = "buffer" },
                     { name = "path" },
-                }),
-            })
-
-            cmp.setup.cmdline(":", {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = cmp.config.sources({
-                    { name = "path" },
-                }, {
                     { name = "cmdline" },
                 }),
             })
@@ -79,9 +72,9 @@ return {
     {
         "L3MON4D3/LuaSnip",
         dependencies = { "rafamadriz/friendly-snippets" },
+        lazy = true,
         version = "v2.*",
         build = "make install_jsregexp",
-        event = { "InsertEnter", "CmdlineEnter" },
         config = function()
             require("luasnip.loaders.from_lua").load({
                 paths = "~/.config/nvim/lua/snippets/"
@@ -96,7 +89,7 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
         },
-        event = "WinScrolled",
+        event = { "BufRead", "BufNewFile" },
         keys = {
             { "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
         },
