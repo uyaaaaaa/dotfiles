@@ -2,6 +2,7 @@ return {
     -- snacks
     {
         "folke/snacks.nvim",
+        lazy = true,
         keys = {
             {
                 "ff",
