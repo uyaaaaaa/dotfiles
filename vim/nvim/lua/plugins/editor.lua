@@ -298,15 +298,6 @@ return {
         "kevinhwang91/nvim-hlslens",
         keys = {
             { "*", mode = "n", "*<Cmd>lua require('hlslens').start()<CR>", desc = "Search current word with hlslens" },
-            {
-                "#",
-                mode = "n",
-                function()
-                    vim.api.nvim_feedkeys(":%s/" .. vim.fn.expand("<cword>") .. "//g", "n", false)
-                    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left><Left>", true, true, true), "n", false)
-                end,
-                desc = "Replace current word",
-            },
         },
         opts = {
             nearest_only = true,
