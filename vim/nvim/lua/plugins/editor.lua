@@ -168,7 +168,6 @@ return {
                 close_if_last_window = true,
             },
             filesystem = {
-                bind_to_cwd = false,
                 follow_current_file = { enabled = true },
                 use_libuv_file_watcher = true,
                 window = {
@@ -316,7 +315,18 @@ return {
     -- hlslens
     {
         "kevinhwang91/nvim-hlslens",
-        event = "VeryLazy",
+        keys = {
+            { "*", mode = "n", "*<Cmd>lua require('hlslens').start()<CR>", desc = "Search current word with hlslens" },
+            {
+                "#",
+                mode = "n",
+                function()
+                    vim.api.nvim_feedkeys(":%s/" .. vim.fn.expand("<cword>") .. "//g", "n", false)
+                    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left><Left>", true, true, true), "n", false)
+                end,
+                desc = "Replace current word",
+            },
+        },
         opts = {
             nearest_only = true,
             calm_down = true,
@@ -326,7 +336,7 @@ return {
     -- scrollbar
     {
         "petertriho/nvim-scrollbar",
-        event = "WinScrolled",
+        event = { "BufRead", "BufNewFile" },
         opts = {
             handlers = {
                 cursor = false,
@@ -346,7 +356,7 @@ return {
     -- notify
     {
         "rcarriga/nvim-notify",
-        event = "VeryLazy",
+        lazy = true,
         opts = {
             background_colour = "#000000",
             stages = "fade",
@@ -370,34 +380,7 @@ return {
                     ["cmp.entry.get_documentation"] = true,
                 },
             },
-            routes = {
-                {
-                    filter = {
-                        event = "msg_show",
-                        any = {
-                            { find = "%d+L, %d+B" },
-                            { find = "; after #%d+" },
-                            { find = "; before #%d+" },
-                            { find = "more lines" },
-                            { find = "fewer lines" },
-                            { find = "/" },
-                            { find = "No information available" },
-                            { find = "1 time" },
-                        },
-                    },
-                    opts = { skip = true },
-                },
-                {
-                    filter = {
-                        event = "notify",
-                        any = {
-                            { find = "hover is not supported by the servers of the current buffer" },
-                            { find = "No information available" },
-                        },
-                    },
-                    opts = { skip = true },
-                },
-            },
+            routes = require("utils.noice").routes,
             presets = {
                 command_palette = true,
                 lsp_doc_border = true,
