@@ -17,24 +17,16 @@ return {
                 VertSplit = { bg = "None" },
             },
         },
-        config = function(_, opts)
-            require("ayu").setup(opts)
-            vim.cmd.colorscheme("ayu")
-        end,
     },
 
-    -- neomodern
+    -- iceclimber | coffeecat | darkforest | roseprime | daylight
     {
         "cdmill/neomodern.nvim",
         lazy = true,
         opts = {
-            theme = "iceclimber",  -- iceclimber|coffeecat|darkforest|roseprime|daylight
+            theme = "iceclimber",
             transparent = true,
         },
-        config = function(_, opts)
-            require("neomodern").setup(opts)
-            require("neomodern").load()
-        end,
     },
 
     -- night-owl
@@ -46,14 +38,11 @@ return {
             itaric = false,
             transparent_background = true,
         },
-        config = function(_, opts)
-            require("night-owl").setup(opts)
-            vim.cmd.colorscheme("night-owl")
-        end,
     },
 
     -- nightfox
     {
+        -- nightfox | nordfox | carbonfox | duskfox
         "EdenEast/nightfox.nvim",
         lazy = true,
         opts = {
@@ -67,13 +56,6 @@ return {
                 },
             },
         },
-        config = function(_, opts)
-            require("nightfox").setup(opts)
-            -- vim.cmd.colorscheme("duskfox")
-            -- vim.cmd.colorscheme("nightfox")
-            -- vim.cmd.colorscheme("nordfox")
-            vim.cmd.colorscheme("carbonfox")
-        end,
     },
 
     -- onedark
