@@ -7,7 +7,7 @@ ls.add_snippets("php", {
     -- todo comment
     s("todo", { t("// TODO: "), i(1, "description") }),
     -- laravel log(info)
-    s("lg", { t("\\Log::info(\""), i(1, "title"), t(": \" + "), i(2), t(");") }),
+    s("lg", { t("\\Log::info(\""), i(1, "title"), t(": \" "), i(2), t(");") }),
     -- function template
     s("fn", {
         t("/**"),

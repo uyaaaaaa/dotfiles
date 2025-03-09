@@ -20,17 +20,6 @@ return {
                 },
             })
             require("nvim-treesitter.configs").setup(opts)
-
-            local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-            -- Add blade syntax
-            parser_config.blade = {
-                install_info = {
-                    url = "https://github.com/EmranMR/tree-sitter-blade",
-                    files = { "src/parser.c" },
-                    branch = "main",
-                },
-                filetype = "blade",
-            }
         end,
     },
 
@@ -137,14 +126,6 @@ return {
                             require("neo-tree")
                         end
                     end
-                    require('nvim-web-devicons').set_icon({
-                        ['blade.php'] = {
-                            icon = require("utils.icons").blade,
-                            color = "#f9322c",
-                            cterm_color = "Red",
-                            name = "Blade",
-                        }
-                    })
                 end,
             })
         end,
