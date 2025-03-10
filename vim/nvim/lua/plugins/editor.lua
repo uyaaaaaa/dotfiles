@@ -318,7 +318,7 @@ return {
             },
             marks = {
                 Search = { text = "▌" },
-                Error = { text = "▌" },
+                Error = { text = { "▌" } },
                 GitAdd = { text = "▌" },
                 GitChange = { text = "▌" },
             },
