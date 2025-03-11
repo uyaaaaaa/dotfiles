@@ -5,7 +5,7 @@ return {
         version = false,
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
-            "hrsh7th/cmp-buffer",
+            -- "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-nvim-lsp",
@@ -60,7 +60,7 @@ return {
                     { name = "render-markdown" },
                     { name = "path" },
                 }, {
-                    { name = "buffer" },
+                    -- { name = "buffer" },
                     { name = "path" },
                     { name = "cmdline" },
                 }),
