@@ -5,6 +5,7 @@ local filters = {
     { "msg_show", "%d+L, %d+B" },
     { "msg_show", "; after #%d+" },
     { "msg_show", "; before #%d+" },
+    -- { "msg_show", "/" },
     { "msg_show", "more lines" },
     { "msg_show", "fewer lines" },
     { "msg_show", "No information available" },
