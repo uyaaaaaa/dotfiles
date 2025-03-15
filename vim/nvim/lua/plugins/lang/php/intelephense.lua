@@ -1,7 +1,5 @@
 -- Setup intelephense
-local M = {
-
-}
+local M = {}
 
 local lsp_config = require("lspconfig")
 lsp_config.intelephense.setup({
