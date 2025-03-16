@@ -32,12 +32,16 @@ return {
     -- night-owl
     {
         "oxfist/night-owl.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         opts = {
             itaric = false,
             transparent_background = true,
         },
+        config = function(_, opts)
+            require("night-owl").setup(opts)
+            vim.cmd.colorscheme("night-owl")
+        end,
     },
 
     -- nightfox
@@ -61,15 +65,11 @@ return {
     -- onedark
     {
         "navarasu/onedark.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         opts = {
             style = "warmer",
             transparent = true,
         },
-        config = function(_, opts)
-            require("onedark").setup(opts)
-            vim.cmd.colorscheme("onedark")
-        end,
     },
 }
