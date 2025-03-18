@@ -25,6 +25,7 @@ M.list = {
     "xml",
     "yaml",
     "toml",
+    "ruby",
 }
 
 return M

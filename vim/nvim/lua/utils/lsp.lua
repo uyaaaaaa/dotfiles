@@ -14,6 +14,7 @@ M.lsp_servers = {
     "ts_ls",
     "html",
     "cssls",
+    "rubocop",
 }
 
 M.formatters = {
@@ -23,6 +24,7 @@ M.formatters = {
     "stylua",
     "shfmt",
     "prettier",
+    "rubocop",
 }
 
 M.diagnostics = {
