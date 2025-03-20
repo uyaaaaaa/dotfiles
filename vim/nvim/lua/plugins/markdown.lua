@@ -40,9 +40,9 @@ return {
                 repeat_linebreak = true,
             },
             win_options = {
-                showbreak = { default = '', rendered = '  ' },
+                showbreak = { default = "", rendered = "  " },
                 breakindent = { default = false, rendered = true },
-                breakindentopt = { default = '', rendered = '' },
+                breakindentopt = { default = "", rendered = "" },
             },
             code = {
                 sign = false,
@@ -54,7 +54,7 @@ return {
             },
             checkbox = {
                 checked = {
-                    icon = '✔ ',
+                    icon = "✔ ",
                     scope_highlight = "@markup.strikethrough",
                 },
                 custom = {
