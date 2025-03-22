@@ -454,7 +454,7 @@ return {
             require("lualine_require").require = require
             vim.o.laststatus = vim.g.lualine_laststatus
             local icons = require("utils.icons")
-            local git_repo = vim.fn.fnamemodify(vim.fn.systemlist('git rev-parse --show-toplevel')[1], ':t') or ''
+            local git_repo = vim.fn.fnamemodify(vim.fn.systemlist("git rev-parse --show-toplevel")[1], ":t") or ""
 
             local opts = {
                 options = {
