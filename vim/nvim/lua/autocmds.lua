@@ -7,15 +7,6 @@ autocmd("BufWritePre", {
     pattern = "*",
     command = ":%s/\\s\\+$//e",
 })
--- -- Set Color
--- autocmd("BufEnter", {
---     group = augroup("Colorscheme of Fold and Cursor", { clear = true }),
---     once = true,
---     callback = function()
---         vim.cmd("highlight Folded gui=italic")
---         vim.cmd("highlight Cursor guifg=black guibg=#B4DC00")
---     end,
--- })
 -- Highlight on yank
 autocmd("TextYankPost", {
     group = augroup("highlight_yank", { clear = true }),
