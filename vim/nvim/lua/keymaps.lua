@@ -60,7 +60,7 @@ keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 keymap.set("n", ">", ">>", opts)
 keymap.set("n", "<", "<<", opts)
 -- Jump By Lsp
-keymap.set("n", "gd", function() return Snacks.picker.lsp_definitions() end, opts)
+keymap.set("n", "gd", function() return require("utils.ui").GD() end, opts)
 keymap.set("n", "gr", function() return Snacks.picker.lsp_references() end, opts)
 -- Replace current word in buffer
 keymap.set("n", "#", function()
