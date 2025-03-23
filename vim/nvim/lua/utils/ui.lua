@@ -30,6 +30,29 @@ function M.foldexpr()
     return vim.b[buf].ts_folds and vim.treesitter.foldexpr() or "0"
 end
 
+-- remap `gd`
+function M.GD()
+    local line = vim.fn.getline(".")
+    local col = vim.fn.col(".")
+
+    for url in line:gmatch("%b()") do
+        url = url:sub(2, -2)
+        local start_pos = line:find(url, 1, true)
+        local end_pos = start_pos + #url
+
+        if col >= start_pos and col <= end_pos then
+            local cut_url = url:match("^(https?://[^%s]+)") or url
+
+            if cut_url:match("^https?://") then
+                vim.fn.jobstart({ "xdg-open", url }, { detach = true })
+                return
+            end
+        end
+    end
+
+    Snacks.picker.lsp_definitions()
+end
+
 -- -- set statuscolumn with fold
 -- function M.get_statuscol()
 --     local lnum = vim.v.lnum
