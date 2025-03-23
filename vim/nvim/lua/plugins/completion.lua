@@ -58,7 +58,6 @@ return {
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "render-markdown" },
-                    { name = "path" },
                 }, {
                     -- { name = "buffer" },
                     { name = "path" },
