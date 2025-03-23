@@ -1,7 +1,6 @@
 return {
     -- treesitter
     {
-        -- treesitter
         "nvim-treesitter/nvim-treesitter",
         version = false, -- last release is way too old and doesn"t work on Windows
         lazy = true,
@@ -51,43 +50,14 @@ return {
         },
     },
 
-    -- git diff
+    -- gitportal
     {
-        "sindrets/diffview.nvim",
-        cmd = { "DiffviewOpen", "DiffiviewFileHistory" },
+        "trevorhauter/gitportal.nvim",
         keys = {
-            -- `gt`: Go to Next Tab
-            { "<leader>gd", "<cmd>DiffviewOpen<CR>",        desc = "Open Diffview" },
-            { "<leader>gq", "<cmd>tabclose<CR>",            desc = "Close Diffview" },
-            { "<leader>gf", "<cmd>DiffviewFileHistory<CR>", desc = "Open File History" },
+            { "<leader>gp", mode = { "n", "v" }, function() return require("gitportal").open_file_in_browser() end, desc = "" },
         },
         opts = {
-            enhanced_diff_hl = false,
-            show_help_hints = true,
-            watch_index = true,
-            view = {
-                default = {
-                    winbar_info = true,
-                },
-                merge_tool = {
-                    layout = "diff3_mixed",
-                },
-                file_history = {
-                    winbar_info = true,
-                },
-            },
-            file_panel = {
-                listing_style = "list",
-                win_config = {
-                    position = "left",
-                    width = 40,
-                },
-            },
-            file_history_panel = {
-                win_config = {
-                    height = 14,
-                },
-            },
+            switch_branch_or_commit_upon_ingestion = "ask_first",
         },
     },
 
@@ -525,4 +495,5 @@ return {
             return opts
         end,
     },
+
 }
