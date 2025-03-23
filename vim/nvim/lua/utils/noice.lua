@@ -12,6 +12,7 @@ local filters = {
     { "msg_show", "1 time" },
     { "notify", "hover is not supported by the servers of the current buffer" },
     { "notify", "No information available" },
+    { "notify", "vim.ui.open: command timeout " },
 }
 
 local function noiceWrapper(event, pattern)
