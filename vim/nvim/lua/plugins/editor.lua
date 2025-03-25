@@ -22,6 +22,13 @@ return {
         end,
     },
 
+    -- treesitter-context
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "BufRead",
+        opts = {},
+    },
+
     -- gitsigns
     {
         "lewis6991/gitsigns.nvim",
