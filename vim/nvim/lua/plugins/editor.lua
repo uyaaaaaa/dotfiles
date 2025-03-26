@@ -73,6 +73,7 @@ return {
                 map("v", "gs", function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
                 map("n", "ge", function() gitsigns.setloclist(nil, "all") end)
                 map("n", "ga", gitsigns.stage_buffer)
+                map("n", "<leader>gi", gitsigns.preview_hunk_inline)
             end
         },
     },
