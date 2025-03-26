@@ -26,7 +26,10 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-context",
         event = "BufRead",
-        opts = {},
+        opts = {
+            mode = "topline",
+            max_lines = 1,
+        },
     },
 
     -- gitsigns
