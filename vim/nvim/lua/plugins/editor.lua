@@ -28,7 +28,7 @@ return {
         event = "BufRead",
         opts = {
             mode = "topline",
-            max_lines = 1,
+            max_lines = 3,
         },
     },
 
