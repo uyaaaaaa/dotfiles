@@ -17,6 +17,9 @@ return {
                 VertSplit = { bg = "None" },
             },
         },
+        config = function(_, opts)
+            require("ayu").setup(opts)
+        end,
     },
 
     -- iceclimber | coffeecat | darkforest | roseprime | daylight
