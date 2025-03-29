@@ -12,14 +12,6 @@ return {
             indent = { enable = true },
             ensure_installed = require("utils.treesitter").list
         },
-        config = function(_, opts)
-            vim.filetype.add({
-                pattern = {
-                    [".*%.blade%.php"] = "blade",
-                },
-            })
-            require("nvim-treesitter.configs").setup(opts)
-        end,
     },
 
     -- treesitter-context
