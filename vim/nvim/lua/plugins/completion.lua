@@ -93,7 +93,13 @@ return {
             { "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
         },
         opts = {
-            ui = { code_action = "" },
+            ui = {
+                code_action = "",
+            },
+            hover = {
+                max_width = 0.7,
+                max_height = 0.5,
+            },
         },
     },
 }
