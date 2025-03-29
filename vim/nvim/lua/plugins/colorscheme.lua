@@ -60,11 +60,12 @@ return {
 
     -- onedark
     {
+        -- dark | darker | cool | deep | warm | warmer
         "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
         opts = {
-            style = "warmer",
+            style = "darker",
             transparent = true,
         },
         config = function(_, opts)
