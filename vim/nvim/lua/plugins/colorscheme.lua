@@ -33,7 +33,6 @@ return {
     {
         "oxfist/night-owl.nvim",
         lazy = true,
-        priority = 1000,
         opts = {
             itaric = false,
             transparent_background = true,
