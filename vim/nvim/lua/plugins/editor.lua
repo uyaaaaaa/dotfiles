@@ -524,4 +524,22 @@ return {
         end,
     },
 
+    -- nvim-ufo(folding plugins)
+    {
+        "kevinhwang91/nvim-ufo",
+        dependencies = {
+            "kevinhwang91/promise-async",
+        },
+        event = "BufRead",
+        opts = {
+            provider_selector = function(bufnr, filetype, buftype)
+                return {'treesitter', 'indent'}
+            end,
+        },
+        config = function (_, opts)
+            vim.keymap.set('n', 'zz', require('ufo').openAllFolds)
+            vim.keymap.set('n', 'zm', require('ufo').closeAllFolds)
+            require('ufo').setup(opts)
+        end
+    },
 }

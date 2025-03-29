@@ -32,13 +32,12 @@ opt.fillchars = {
     diff = "╱",
     eob = " ",
 }
--- _G.fcs = opt.fillchars:get()
 opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
 opt.foldcolumn = "1"
-opt.smoothscroll = true
-opt.foldexpr = "v:lua.require'utils.ui'.foldexpr()"
-opt.foldmethod = "expr"
 opt.foldtext = ""
+opt.smoothscroll = true
 
 -- statuscol
 opt.signcolumn = "yes"
