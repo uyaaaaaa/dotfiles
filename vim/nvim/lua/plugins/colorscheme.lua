@@ -44,7 +44,8 @@ return {
     {
         -- nightfox | nordfox | carbonfox | duskfox
         "EdenEast/nightfox.nvim",
-        lazy = true,
+        lazy = false,
+        priority = 1000,
         opts = {
             options = {
                 transparent = true,
@@ -56,21 +57,20 @@ return {
                 },
             },
         },
+        config = function(_, opts)
+            require("nightfox").setup(opts)
+            vim.cmd.colorscheme("nightfox")
+        end,
     },
 
     -- onedark
     {
         -- dark | darker | cool | deep | warm | warmer
         "navarasu/onedark.nvim",
-        lazy = false,
-        priority = 1000,
+        lazy = true,
         opts = {
             style = "darker",
             transparent = true,
         },
-        config = function(_, opts)
-            require("onedark").setup(opts)
-            vim.cmd.colorscheme("onedark")
-        end,
     },
 }
