@@ -9,6 +9,7 @@ M.info = " "
 
 -- git
 M.github = ""
+M.copilot = ""
 M.repository = ""
 M.branch = ""
 M.modified = " "
