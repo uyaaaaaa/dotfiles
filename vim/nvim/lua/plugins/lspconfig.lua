@@ -24,12 +24,15 @@ return {
         },
         config = function()
             require("mason").setup()
+
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
             require("mason-lspconfig").setup({
                 ensure_installed = lsp.lsp_servers,
                 handlers = {
                     function(server_name)
                         require("lspconfig")[server_name].setup({
-                            capabilities = require("cmp_nvim_lsp").default_capabilities(),
+                            capabilities = capabilities,
                             root_dir = function(fname)
                                 return require("lspconfig").util.find_git_ancestor(fname) or vim.fn.getcwd()
                             end,
