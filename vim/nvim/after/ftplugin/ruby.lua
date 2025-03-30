@@ -1,8 +1,5 @@
--- Setup intelephense
-local M = {}
-
+-- ruby-lsp
 local lsp_config = require("lspconfig")
-
 lsp_config.ruby_lsp.setup({
     cmd = { "ruby-lsp" },
     filetypes = { "ruby" },
@@ -12,6 +9,4 @@ lsp_config.ruby_lsp.setup({
     },
     single_file_support = true,
 })
-
-return M
 
