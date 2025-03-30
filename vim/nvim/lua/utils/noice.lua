@@ -1,5 +1,7 @@
 ---@class lazyvim.util.noice
-local M = {}
+local M = {
+    routes = {},
+}
 
 local filters = {
     { "msg_show", "%d+L, %d+B" },
@@ -10,6 +12,7 @@ local filters = {
     { "msg_show", "fewer lines" },
     { "msg_show", "No information available" },
     { "msg_show", "1 time" },
+    { "msg_show", "Cannot write, \'buftype\' option is set" },
     { "notify", "hover is not supported by the servers of the current buffer" },
     { "notify", "No information available" },
     { "notify", "vim.ui.open: command timeout " },
@@ -23,8 +26,6 @@ local function noiceWrapper(event, pattern)
         },
     }
 end
-
-M.routes = {}
 
 for _, values in pairs(filters) do
     table.insert(M.routes, noiceWrapper(values[1], values[2]))
