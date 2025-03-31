@@ -61,7 +61,7 @@ return {
                     todo = { raw = "", rendered = "", highlight = "" },
                     canceled = {
                         raw = "[-]",
-                        rendered = "✘",
+                        rendered = "󰅘 ",
                         scope_highlight = "@markup.strikethrough",
                     },
                 },
