@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Esc
-keymap.set("i", "jk", "<Esc>", opts)
+keymap.set("i", "jk", "<Esc>:w<CR>", opts)
 
 -- NORMAL MODE --
 -- Split
@@ -53,9 +53,11 @@ keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Indent
 keymap.set("n", ">", ">>", opts)
 keymap.set("n", "<", "<<", opts)
+-- Open help window
+keymap.set("n", "g?", function() require("utils.ui").OpenMarkdownHelp() end, opts)
 -- Jump By Lsp
-keymap.set("n", "gd", function() return require("utils.ui").GD() end, opts)
-keymap.set("n", "gr", function() return Snacks.picker.lsp_references() end, opts)
+keymap.set("n", "gd", function() require("utils.ui").GD() end, opts)
+keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, opts)
 -- Replace current word in buffer
 keymap.set("n", "#", function()
     vim.api.nvim_feedkeys(":%s/" .. vim.fn.expand("<cword>") .. "//g", "n", false)
