@@ -17,7 +17,6 @@ return {
             local cmp = require("cmp")
             local luasnip = require("luasnip")
             cmp.setup({
-                experimental = { ghost_text = true },
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
@@ -33,6 +32,9 @@ return {
                         end,
                         symbol_map = { Copilot = require("utils.icons").copilot }
                     }),
+                },
+                performance = {
+                    debounce = 300,
                 },
                 window = {
                     completion = cmp.config.window.bordered(),
