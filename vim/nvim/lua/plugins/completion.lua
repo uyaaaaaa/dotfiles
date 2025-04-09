@@ -30,7 +30,6 @@ return {
                         before = function(entry, vim_item)
                             return vim_item
                         end,
-                        symbol_map = { Copilot = require("utils.icons").copilot }
                     }),
                 },
                 performance = {
@@ -58,7 +57,6 @@ return {
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 }),
                 sources = cmp.config.sources({
-                    { name = "copilot" },
                     { name = "luasnip" },
                     { name = "nvim_lsp" },
                     { name = "render-markdown" },
@@ -107,28 +105,8 @@ return {
         },
     },
 
-    -- copilot-cmp
     {
-        "zbirenbaum/copilot-cmp",
-        event = { "InsertEnter", "LspAttach" },
         dependencies = {
-            "hrsh7th/nvim-cmp",
-            "zbirenbaum/copilot.lua",
         },
-        fix_pairs = true,
-        -- config = function()
-        --     require("copilot").setup({
-        --         suggestion = { enabled = false },
-        --         panel = { enabled = false },
-        --     })
-        --     require("copilot_cmp").setup()
-        -- end,
-    },
-
-    -- copilot
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        lazy = true,
     },
 }
