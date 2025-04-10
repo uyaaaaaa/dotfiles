@@ -105,8 +105,29 @@ return {
         },
     },
 
+    -- windsurf(codeium)
     {
+        "Exafunction/windsurf.nvim",
         dependencies = {
+            "nvim-lua/plenary.nvim",
         },
+        config = function()
+            require("codeium").setup({
+                enable_cmp_source = false,  -- Optionally disable cmp source if using virtual text only
+                virtual_text = {
+                    enabled = true,
+                },
+                key_bindings = {
+                    accept = "<Tab>",     -- Accept the current completion.
+                    accept_word = false,  -- Accept the next word.
+                    accept_line = false,  -- Accept the next line.
+                    clear = false,        -- Clear the virtual text.
+                    next = false,         -- Cycle to the next completion.
+                    prev = false,         -- Cycle to the previous completion.
+                    dismiss = false,      -- Dismiss the current completion.
+                    toggle = false,       -- Toggle completion status
+                },
+            })
+        end
     },
 }
