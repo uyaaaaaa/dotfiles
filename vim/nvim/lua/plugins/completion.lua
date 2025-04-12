@@ -1,3 +1,6 @@
+local util = require("utils.fn")
+local lsp = require("utils.lsp")
+
 return {
     -- nvim-cmp
     {
@@ -16,6 +19,7 @@ return {
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
+            local lsp_kind = require("cmp.types").lsp.CompletionItemKind
             cmp.setup({
                 completion = {
                     autocomplete = false,
@@ -64,10 +68,14 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "luasnip" },
-                    { name = "nvim_lsp" },
+                    {
+                        name = "nvim_lsp",
+                        entry_filter = function(entry, ctx)
+                            return not util.list_contains(lsp.exclude_kind, lsp_kind[entry:get_kind()])
+                        end,
+                    },
                     { name = "render-markdown" },
                 }, {
-                    -- { name = "buffer" },
                     { name = "path" },
                     { name = "cmdline" },
                 }),
