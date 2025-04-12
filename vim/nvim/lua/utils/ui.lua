@@ -1,19 +1,6 @@
 ---@class lazyvim.util.ui
 local M = {}
 
--- set diagnostic icons
-local icons = require("utils.icons")
-vim.diagnostic.config({
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = icons.error,
-            [vim.diagnostic.severity.WARN] = icons.warn,
-            [vim.diagnostic.severity.INFO] = icons.info,
-            [vim.diagnostic.severity.HINT] = icons.hint,
-        },
-    },
-})
-
 -- remap `gd`
 function M.GD()
     local cfile = vim.fn.expand("<cfile>")

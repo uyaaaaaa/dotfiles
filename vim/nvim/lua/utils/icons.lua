@@ -33,4 +33,16 @@ M.mac = " "
 M.readonly = "󰌾 "
 M.blade = "󰫐 "
 
+-- set diagnostic icons
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = M.error,
+            [vim.diagnostic.severity.WARN] = M.warn,
+            [vim.diagnostic.severity.INFO] = M.info,
+            [vim.diagnostic.severity.HINT] = M.hint,
+        },
+    },
+})
+
 return M
