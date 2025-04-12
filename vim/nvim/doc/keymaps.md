@@ -18,3 +18,9 @@
 * `ga`: Stage buffer
 * `<leader>gd`: Go Diff file
 * `<leader>gi`: Preview hunk inline
+* `<leader>gg`: Open lazygit in float window
+
+## Terminal
+* `<C-t>`: Toggle terminal
+* `<leader>q`: Ecscape terminal
+* `<leader>q`: Ecsape terminal
