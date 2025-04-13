@@ -113,7 +113,8 @@ config.keys = {
 	{ key = "+", mods = "CTRL|SHIFT", action = act.IncreaseFontSize },
 	{ key = "-", mods = "CTRL", action = act.DecreaseFontSize },
 	-- copy from clipboard
-	{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
+	{ key = "v", mods = "CMD", action = act.PasteFrom("Clipboard") },
+	{ key = "c", mods = "CMD", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	-- delete word
 	{ key = "Backspace", mods = "CTRL", action = act.SendKey({
 		key = "w",
