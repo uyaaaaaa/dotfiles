@@ -22,7 +22,7 @@
     {
         "key": "ctrl+h",
         "command": "workbench.action.focusSideBar",
-        "when": "editorTextFocus && !inputFocus"
+        "when": "editorTextFocus && vim.mode == 'Normal'"
     },
     {
         "key": "ctrl+l",
