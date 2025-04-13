@@ -1,0 +1,16 @@
+# Open setting with `Cmd + ,`
+theme = Molokai
+macos-titlebar-proxy-icon = hidden
+window-height = 40
+window-width = 120
+window-padding-x = 10
+window-padding-y = 5
+window-padding-balance = true
+window-theme = ghostty
+resize-overlay = never
+
+macos-icon-frame = beige
+
+background-opacity = 0.75
+background-blur-radius = 25
+macos-titlebar-style = transparent
