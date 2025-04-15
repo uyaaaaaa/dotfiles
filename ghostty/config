@@ -21,4 +21,4 @@ font-feature = -dlig
 
 quick-terminal-position = bottom
 
-keybind = global:ctrl+space=toggle_quick_terminal
+keybind = global:shift+space=toggle_quick_terminal
