@@ -125,6 +125,8 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+        event = { "InsertEnter" },
+        enabled = false,
         config = function()
             require("codeium").setup({
                 enable_cmp_source = false,  -- Optionally disable cmp source if using virtual text only
@@ -143,5 +145,14 @@ return {
                 },
             })
         end
+    },
+
+    -- augment-code
+    {
+        "augmentcode/augment.vim",
+        event = { "InsertEnter" },
+        keys = {
+            { mode = "n", "<D-k>", "<cmd>Augment chat<CR>", desc = "Open augment chat" },
+        },
     },
 }
