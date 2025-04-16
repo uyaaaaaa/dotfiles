@@ -1,4 +1,5 @@
 local lsp = require("utils.lsp")
+local icons = require("utils.icons")
 
 return {
     -- lsp icons
@@ -75,6 +76,19 @@ return {
             for _, tool in ipairs(lsp.diagnostics) do
                 table.insert(diagnostics_sources, null_ls.builtins.diagnostics[tool])
             end
+
+            -- set diagnostic icons
+            vim.diagnostic.config({
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = icons.error,
+                        [vim.diagnostic.severity.WARN] = icons.warn,
+                        [vim.diagnostic.severity.INFO] = icons.info,
+                        [vim.diagnostic.severity.HINT] = icons.hint,
+                    },
+                },
+                virtual_text = true,
+            })
 
             -- none-ls setup
             null_ls.setup({
