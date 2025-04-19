@@ -26,6 +26,7 @@ M.list = {
     "yaml",
     "toml",
     "ruby",
+    "go",
 }
 
 return M

@@ -15,7 +15,8 @@ M.lsp_servers = {
     "html",
     "cssls",
     "rubocop",
-    "marksman"
+    "marksman",
+    "gopls",
 }
 
 M.formatters = {
