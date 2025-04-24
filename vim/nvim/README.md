@@ -38,3 +38,5 @@
     nvim .
     ```
 
+## Features
+
