@@ -38,5 +38,21 @@
     nvim .
     ```
 
-## Features
+## Keybindings
+### General
+| Keybind | Description |
+|---------|-------------|
+| `<Space>` | Leader key |
+| `jk` | Exit insert mode |
+| `<C-h>` | Move to left window |
+| `<C-j>` | Move to window below |
+| `<C-k>` | Move to window above |
+| `<C-l>` | Move to right window |
+| `ss` | Split window horizontally |
+| `sv` | Split window vertically |
 
+Note:
+- `<leader>` represents the Space key
+- `<C-x>` represents Ctrl + x
+- `<S-x>` represents Shift + x
+- `<D-x>` represents Cmd + x`
