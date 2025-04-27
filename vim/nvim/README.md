@@ -39,6 +39,7 @@
     ```
 
 ## Keybindings
+
 ### General
 | Keybind | Description |
 |---------|-------------|
@@ -50,6 +51,41 @@
 | `<C-l>` | Move to right window |
 | `ss` | Split window horizontally |
 | `sv` | Split window vertically |
+
+### File Navigation
+| Keybind | Description |
+|---------|-------------|
+| `<leader>e` | Toggle file explorer |
+| `<C-p>` | Find files |
+| `ff` | Live grep |
+
+### Code
+| Keybind | Description |
+|---------|-------------|
+| `gd` | Go to definition |
+| `gr` | Show references |
+| `<leader><leader>` | Show hover documentation |
+| `[d` | Previous diagnostic |
+| `]d` | Next diagnostic |
+| `<leader>f` | Format document |
+
+### Git
+| Keybind | Description |
+|---------|-------------|
+| `gs` | Git add |
+| `g[` | Next git change |
+| `g]` | Previous git change |
+
+### Terminal
+| Keybind | Description |
+|---------|-------------|
+| `<C-t>` | Toggle terminal |
+| `<leader>q` | Exit terminal mode |
+
+### Tabs/Buffers
+| Keybind | Description |
+|---------|-------------|
+| `<leader>w` | Close current buffer |
 
 Note:
 - `<leader>` represents the Space key
