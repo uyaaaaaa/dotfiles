@@ -92,3 +92,19 @@ Note:
 - `<C-x>` represents Ctrl + x
 - `<S-x>` represents Shift + x
 - `<D-x>` represents Cmd + x`
+
+## Abbreviations
+
+The following abbreviations are configured in `/lua/abbreviations.lua`:
+
+### Insert Mode Abbreviations
+
+- `ymd` - Expands to current date in format YYYYMMDD
+- `ymd-` - Expands to current date in format YYYY-MM-DD
+
+### Command Mode Abbreviations
+
+- `w]` - Smartly converts to `w` command when typed exactly as "w]"
+- `w` - In visual mode, prevents the range prefix ('<,'>) from being added to the write command
+- `s` - Automatically expands to `%s///g` with cursor positioned between the second and third slash, making global substitutions more convenient
+
