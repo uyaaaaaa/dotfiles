@@ -37,7 +37,6 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 opt.foldcolumn = "1"
 opt.foldtext = ""
-opt.smoothscroll = true
 
 -- statuscol
 opt.signcolumn = "yes"
