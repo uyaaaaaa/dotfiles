@@ -19,6 +19,8 @@ font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 
+font-family = "JetBrains Mono"
+
 quick-terminal-position = bottom
 
 keybind = global:shift+space=toggle_quick_terminal
