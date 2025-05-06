@@ -21,9 +21,6 @@ return {
             local luasnip = require("luasnip")
             local lsp_kind = require("cmp.types").lsp.CompletionItemKind
             cmp.setup({
-                completion = {
-                    autocomplete = false,
-                },
                 experimental = {
                     ghost_text = true,
                 },
