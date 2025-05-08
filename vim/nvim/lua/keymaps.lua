@@ -53,8 +53,6 @@ keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Indent
 keymap.set("n", ">", ">>", opts)
 keymap.set("n", "<", "<<", opts)
--- Open help window
-keymap.set("n", "g?", function() require("utils.fn").OpenMarkdownHelp() end, opts)
 -- Jump By Lsp
 keymap.set("n", "gd", function() require("utils.fn").GD() end, opts)
 keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, opts)
