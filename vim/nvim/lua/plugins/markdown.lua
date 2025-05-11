@@ -29,6 +29,7 @@ return {
         ft = { "markdown", "norg", "rmd", "org" },
         opts = {
             link = {
+                email = ' ',
                 -- Default Options
                 -- custom = {
                 --     web = { pattern = '^http', icon = '󰖟 ' },
