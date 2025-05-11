@@ -26,8 +26,9 @@ return {
             "nvim-tree/nvim-web-devicons",
             "nvim-treesitter/nvim-treesitter",
         },
-        ft = { "markdown", "norg", "rmd", "org" },
+        ft = { "markdown", "mdx" },
         opts = {
+            render_modes = { "n", "no", "c", "t", "v", "V", "i" },
             link = {
                 email = ' ',
                 -- Default Options
@@ -43,7 +44,6 @@ return {
                 --     youtube = { pattern = 'youtube%.com', icon = '󰗃 ' },
                 -- },
             },
-            render_modes = { "n", "no", "c", "t", "v", "V", "i" },
             heading = {
                 sign = false,
                 width = "block",
