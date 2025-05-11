@@ -28,6 +28,20 @@ return {
         },
         ft = { "markdown", "norg", "rmd", "org" },
         opts = {
+            link = {
+                -- Default Options
+                -- custom = {
+                --     web = { pattern = '^http', icon = '󰖟 ' },
+                --     discord = { pattern = 'discord%.com', icon = '󰙯 ' },
+                --     github = { pattern = 'github%.com', icon = '󰊤 ' },
+                --     google = { pattern = 'google%.com', icon = '󰊭 ' },
+                --     neovim = { pattern = 'neovim%.io', icon = ' ' },
+                --     reddit = { pattern = 'reddit%.com', icon = '󰑍 ' },
+                --     stackoverflow = { pattern = 'stackoverflow%.com', icon = '󰓌 ' },
+                --     wikipedia = { pattern = 'wikipedia%.org', icon = '󰖬 ' },
+                --     youtube = { pattern = 'youtube%.com', icon = '󰗃 ' },
+                -- },
+            },
             render_modes = { "n", "no", "c", "t", "v", "V", "i" },
             heading = {
                 sign = false,
