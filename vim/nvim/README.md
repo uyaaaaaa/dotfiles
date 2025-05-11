@@ -20,7 +20,7 @@
 
 1. Clone this repository to `~/.config/nvim`
     ```bash
-    git clone https://github.com/uedayasuto/dotfiles.git ~/.config/nvim
+    git clone https://github.com/uyaaaaaa/dotfiles.git ~/.config/nvim
     ```
 
 3. Install a NerdFont(optional)
