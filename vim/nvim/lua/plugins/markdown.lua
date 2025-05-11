@@ -31,8 +31,7 @@ return {
             render_modes = { "n", "no", "c", "t", "v", "V", "i" },
             link = {
                 email = ' ',
-                -- Default Options
-                -- custom = {
+                custom = {
                 --     web = { pattern = '^http', icon = '󰖟 ' },
                 --     discord = { pattern = 'discord%.com', icon = '󰙯 ' },
                 --     github = { pattern = 'github%.com', icon = '󰊤 ' },
@@ -42,7 +41,8 @@ return {
                 --     stackoverflow = { pattern = 'stackoverflow%.com', icon = '󰓌 ' },
                 --     wikipedia = { pattern = 'wikipedia%.org', icon = '󰖬 ' },
                 --     youtube = { pattern = 'youtube%.com', icon = '󰗃 ' },
-                -- },
+                    linkedin = { pattern = "%linkedin%.com", icon = " " },
+                },
             },
             heading = {
                 sign = false,
