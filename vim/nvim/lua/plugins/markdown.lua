@@ -68,14 +68,18 @@ return {
             },
             checkbox = {
                 checked = {
-                    icon = "✔ ",
+                    icon = ' ',
                     scope_highlight = "@markup.strikethrough",
+                },
+                unchecked = {
+                    icon = ' ',
+                    highlight = 'RenderMarkdownChecked',
                 },
                 custom = {
                     todo = { raw = "", rendered = "", highlight = "" },
                     canceled = {
                         raw = "[-]",
-                        rendered = "󰅘 ",
+                        rendered = " ",
                         scope_highlight = "@markup.strikethrough",
                     },
                 },
