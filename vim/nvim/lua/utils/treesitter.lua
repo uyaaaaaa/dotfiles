@@ -6,6 +6,7 @@ M.list = {
     "jsdoc",
     "json",
     "markdown",
+    "markdown_inline",
     "printf",
     "python",
     "lua",
