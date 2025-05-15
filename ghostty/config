@@ -1,6 +1,9 @@
 theme = iceberg-dark
-theme = DoomOne
-theme = Guezwhoz
+theme = iceberg-light
+theme = Monokai Pro Machine
+theme = Peppermint
+theme = idleToes
+
 macos-titlebar-proxy-icon = hidden
 window-height = 40
 window-width = 120
