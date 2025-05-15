@@ -183,26 +183,6 @@ return {
         },
     },
 
-    -- Search and Replace
-    {
-        "MagicDuck/grug-far.nvim",
-        cmd = "GrugFar",
-        opts = { headerMaxWidth = 40 },
-        keys = {
-            {
-                "<leader>ss",
-                function()
-                    require("grug-far").open({
-                        transient = true,
-                        prefills = { search = vim.fn.expand("<cword>") },
-                    })
-                end,
-                mode = { "n", "v" },
-                desc = "Search and Replace",
-            },
-        },
-    },
-
     -- Indent line
     {
         "lukas-reineke/indent-blankline.nvim",
