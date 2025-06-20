@@ -1,8 +1,5 @@
 theme = iceberg-dark
-theme = iceberg-light
-theme = Monokai Pro Machine
-theme = Peppermint
-theme = idleToes
+theme = xcodedarkhc
 
 macos-titlebar-proxy-icon = hidden
 window-height = 40
