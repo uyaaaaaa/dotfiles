@@ -1,6 +1,8 @@
 theme = iceberg-dark
 theme = xcodedarkhc
 
+split-divider-color = #808080
+
 macos-titlebar-proxy-icon = hidden
 window-height = 40
 window-width = 120
