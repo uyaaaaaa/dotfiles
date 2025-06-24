@@ -23,16 +23,6 @@
             "after": ["\"", "_", "s"]
         },
         {
-            "before": ["J"],
-            "commands": ["editor.action.moveLinesDownAction"],
-            "when": "editorTextFocus && !editorReadOnly"
-        },
-        {
-            "before": ["K"],
-            "commands": ["editor.action.moveLinesUpAction"],
-            "when": "editorTextFocus && !editorReadOnly"
-        },
-        {
             "before": [">"],
             "after": [">", ">"],
             "when": "editorTextFocus && !editorReadOnly"
@@ -59,29 +49,11 @@
             "after": ["z", "a"]
         },
         {
-            "before": ["+"],
-            "after": ["<C-a>"]
-        },
-        {
-            "before": ["-"],
-            "after": ["<C-x>"]
-        },
-        {
             "before": ["<C-u>"],
             "after": ["H", "z", "z"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["J"],
-            "commands": ["editor.action.moveLinesDownAction"],
-            "when": "editorTextFocus && !editorReadOnly"
-        },
-        {
-            "before": ["K"],
-            "commands": ["editor.action.moveLinesUpAction"],
-            "when": "editorTextFocus && !editorReadOnly"
-        },
         {
             "before": [">"],
             "after": [">", "g", "v"]
