@@ -17,8 +17,6 @@ keymap.set("n", "ss", ":vsplit<Return><C-w>w", opts)
 -- Move active pane
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
--- Close tab
-keymap.set("n", "<C-w><C-t>", "<Cmd>tabclose<CR>", opts)
 -- Copy current path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 
