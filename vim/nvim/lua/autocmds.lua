@@ -25,3 +25,21 @@ autocmd("BufRead", {
         end
     end,
 })
+
+-- Set tab width to 2 for TypeScript files
+autocmd("FileType", {
+    pattern = {
+        "javascript",
+        "javascript.jsx",
+        "javascriptreact",
+        "typescript",
+        "typescript.tsx",
+        "typescriptreact"
+    },
+    callback = function()
+        vim.bo.shiftwidth = 2
+        vim.bo.softtabstop = 2
+        vim.bo.tabstop = 2
+    end,
+})
+
