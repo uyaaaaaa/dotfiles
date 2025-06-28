@@ -38,6 +38,9 @@ opt.foldenable = true
 opt.foldcolumn = "1"
 opt.foldtext = ""
 
+-- Swapfile
+opt.swapfile = false
+
 -- statuscol
 opt.signcolumn = "yes"
 opt.statuscolumn = "%!v:lua.require'snacks.statuscolumn'.get()"
