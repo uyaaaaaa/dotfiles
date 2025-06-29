@@ -19,9 +19,9 @@ background-opacity = 0.75
 background-blur-radius = 25
 macos-titlebar-style = transparent
 
+font-family = JetBrains Mono NF
+
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-
-font-family = "JetBrains Mono"
 
