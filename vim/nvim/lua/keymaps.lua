@@ -17,8 +17,6 @@ keymap.set("n", "ss", ":vsplit<Return><C-w>w", opts)
 -- Move active pane
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
--- Copy current path(relative)
-keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 
 -- -- Move current line
 keymap.set("n", "<C-j>", "<Cmd>move+{v:count1}<CR>=l", opts)
@@ -33,8 +31,6 @@ keymap.set("n", "<Space>l", "$", opts)
 keymap.set("n", "gh", "<S-H>", opts)
 keymap.set("n", "gm", "<S-m>", opts)
 keymap.set("n", "gl", "<S-l>", opts)
--- Copy current buffer path(relative)
-keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Yank to last
 keymap.set("n", "Y", "y$", opts)
 -- Do not yank with x,c
@@ -46,7 +42,7 @@ keymap.set("n", "cw", '"_cw', opts)
 keymap.set("n", "ce", '"_ce', opts)
 -- Decrement
 keymap.set("n", "<C-f>", "<C-x>", opts)
--- Copy current buffer path(relative)
+-- Copy active buffer path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Indent
 keymap.set("n", ">", ">>", opts)
