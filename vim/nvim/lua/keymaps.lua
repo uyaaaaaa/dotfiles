@@ -39,13 +39,8 @@ keymap.set("n", "C", '"_C', opts)
 keymap.set("n", "ciw", '"_ciw', opts)
 keymap.set("n", "cw", '"_cw', opts)
 keymap.set("n", "ce", '"_ce', opts)
--- Decrement
-keymap.set("n", "<C-f>", "<C-x>", opts)
 -- Copy active buffer path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
--- Indent
-keymap.set("n", ">", ">>", opts)
-keymap.set("n", "<", "<<", opts)
 -- Jump By Lsp
 keymap.set("n", "gd", function() require("utils.fn").GD() end, opts)
 keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, opts)
@@ -60,11 +55,6 @@ keymap.set("n", "<leader>td", function() require("utils.fn").ToggleVirtualText()
 keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 
 -- INSERT MODE --
--- Emacs like commands
-keymap.set("i", "<C-f>", "<Right>", opts)
-keymap.set("i", "<C-b>", "<Left>", opts)
-keymap.set("i", "<C-j>", "<Down>", opts)
-keymap.set("i", "<C-k>", "<Up>", opts)
 -- Delete character
 keymap.set("i", "<C-d>", "<Del>", opts)
 
