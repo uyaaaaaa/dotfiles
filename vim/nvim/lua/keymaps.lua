@@ -17,13 +17,12 @@ keymap.set("n", "ss", ":vsplit<Return><C-w>w", opts)
 -- Move active pane
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
-
 -- -- Move current line
 keymap.set("n", "<C-j>", "<Cmd>move+{v:count1}<CR>=l", opts)
 keymap.set("n", "<C-k>", "<Cmd>move-1-{v:count1}<CR>=l", opts)
 -- Copy current line
-keymap.set("n", "<Space>j", "<Cmd>copy.<CR>", opts)
-keymap.set("n", "<Space>k", "<Cmd>copy-1<CR>", opts)
+keymap.set("n", "<leader>j", "<Cmd>copy.<CR>", opts)
+keymap.set("n", "<leader>k", "<Cmd>copy-1<CR>", opts)
 -- Move inside line
 keymap.set("n", "<Space>h", "^", opts)
 keymap.set("n", "<Space>l", "$", opts)
@@ -74,8 +73,8 @@ keymap.set("i", "<C-d>", "<Del>", opts)
 keymap.set("v", "<C-j>", ":move'>+1<CR>gv=gv", opts)
 keymap.set("v", "<C-k>", ":move'<-2<CR>gv=gv", opts)
 -- Copy selected line
-keymap.set("v", "<Space>j", ":copy'<-1<CR>gv", opts)
-keymap.set("v", "<Space>k", ":copy'>+0<CR>gv", opts)
+keymap.set("v", "<leader>j", ":copy'<-1<CR>gv", opts)
+keymap.set("v", "<leader>k", ":copy'>+0<CR>gv", opts)
 -- Select inside line
 keymap.set("v", "<Space>h", "^", opts)
 keymap.set("v", "<Space>l", "$", opts)
