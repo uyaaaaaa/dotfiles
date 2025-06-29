@@ -1,5 +1,5 @@
 gui:
-  showIcons: true
+  language: en
   nerdFontsVersion: "3"
   commitAuthorShortLength: 10
   commitAuthorLongLength: 10
@@ -8,4 +8,5 @@ gui:
   commandLogSize: 10
 git:
   branchLogCmd: git log --graph --color=always --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(green)%H%Creset %C(#dd4814)%an%Creset %C(white reverse)%d%Creset %n%C(cyan)%ad%Creset %s%Creset%n' {{branchName}} --
-  allBranchesLogCmd: git log --graph --color=always --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(green)%H%Creset %C(#dd4814)%an%Creset %C(white reverse)%d%Creset %n%C(cyan)%ad%Creset %s%Creset%n' --
+notARepository: quit
+
