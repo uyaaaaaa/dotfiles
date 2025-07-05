@@ -10,3 +10,4 @@ git:
   branchLogCmd: git log --graph --color=always --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(green)%H%Creset %C(#dd4814)%an%Creset %C(white reverse)%d%Creset %n%C(cyan)%ad%Creset %s%Creset%n' {{branchName}} --
 notARepository: quit
 
+promptToReturnFromSubprocess: false
