@@ -152,10 +152,11 @@ return {
                 },
                 filtered_items = {
                     always_show_by_pattern = {
-                        ".gitignored",
+                        ".gitignore",
                         ".env*",
                     },
                     never_show = {
+                        ".git",
                         ".DS_Store",
                         "thumbs.db",
                     },
