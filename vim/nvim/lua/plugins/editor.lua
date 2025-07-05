@@ -151,6 +151,9 @@ return {
                     },
                 },
                 filtered_items = {
+                    visible = false,
+                    hide_gitignored = true,
+                    hide_dotfiles = false,
                     always_show_by_pattern = {
                         ".gitignore",
                         ".env*",
