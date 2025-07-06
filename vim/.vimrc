@@ -24,9 +24,10 @@ endif
 
 set ambiwidth=double
 set autoread
-set clipboard=unnamed,autoselect
 set background=dark
+set clipboard=unnamed,autoselect
 set cursorline
+set encoding=utf-8
 set expandtab
 set fenc=utf-8
 set guioptions+=a
@@ -39,10 +40,12 @@ set nobackup
 set noerrorbells
 set noswapfile
 set number
+set relativenumber
 set shiftwidth=4
 set showmatch matchtime=1
 set smartcase
 set smartindent
+set smarttab
 set softtabstop=4
 set tabstop=4
 set virtualedit=block
@@ -57,3 +60,4 @@ nnoremap j gj
 nnoremap k gk
 
 inoremap <silent> jk <ESC>
+
