@@ -53,6 +53,9 @@ end, opts)
 keymap.set("n", "<leader>td", function() require("utils.fn").ToggleVirtualText() end, { desc = "Toggle Diagnostic Virtual Text" })
 -- Escape hlslens
 keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
+-- Increment / Decrement
+keymap.set("n", "+", "<C-a>", opts)
+keymap.set("n", "-", "<C-x>", opts)
 
 -- INSERT MODE --
 -- Delete character
