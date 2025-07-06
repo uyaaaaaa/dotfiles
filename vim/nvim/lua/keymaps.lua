@@ -11,8 +11,6 @@ keymap.set("i", "jk", "<Esc>:w<CR>", opts)
 -- NORMAL MODE --
 -- execute command
 keymap.set("n", "<leader><CR>", ":.!sh<CR>", opts)
--- add line
-keymap.set("n", "<CR>", "A<CR><Esc>", opts)
 -- Split
 keymap.set("n", "sv", ":split<Return><C-w>w", opts)
 keymap.set("n", "ss", ":vsplit<Return><C-w>w", opts)
