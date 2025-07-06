@@ -22,6 +22,7 @@ opt.timeoutlen = vim.g.vscode and 1000 or 300
 opt.undofile = true
 opt.undolevels = 10000
 opt.wrap = false
+opt.pumheight = 20
 
 -- Fold
 opt.fillchars = {
