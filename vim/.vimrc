@@ -53,7 +53,7 @@ set wrapscan
 
 syntax enable
 
-colorscheme retrobox
+colorscheme habamax
 
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 nnoremap j gj
