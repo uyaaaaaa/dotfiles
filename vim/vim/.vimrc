@@ -50,7 +50,7 @@ let &t_EI .= "\e[1 q"
 
 set ambiwidth=double
 set autoread
-set background=dark
+set background=light
 set clipboard=unnamed,autoselect
 set cursorline
 set display=lastline
@@ -81,7 +81,7 @@ set wrapscan
 
 syntax enable
 
-colorscheme habamax
+colorscheme shine
 
 " NORMAL MODE
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
