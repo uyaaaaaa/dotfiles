@@ -90,8 +90,8 @@ nnoremap k gk
 nnoremap Y y$
 nnoremap + <C-a>
 nnoremap - <C-x>
-nnoremap > <C-w>2>
-nnoremap < <C-w>2<
+nnoremap <C-.> <C-w>2>
+nnoremap <C-,> <C-w>2<
 nnoremap <silent> <C-n> :Fern . -reveal=% -drawer -toggle -width=55<CR>
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-l> <C-w>l
