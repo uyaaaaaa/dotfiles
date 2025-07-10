@@ -68,6 +68,8 @@ bindkey "^N" history-beginning-search-forward-end
 
 alias la='ls -lAG'
 alias ll='ls -lG'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 alias dots="cd ~/dotfiles"
 
 ################ fzf #################
