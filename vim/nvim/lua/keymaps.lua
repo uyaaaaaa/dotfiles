@@ -24,8 +24,8 @@ keymap.set("n", "<C-k>", "<Cmd>move-1-{v:count1}<CR>=l", opts)
 keymap.set("n", "<leader>j", "<Cmd>copy.<CR>", opts)
 keymap.set("n", "<leader>k", "<Cmd>copy-1<CR>", opts)
 -- Move inside line
-keymap.set("n", "<Space>h", "^", opts)
-keymap.set("n", "<Space>l", "$", opts)
+keymap.set("n", "<leader>h", "^", opts)
+keymap.set("n", "<leader>l", "$", opts)
 -- Move cursor
 keymap.set("n", "gh", "<S-H>", opts)
 keymap.set("n", "gm", "<S-m>", opts)
