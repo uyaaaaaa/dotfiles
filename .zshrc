@@ -74,8 +74,9 @@ bindkey "^N" history-beginning-search-forward-end
 
 ############### alias ################
 
+# alias -g C='| pbcopy'  # macOS only
 alias la='ls -lAG'
-alias ll='ls -lG'
+alias ll='ls -1 --color=auto'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias dots="cd ~/dotfiles"
