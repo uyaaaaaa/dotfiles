@@ -38,6 +38,14 @@ zshaddhistory() {
     [[ "$?" == 0 ]]
 }
 
+# stash line once
+bindkey '^O' push-line
+
+# edit command line
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey "^[," edit-command-line
+
 ############### completion ################
 
 autoload -Uz compinit; compinit
