@@ -51,7 +51,7 @@ let &t_EI .= "\e[1 q"
 set ambiwidth=double
 set autoread
 set background=light
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 set cursorline
 set display=lastline
 set encoding=utf-8
