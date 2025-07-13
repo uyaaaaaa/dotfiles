@@ -55,7 +55,7 @@
 ### File Navigation
 | Keybind | Description |
 |---------|-------------|
-| `<leader>e` | Toggle file explorer |
+| `<C-n>` | Toggle file explorer |
 | `<C-p>` | Find files |
 | `ff` | Live grep |
 
