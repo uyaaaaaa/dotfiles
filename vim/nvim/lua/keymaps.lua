@@ -32,6 +32,10 @@ keymap.set("n", "gm", "<S-m>", opts)
 keymap.set("n", "gl", "<S-l>", opts)
 -- Yank to last
 keymap.set("n", "Y", "y$", opts)
+-- Resize window
+keymap.set("n", "<C-.>", "<C-w>2>", opts)
+keymap.set("n", "<C-,>", "<C-w>2<", opts)
+
 -- Do not yank with x,c
 keymap.set("n", "x", '"_x', opts)
 keymap.set("n", "c", '"_c', opts)
