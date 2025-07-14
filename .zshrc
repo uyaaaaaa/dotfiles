@@ -24,15 +24,17 @@ zinit light zdharma/history-search-multi-word
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
-SAVEHIST=1000000
+SAVEHIST=100000
 
 setopt share_history
+setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_no_store
 setopt hist_reduce_blanks
 setopt extended_history
 setopt hist_expire_dups_first
+setopt auto_param_keys
 
 zshaddhistory() {
     [[ "$?" == 0 ]]
