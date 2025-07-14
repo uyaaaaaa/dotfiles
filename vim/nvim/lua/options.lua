@@ -23,6 +23,8 @@ opt.undofile = true
 opt.undolevels = 10000
 opt.wrap = false
 opt.pumheight = 20
+opt.list = true
+opt.listchars="nbsp:%,eol:↵"
 
 -- Fold
 opt.fillchars = {
