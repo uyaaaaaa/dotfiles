@@ -79,29 +79,61 @@ set tabstop=4
 set virtualedit=block
 set wrapscan
 
-syntax enable
-
-colorscheme shine
+" Set leader key
+let mapleader = "\<space>"
 
 " NORMAL MODE
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 nnoremap j gj
 nnoremap k gk
 nnoremap Y y$
+nnoremap <leader>h ^
+nnoremap <leader>l $
+" Do not yank with x,c
+nnoremap x "_x
+nnoremap c "_c
+nnoremap C "_C
+nnoremap ciw "_ciw
+nnoremap cw "_cw
+nnoremap ce "_ce
+" Copy current path
+nnoremap <silent> <C-c> :let @+ = expand('%:.')<CR>
+
+" Increment / Decrement
 nnoremap + <C-a>
 nnoremap - <C-x>
+" Toggle file tree
+nnoremap <silent> <C-n> :Fern . -reveal=% -drawer -toggle -width=55<CR>
+" Resize window
 nnoremap <C-.> <C-w>2>
 nnoremap <C-,> <C-w>2<
-nnoremap <silent> <C-n> :Fern . -reveal=% -drawer -toggle -width=55<CR>
+" Move window
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-l> <C-w>l
+" Move line
 nnoremap <silent> <C-j> :move+{v:count1}<CR>=l
 nnoremap <silent> <C-k> :move-1-{v:count1}<CR>=l
+" Duplicate row
+nnoremap <silent> <Leader>j yyp
+nnoremap <silent> <Leader>k yyP
 
 " INSERT MODE
+" Escape insert mode
 inoremap <silent> jk <ESC>
 
 " VISUAL MODE
+" Not Overwrite register when paste in visual mode
+vnoremap p "_dP
+vnoremap <leader>h ^
+vnoremap <leader>l $
+" Move lines
 vnoremap <silent> <C-j> :move'>+1<CR>gv=gv
 vnoremap <silent> <C-k> :move'<-2<CR>gv=gv
+" Duplicate rows
+vnoremap <silent> <Leader>j :copy'<-1<CR>gv
+vnoremap <silent> <Leader>k :copy'>+0<CR>gv
+
+syntax on
+
+colorscheme shine
 
