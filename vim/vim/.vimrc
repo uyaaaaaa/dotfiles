@@ -63,6 +63,8 @@ set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
+set list
+set listchars=nbsp:%,eol:↵   " show break-line
 set nobackup
 set noerrorbells
 set noswapfile
