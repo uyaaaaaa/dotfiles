@@ -122,6 +122,11 @@ nnoremap <silent> <Leader>k yyP
 " INSERT MODE
 " Escape insert mode
 inoremap <silent> jk <ESC>
+" Complete filepath easily
+inoremap <expr> /
+      \ complete_info(['mode']).mode == 'files' && complete_info(['selected']).selected >= 0
+      \   ? '<c-x><c-f>'
+      \   : '/'
 
 " VISUAL MODE
 " Not Overwrite register when paste in visual mode
