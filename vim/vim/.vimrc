@@ -42,7 +42,7 @@ let g:airline_powerline_fonts = 1
 let g:highlightedyank_highlight_duration = 150
 
 " auto close tag
-let g:closetag_filenames = '*.html,*.vue,*.jsx,*.tsx'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.php,*.vue,*.jsx,*.tsx'
 
 " cursor style
 let &t_SI .= "\e[5 q"
