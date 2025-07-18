@@ -5,7 +5,7 @@ return {
         lazy = true,
         keys = {
             {
-                "ff",
+                "g/",
                 mode = "n",
                 function()
                     Snacks.picker.grep({
@@ -16,7 +16,7 @@ return {
                 desc = "Grep"
             },
             {
-                "ff",
+                "g/",
                 mode = "x",
                 function()
                     Snacks.picker.grep_word({
