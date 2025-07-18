@@ -1,85 +1,65 @@
 {
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j","k"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["<C-h>"],
-            "after": ["<backspace>"]
-        },
-        {
-            "before": ["<C-l>"],
-            "after": ["<delete>"]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["x"],
-            "after": ["\"", "_", "x"]
-        },
-        {
-            "before": ["s"],
-            "after": ["\"", "_", "s"]
-        },
-        {
-            "before": [">"],
-            "after": [">", ">"],
-            "when": "editorTextFocus && !editorReadOnly"
-        },
-        {
-            "before": ["<"],
-            "after": ["<", "<"],
-            "when": "editorTextFocus && !editorReadOnly"
-        },
-        {
-            "before": ["Y"],
-            "after": ["y","$"]
-        },
-        {
-            "before": ["<leader>", "h"],
-            "after": ["^"]
-        },
-        {
-            "before": ["<leader>", "l"],
-            "after": ["$"]
-        },
-        {
-            "before": ["z", "f"],
-            "after": ["z", "a"]
-        },
-        {
-            "before": ["<C-u>"],
-            "after": ["H", "z", "z"]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": [">"],
-            "after": [">", "g", "v"]
-        },
-        {
-            "before": ["<"],
-            "after": ["<", "g", "v"]
-        }
-    ],
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<Shift-*>": true,
-        "<C-c>": false,
-        "<C-v>": false,
-        "<C-x>": false,
-        "<C-f>": false,
-        "<C-a>": false,
-        "<C-p>": false,
-        "<Esc>": false,
-        "<Shift>": false
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     },
-    "vim.hlsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.leader": "<space>",
-    "vim.highlightedyank.enable": true,
-    "vim.easymotion": true,
-    "vim.easymotionKeys": "sdfghjkl",
-    "vim.foldfix": true
+    {
+      "before": ["<C-h>"],
+      "after": ["<backspace>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<delete>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
+    },
+    {
+      "before": ["s"],
+      "after": ["\"", "_", "s"]
+    },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["^"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
+    },
+    {
+      "before": ["z", "f"],
+      "after": ["z", "a"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["H", "z", "z"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<Shift-*>": true,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-f>": false,
+    "<C-a>": false,
+    "<C-p>": false,
+    "<Esc>": false,
+    "<Shift>": false
+  },
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  "vim.highlightedyank.enable": true,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "sdfghjkl",
+  "vim.foldfix": true
 }
