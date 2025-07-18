@@ -1,0 +1,9 @@
+[
+  {
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus",
+      "cmd-l": "agent::ToggleFocus",
+      "shift shift": "file_finder::Toggle"
+    }
+  },
+]
