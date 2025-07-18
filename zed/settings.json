@@ -14,4 +14,8 @@
   "buffer_font_features": {
     "calt": false
   },
+  "vim_mode": true,
+  "vim": {
+    "use_smartcase_find": true
+  },
 }
