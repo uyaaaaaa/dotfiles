@@ -1,0 +1,10 @@
+{
+  "base_keymap": "VSCode",
+  "auto_update": true,
+  "icon_theme": "VSCode Great Icons Theme",
+  "theme": {
+    "mode": "system",
+    "light": "Fleet Light",
+    "dark": "JetBrains New Dark"
+  },
+}
