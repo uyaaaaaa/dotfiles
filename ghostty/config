@@ -19,7 +19,7 @@ background-opacity = 0.75
 background-blur-radius = 25
 macos-titlebar-style = transparent
 
-font-family = "JetBrainsMono Nerd Font"
+font-family = "JetBrains Mono Nerd Font"
 
 font-feature = -calt
 font-feature = -liege
