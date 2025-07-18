@@ -22,7 +22,7 @@ macos-titlebar-style = transparent
 font-family = "JetBrains Mono Nerd Font"
 
 font-feature = -calt
-font-feature = -liga
+font-feature = -liege
 font-feature = -dlig
 
 cursor-color = #888888
