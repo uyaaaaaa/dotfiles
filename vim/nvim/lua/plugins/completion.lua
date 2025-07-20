@@ -95,7 +95,7 @@ return {
         },
         event = { "BufRead", "BufNewFile" },
         keys = {
-            { "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
+            { "<S-k>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
         },
         opts = {
             ui = {
