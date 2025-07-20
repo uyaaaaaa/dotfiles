@@ -6,4 +6,83 @@
       "shift shift": "file_finder::Toggle"
     }
   },
+  {
+    // @see: https://github.com/zed-industries/zed/blob/main/assets/keymaps/vim.json
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g l": null,
+      "g L": null,
+      "g >": null,
+      "g <": null,
+      "g a": "editor::SelectAllMatches"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-e": "menu::Cancel",
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "ctrl-d": "editor::Delete"
+    }
+  },
+  {
+    "context": "vim_mode != insert",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-n": "workspace::ToggleLeftDock",
+      "space h": "vim::StartOfLineDownward",
+      "space l": "vim::EndOfLine"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && menu",
+    "bindings": {
+      "ctrl-k": "editor::ContextMenuPrevious",
+      "ctrl-j": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-c": "workspace::CopyRelativePath",
+      "cmd-shift-h": "pane::SwapItemLeft",
+      "cmd-shift-l": "pane::SwapItemRight",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "z f": "editor::ToggleFold",
+      "z m": "editor::FoldAll",
+      "z r": "editor::UnfoldAll",
+      // git
+      "g [": "editor::GoToHunk",
+      "g ]": "editor::GoToPreviousHunk",
+      "space g i": "editor::ToggleSelectedDiffHunks",
+      "g s": "git::ToggleStaged"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "cmd-backspace": ["project_panel::Trash", { "skip_prompt": false }],
+      "ctrl-c": "workspace::CopyRelativePath",
+      "shift-h": "project_panel::ToggleHideGitIgnore",
+      "A": "project_panel::NewDirectory",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "l": "project_panel::OpenPermanent",
+      "h": "project_panel::CollapseSelectedEntry"
+    }
+  }
 ]
