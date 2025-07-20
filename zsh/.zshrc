@@ -79,6 +79,7 @@ bindkey "^N" history-beginning-search-forward-end
 # alias -g C='| pbcopy'  # macOS only
 alias la='ls -lAG'
 alias ll='ls -1 --color=auto'
+alias lg='lazygit'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias dots="cd ~/dotfiles"
