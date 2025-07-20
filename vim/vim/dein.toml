@@ -41,3 +41,9 @@ repo = 'editorconfig/editorconfig-vim'
 [[plugins]]
 repo = 'alvan/vim-closetag'
 
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'vim-fall/fall.vim'
+

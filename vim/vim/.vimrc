@@ -118,6 +118,10 @@ nnoremap <silent> <C-k> :move-1-{v:count1}<CR>=l
 " Duplicate row
 nnoremap <silent> <Leader>j yyp
 nnoremap <silent> <Leader>k yyP
+" Find file
+nnoremap <silent> <C-p> :Fall file<CR>
+" Grep
+nnoremap <silent> g/ :Fall rg<CR>
 
 " INSERT MODE
 " Escape insert mode
