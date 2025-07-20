@@ -1,6 +1,33 @@
+[user]
+  name = uyaaaaaa
+  email = xxx@gmail.com
 [core]
-	editor = nvim
+  editor = nvim
+	pager = delta
 [alias]
-    lo = log -n 15 --oneline
-    lp = log -n 15 --pretty=oneline
-    graph = log -n 40 --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
+  lo = log -n 15 --oneline
+  lp = log -n 15 --pretty=oneline
+  graph = log -n 40 --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
+[pager]
+  diff = delta
+  show = delta
+[delta]
+  width = variable
+  true-color = always
+  syntax-theme = monokai extended
+  commit-decoration-style = yellow ol ul
+  file-decoration-style = blue box
+  hunk-header-style = none
+  minus-style = bold red
+  minus-non-emph-style = bold red
+  minus-emph-style = bold red 52
+  minus-empty-line-marker-style = normal
+  zero-style = normal
+  plus-style = bold green
+  plus-non-emph-style = bold green
+  plus-emph-style = bold green 22
+  plus-empty-line-marker-style = normal
+  keep-plus-minus-markers = true
+  navigate = true
+  line-numbers = true
+  wrap = true
