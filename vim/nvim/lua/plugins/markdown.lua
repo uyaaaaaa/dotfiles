@@ -28,6 +28,7 @@ return {
         },
         ft = { "markdown", "mdx" },
         opts = {
+            completions = { blink = { enabled = true } },
             render_modes = { "n", "no", "c", "t", "v", "V", "i" },
             link = {
                 email = ' ',
