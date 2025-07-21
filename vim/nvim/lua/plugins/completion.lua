@@ -16,6 +16,7 @@ return {
                         align_to = "cursor",
                         treesitter = { "lsp" },
                     },
+                    winblend = 5,
                 },
                 documentation = {
                     auto_show = true,
