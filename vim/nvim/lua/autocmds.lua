@@ -34,7 +34,8 @@ autocmd("FileType", {
         "javascriptreact",
         "typescript",
         "typescript.tsx",
-        "typescriptreact"
+        "typescriptreact",
+        "yaml",
     },
     callback = function()
         vim.bo.shiftwidth = 2
