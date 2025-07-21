@@ -14,7 +14,7 @@
 [delta]
   width = variable
   true-color = always
-  syntax-theme = monokai extended
+  syntax-theme = Dracula
   commit-decoration-style = yellow ol ul
   file-decoration-style = blue box
   hunk-header-style = none
