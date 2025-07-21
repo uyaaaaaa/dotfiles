@@ -28,16 +28,9 @@ return {
                 preset = "super-tab",
                 ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
                 ["<C-j>"] = { "select_next", "fallback_to_mappings" },
-                ["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(2) end, "fallback" },
-                ["<C-f>"] = { function(cmp) cmp.scroll_documentation_down(2) end, "fallback" },
+                ["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(2) end },
+                ["<C-f>"] = { function(cmp) cmp.scroll_documentation_down(2) end },
                 ["<Esc>"] = { "hide", "fallback" },
-            },
-            cmdline = {
-                keymap = {
-                    preset = "super-tab",
-                    ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
-                    ["<C-j>"] = { "select_next", "fallback_to_mappings" },
-                },
             },
             sources = {
                 default = { "snippets", "lsp", "path", "buffer" },
