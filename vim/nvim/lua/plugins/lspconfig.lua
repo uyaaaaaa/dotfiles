@@ -20,13 +20,14 @@ return {
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
             "neovim/nvim-lspconfig",
+            "saghen/blink.cmp",
             "jay-babu/mason-null-ls.nvim",
             "nvimtools/none-ls.nvim",
         },
         config = function()
             require("mason").setup()
 
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
 
             require("mason-lspconfig").setup({
                 ensure_installed = lsp.lsp_servers,

@@ -34,9 +34,4 @@ M.diagnostics = {
     "selene",
 }
 
-M.exclude_kind = {
-    "Variable",
-    "Text",
-}
-
 return M
