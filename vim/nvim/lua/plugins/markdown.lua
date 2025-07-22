@@ -45,6 +45,7 @@ return {
                     linkedin = { pattern = "%linkedin%.com", icon = " " },
                 },
             },
+            dash = { width = 80 },
             heading = {
                 sign = false,
                 width = "block",
