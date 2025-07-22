@@ -53,9 +53,7 @@ return {
                 right_pad = 1,
                 icons = {},
             },
-            quote = {
-                repeat_linebreak = true,
-            },
+            quote = { repeat_linebreak = true },
             code = {
                 sign = false,
                 width = "block",
