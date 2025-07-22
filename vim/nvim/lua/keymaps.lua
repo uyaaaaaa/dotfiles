@@ -83,8 +83,8 @@ keymap.set("v", "<", "<gv", opts)
 
 -- COMMAND MODE --
 -- Select command history
-keymap.set("c", "<C-j>", "<PageDown>")
-keymap.set("c", "<C-k>", "<Up>")
+keymap.set("c", "<C-p>", "<Up>")
+keymap.set("c", "<C-n>", "<PageDown>")
 
 -- TERMINAL MODE
 keymap.set("t", "<leader>q", "<C-\\><C-n>", opts)
