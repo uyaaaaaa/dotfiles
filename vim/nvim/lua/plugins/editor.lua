@@ -58,8 +58,8 @@ return {
                     vim.keymap.set(mode, l, r, opts)
                 end
 
-                map("n", "g[", gitsigns.next_hunk)
-                map("n", "g]", gitsigns.prev_hunk)
+                map("n", "[g", gitsigns.next_hunk)
+                map("n", "]g", gitsigns.prev_hunk)
                 map("n", "<leader>gd", function() gitsigns.diffthis(nil, { split = "aboveleft" }) end)
                 map("n", "gs", gitsigns.stage_hunk)
                 map("v", "gs", function() gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end)
