@@ -88,6 +88,8 @@ return {
                         [vim.diagnostic.severity.HINT] = icons.hint,
                     },
                 },
+                -- virtual_lines = true,
+                update_in_insert = true,
                 virtual_text = {
                     format = function(diagnostic)
                         local severity = { "ERROR", "WARN", "INFO", "HINT" }
