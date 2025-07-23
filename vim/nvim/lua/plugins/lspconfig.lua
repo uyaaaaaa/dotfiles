@@ -88,12 +88,16 @@ return {
                         [vim.diagnostic.severity.HINT] = icons.hint,
                     },
                 },
-                virtual_text = true,
+                virtual_text = {
+                    format = function(diagnostic)
+                        local severity = { "ERROR", "WARN", "INFO", "HINT" }
+                        return string.format("%s: %s", severity[diagnostic.severity], diagnostic.message)
+                    end,
+                },
             })
 
             -- none-ls setup
             null_ls.setup({
-                diagnostics_format = "[#{m}] #{s} (#{c})",
                 sources = vim.tbl_flatten({ formatting_sources, diagnostics_sources }),
             })
         end,
