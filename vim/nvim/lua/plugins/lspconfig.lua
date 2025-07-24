@@ -98,6 +98,37 @@ return {
                 },
             })
 
+            local original_publish_diagnostics = vim.lsp.handlers["textDocument/publishDiagnostics"]
+
+            vim.lsp.handlers["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+                if not result or not result.diagnostics then
+                    return original_publish_diagnostics(err, result, ctx, config)
+                end
+
+                local filtered_diagnostics = {}
+
+                for _, d in ipairs(result.diagnostics) do
+                    local should_ignore = false
+
+                    for _, pattern in ipairs(lsp.ignored_messages) do
+                        if string.find(d.message, pattern, 1, true) then
+                            should_ignore = true
+                            break
+                        end
+                    end
+
+                    if not should_ignore then
+                        -- Define display diagnostic
+                        table.insert(filtered_diagnostics, d)
+                    end
+                end
+
+                -- Override diagnostics by filtered diagnostics
+                result.diagnostics = filtered_diagnostics
+
+                return original_publish_diagnostics(err, result, ctx, config)
+            end
+
             -- none-ls setup
             null_ls.setup({
                 sources = vim.tbl_flatten({ formatting_sources, diagnostics_sources }),

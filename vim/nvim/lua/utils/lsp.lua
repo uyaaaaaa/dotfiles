@@ -34,4 +34,10 @@ M.diagnostics = {
     "selene",
 }
 
+M.ignored_messages = {
+    -- lua
+    "Undefined global `vim`",
+    -- php
+}
+
 return M
