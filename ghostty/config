@@ -20,6 +20,8 @@ background-blur-radius = 25
 macos-titlebar-style = transparent
 
 font-family = "JetBrainsMono Nerd Font"
+font-family = "Annotation Mono"
+font-family = "HackGen Console"
 
 font-feature = -calt
 font-feature = -liege

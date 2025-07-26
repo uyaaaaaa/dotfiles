@@ -2,9 +2,7 @@ return {
     -- blink.cmp
     {
         "saghen/blink.cmp",
-        dependencies = {
-            "L3MON4D3/LuaSnip"
-        },
+        dependencies = { "L3MON4D3/LuaSnip" },
         version = "*",
         event = { "InsertEnter", "CmdLineEnter" },
         opts = {
