@@ -1,27 +1,4 @@
 return {
-    -- ayu
-    {
-        "Shatur/neovim-ayu",
-        lazy = true,
-        opts = {
-            -- transparency
-            overrides = {
-                Normal = { bg = "None" },
-                ColorColumn = { bg = "None" },
-                SignColumn = { bg = "None" },
-                Folded = { bg = "None" },
-                FoldColumn = { bg = "None" },
-                CursorLine = { bg = "None" },
-                CursorColumn = { bg = "None" },
-                WhichKeyFloat = { bg = "None" },
-                VertSplit = { bg = "None" },
-            },
-        },
-        config = function(_, opts)
-            require("ayu").setup(opts)
-        end,
-    },
-
     -- iceclimber | coffeecat | darkforest | roseprime | daylight
     {
         "cdmill/neomodern.nvim",
