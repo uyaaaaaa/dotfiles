@@ -97,6 +97,7 @@ return {
                     input = {
                         keys = {
                             ["<Esc>"] = { "close", mode = { "n", "i" } },
+                            ["<C-e>"] = { "close", mode = { "n", "i" } },
                             ["<C-f>"] = { "preview_scroll_down", mode = { "i", "n" } },
                             ["<C-b>"] = { "preview_scroll_up", mode = { "i", "n" } },
                             ["<C-h>"] = { "preview_scroll_left", mode = { "i", "n" } },
