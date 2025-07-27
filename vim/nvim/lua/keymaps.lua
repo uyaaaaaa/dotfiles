@@ -58,6 +58,8 @@ keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 -- Increment / Decrement
 keymap.set("n", "+", "<C-a>", opts)
 keymap.set("n", "-", "<C-x>", opts)
+-- Toggle csv format
+keymap.set("n", "<C-CR>", function() require("utils.fn").ToggleCsvFormat() end, opts)
 
 -- INSERT MODE --
 -- Delete character
