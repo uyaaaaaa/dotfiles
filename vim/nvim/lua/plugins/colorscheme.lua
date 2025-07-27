@@ -1,78 +1,108 @@
 return {
-    -- ayu
-    {
-        "Shatur/neovim-ayu",
-        lazy = true,
-        opts = {
-            -- transparency
-            overrides = {
-                Normal = { bg = "None" },
-                ColorColumn = { bg = "None" },
-                SignColumn = { bg = "None" },
-                Folded = { bg = "None" },
-                FoldColumn = { bg = "None" },
-                CursorLine = { bg = "None" },
-                CursorColumn = { bg = "None" },
-                WhichKeyFloat = { bg = "None" },
-                VertSplit = { bg = "None" },
-            },
-        },
-        config = function(_, opts)
-            require("ayu").setup(opts)
-        end,
-    },
-
     -- iceclimber | coffeecat | darkforest | roseprime | daylight
     {
         "cdmill/neomodern.nvim",
         lazy = true,
-        opts = {
-            theme = "iceclimber",
-            transparent = true,
-        },
+        config = function ()
+           require("neomodern").setup({
+                theme = "iceclimber",
+                transparent = true,
+            })
+            -- vim.cmd.colorscheme("iceclimber")
+        end,
     },
 
     -- night-owl
     {
         "oxfist/night-owl.nvim",
         lazy = true,
-        opts = {
-            itaric = false,
-            transparent_background = true,
-        },
+        config = function ()
+           require("night-owl").setup({
+                itaric = false,
+                transparent_background = true,
+            })
+            -- vim.cmd.colorscheme("night-owl")
+        end,
     },
 
     -- nightfox
     {
         -- nightfox | nordfox | carbonfox | duskfox
         "EdenEast/nightfox.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
-        opts = {
-            options = {
-                transparent = true,
-                styles = {
-                    comments = "italic",
-                    conditionals = "italic",
-                    functions = "italic",
-                    keywords = "italic",
+        config = function ()
+           require("nightfox").setup({
+                options = {
+                    transparent = true,
+                    styles = {
+                        comments = "italic",
+                        conditionals = "italic",
+                        functions = "italic",
+                        keywords = "italic",
+                    },
                 },
-            },
-        },
-        config = function(_, opts)
-            require("nightfox").setup(opts)
-            vim.cmd.colorscheme("duskfox")
+            })
+            -- vim.cmd.colorscheme("duskfox")
         end,
     },
 
     -- onedark
     {
-        -- dark | darker | cool | deep | warm | warmer
         "navarasu/onedark.nvim",
         lazy = true,
-        opts = {
-            style = "darker",
-            transparent = true,
-        },
+        config = function ()
+            require("onedark").setup({
+                -- dark | darker | cool | deep | warm | warmer
+                style = "darker",
+                transparent = true,
+            })
+            -- vim.cmd.colorscheme("onedark")
+        end,
+    },
+
+    -- cyberdream
+    {
+        "scottmckendry/cyberdream.nvim",
+        lazy = true,
+        priority = 1000,
+        config = function ()
+            require("cyberdream").setup({
+                transparent = true,
+                italic_comments = true,
+            })
+            -- vim.cmd.colorscheme("cyberdream")
+        end,
+    },
+
+    -- nordic
+    {
+        "AlexvZyl/nordic.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("nordic").setup({
+                transparent = {
+                    bg = true,
+                    float = true,
+                },
+                bright_border = true,
+                cursorline = {
+                    bold = true,
+                },
+            })
+            vim.cmd.colorscheme("nordic")
+        end,
+    },
+
+    -- oldworld
+    {
+        "dgox16/oldworld.nvim",
+        lazy = true,
+        priority = 1000,
+        config = function ()
+            require("oldworld").setup()  -- Set options if needed.
+            -- vim.cmd.colorscheme("oldworld")
+        end,
     },
 }
