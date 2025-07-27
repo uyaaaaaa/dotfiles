@@ -406,6 +406,21 @@ return {
                         text_align = "left",
                     },
                 },
+                groups = {
+                    options = {
+                        toggle_hidden_on_enter = true,
+                    },
+                    items = {
+                        {
+                            name = "Tests",
+                            auto_close = true,
+                            matcher = function()
+                                local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+                                return filename:match('%Test')
+                            end,
+                        },
+                    },
+                },
             },
         },
     },
@@ -445,6 +460,7 @@ return {
                         {
                             function() return git_repo end,
                             icon = icons.repository,
+                            separator = " ",
                             color = function() return { fg = Snacks.util.color("Statement") } end,
                             padding = { left = 1, right = 0 },
                         },
