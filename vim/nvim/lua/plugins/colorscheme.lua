@@ -49,11 +49,11 @@ return {
 
     -- onedark
     {
-        -- dark | darker | cool | deep | warm | warmer
         "navarasu/onedark.nvim",
         lazy = false,
         config = function ()
             require("onedark").setup({
+                -- dark | darker | cool | deep | warm | warmer
                 style = "darker",
                 transparent = true,
             })
@@ -101,8 +101,7 @@ return {
         lazy = true,
         priority = 1000,
         config = function ()
-            require("oldworld").setup({
-            })
+            require("oldworld").setup()  -- Set options if needed.
             -- vim.cmd.colorscheme("oldworld")
         end,
     },
