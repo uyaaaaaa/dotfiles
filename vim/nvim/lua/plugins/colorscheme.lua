@@ -88,7 +88,7 @@ return {
                 },
                 bright_border = true,
                 cursorline = {
-                    bold = true,
+                    bold = false,
                 },
             })
             vim.cmd.colorscheme("nordic")
