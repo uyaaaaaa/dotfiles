@@ -53,13 +53,13 @@ keymap.set("n", "#", function()
     vim.api.nvim_feedkeys(":%s/" .. vim.fn.expand("<cword>") .. "//g", "n", false)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left><Left>", true, true, true), "n", false)
 end, opts)
--- Toggle virtual text
-keymap.set("n", "<leader>td", function() require("utils.fn").ToggleVirtualText() end, { desc = "Toggle Diagnostic Virtual Text" })
 -- Escape hlslens
 keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 -- Increment / Decrement
 keymap.set("n", "+", "<C-a>", opts)
 keymap.set("n", "-", "<C-x>", opts)
+-- Toggle csv format
+keymap.set("n", "<C-CR>", function() require("utils.fn").ToggleCsvFormat() end, opts)
 
 -- INSERT MODE --
 -- Delete character
