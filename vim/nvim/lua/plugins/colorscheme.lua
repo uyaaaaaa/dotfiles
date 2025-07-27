@@ -64,6 +64,7 @@ return {
     -- cyberdream
     {
         "scottmckendry/cyberdream.nvim",
+        lazy = true,
         priority = 1000,
         config = function ()
             require("cyberdream").setup({
@@ -92,6 +93,17 @@ return {
             })
             -- vim.cmd.colorscheme("nordic")
         end,
+    },
+
+    -- oldworld
+    {
+        "dgox16/oldworld.nvim",
         lazy = true,
+        priority = 1000,
+        config = function ()
+            require("oldworld").setup({
+            })
+            -- vim.cmd.colorscheme("oldworld")
+        end,
     },
 }
