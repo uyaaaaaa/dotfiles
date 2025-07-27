@@ -50,14 +50,14 @@ return {
     -- onedark
     {
         "navarasu/onedark.nvim",
-        lazy = false,
+        lazy = true,
         config = function ()
             require("onedark").setup({
                 -- dark | darker | cool | deep | warm | warmer
                 style = "darker",
                 transparent = true,
             })
-            vim.cmd.colorscheme("onedark")
+            -- vim.cmd.colorscheme("onedark")
         end,
     },
 
@@ -78,7 +78,7 @@ return {
     -- nordic
     {
         "AlexvZyl/nordic.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("nordic").setup({
@@ -91,7 +91,7 @@ return {
                     bold = true,
                 },
             })
-            -- vim.cmd.colorscheme("nordic")
+            vim.cmd.colorscheme("nordic")
         end,
     },
 
