@@ -2,8 +2,8 @@
 vim.bo.commentstring = "// %s"
 
 -- Set blade icon
-require('nvim-web-devicons').set_icon({
-    ['blade.php'] = {
+require("nvim-web-devicons").set_icon({
+    ["blade.php"] = {
         icon = require("utils.icons").blade,
         color = "#f9322c",
         cterm_color = "Red",
@@ -25,6 +25,29 @@ vim.filetype.add({
     pattern = {
         [".*%.blade.%.php"] = "blade",
     },
+})
+
+-- completion
+require("blink.cmp").setup({
+    sources = {
+        providers = {
+            -- ["blade-nav"] = {
+            --     module = "blade-nav.blink",
+            --     opts = {
+            --         cmp_close_tag = true,
+            --         close_tag_on_complete = true,
+            --     },
+            -- },
+            laravel = {
+                name = "laravel",
+                module = "laravel.blink_source",
+            },
+        },
+        per_filetype = {
+            -- php = { "snippets", "laravel", "lsp", "blade-nav", "path", "buffer" },
+            php = { "snippets", "laravel", "lsp", "path", "buffer" },
+        },
+    }
 })
 
 -- intelephense
