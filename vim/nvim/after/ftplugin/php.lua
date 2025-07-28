@@ -2,8 +2,8 @@
 vim.bo.commentstring = "// %s"
 
 -- Set blade icon
-require('nvim-web-devicons').set_icon({
-    ['blade.php'] = {
+require("nvim-web-devicons").set_icon({
+    ["blade.php"] = {
         icon = require("utils.icons").blade,
         color = "#f9322c",
         cterm_color = "Red",
