@@ -11,4 +11,14 @@ return {
     --         close_tag_on_complete = true,
     --     },
     -- },
+
+    -- laravel
+    {
+        "adibhanna/laravel.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+        },
+        ft = { "blade", "php" },
+    },
 }
