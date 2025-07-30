@@ -66,6 +66,7 @@ return {
         event = { "BufRead", "BufNewFile" },
         keys = {
             { "<S-k>", "<cmd>Lspsaga hover_doc<CR>", mode = "n", desc = "Hover documentation" },
+            { "<S-r>", "<cmd>Lspsaga rename<CR>", mode = "n", desc = "Rename definition" },
         },
         opts = {
             ui = {
@@ -74,6 +75,12 @@ return {
             hover = {
                 max_width = 0.7,
                 max_height = 0.5,
+            },
+            rename = {
+                auto_save = true,
+                keys = {
+                    quit = {"<C-e>", "<ESC>"},
+                },
             },
         },
     },
