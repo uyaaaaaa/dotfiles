@@ -1,14 +1,16 @@
 return {
-    -- iceclimber | coffeecat | darkforest | roseprime | daylight
+    -- iceclimber | gyokuro | hojicha | roseprime
     {
         "cdmill/neomodern.nvim",
         lazy = true,
-        config = function ()
-           require("neomodern").setup({
-                theme = "iceclimber",
+        config = function()
+            local theme = "iceclimber"
+
+            require("neomodern").setup({
+                theme = theme,
                 transparent = true,
             })
-            -- vim.cmd.colorscheme("iceclimber")
+            -- vim.cmd.colorscheme(theme)
         end,
     },
 
@@ -16,8 +18,8 @@ return {
     {
         "oxfist/night-owl.nvim",
         lazy = true,
-        config = function ()
-           require("night-owl").setup({
+        config = function()
+            require("night-owl").setup({
                 itaric = false,
                 transparent_background = true,
             })
@@ -31,8 +33,8 @@ return {
         "EdenEast/nightfox.nvim",
         lazy = true,
         priority = 1000,
-        config = function ()
-           require("nightfox").setup({
+        config = function()
+            require("nightfox").setup({
                 options = {
                     transparent = true,
                     styles = {
@@ -51,7 +53,7 @@ return {
     {
         "navarasu/onedark.nvim",
         lazy = true,
-        config = function ()
+        config = function()
             require("onedark").setup({
                 -- dark | darker | cool | deep | warm | warmer
                 style = "darker",
@@ -66,7 +68,7 @@ return {
         "scottmckendry/cyberdream.nvim",
         lazy = true,
         priority = 1000,
-        config = function ()
+        config = function()
             require("cyberdream").setup({
                 transparent = true,
                 italic_comments = true,
@@ -101,8 +103,8 @@ return {
         "dgox16/oldworld.nvim",
         lazy = true,
         priority = 1000,
-        config = function ()
-            require("oldworld").setup()  -- Set options if needed.
+        config = function()
+            require("oldworld").setup() -- Set options if needed.
             -- vim.cmd.colorscheme("oldworld")
         end,
     },
