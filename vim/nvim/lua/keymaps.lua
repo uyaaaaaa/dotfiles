@@ -9,6 +9,8 @@ vim.g.maplocalleader = " "
 keymap.set("i", "jk", "<Esc>:w<CR>", opts)
 
 -- NORMAL MODE --
+keymap.set("n", "j", "gj", opts)
+keymap.set("n", "k", "gk", opts)
 -- execute command
 keymap.set("n", "<leader><CR>", ":.!sh<CR>", opts)
 -- Split
