@@ -4,6 +4,7 @@
 [core]
   editor = nvim
   pager = delta
+  excludesfile = $XDG_CONFIG_HOME/git/ignore
 [alias]
   lo = log -n 15 --oneline
   lp = log -n 15 --pretty=oneline
