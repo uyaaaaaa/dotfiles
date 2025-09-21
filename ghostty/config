@@ -1,29 +1,27 @@
-theme = iceberg-dark
 theme = xcodedarkhc
+theme = iceberg-dark
 theme = Rapture
 
-split-divider-color = #808080
-
-macos-titlebar-proxy-icon = hidden
-window-height = 40
-window-width = 120
 window-padding-x = 10
 window-padding-y = 5
 window-padding-balance = true
 window-theme = ghostty
+
 resize-overlay = never
 cursor-style = block
 
+macos-titlebar-proxy-icon = hidden
 macos-icon-frame = beige
+macos-titlebar-style = transparent
+macos-non-native-fullscreen = visible-menu
+window-width = 280
+window-height = 80
 
 background-opacity = 0.80
 background-blur-radius = 20
-macos-titlebar-style = transparent
 
 font-family = "JetBrainsMono Nerd Font"
 
-font-feature = -calt
-font-feature = -liege
-font-feature = -dlig
-
 cursor-color = #888888
+split-divider-color = #808080
+
