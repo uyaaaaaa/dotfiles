@@ -24,6 +24,5 @@ hide_when_typing = false
 bindings = [
     { key = "C", mods = "Control", action = "Copy" },
     { key = "V", mods = "Control", action = "Paste" },
-    { key = "D", mods = "Control", action = "CreateNewWindow" },
-    { key = "W", mods = "Control", action = "Quit" },
+    { key = "W", mods = "SUPER", action = "Quit" },
 ]
