@@ -1,0 +1,6 @@
+modmap:
+  - name: Global
+    remap:
+      CapsLock: LeftCtrl
+      LeftAlt: LeftCtrl
+      RightShift: Grave
