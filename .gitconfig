@@ -3,7 +3,7 @@
   email = xxx@gmail.com
 [core]
   editor = nvim
-	pager = delta
+  pager = delta
 [alias]
   lo = log -n 15 --oneline
   lp = log -n 15 --pretty=oneline

@@ -66,6 +66,7 @@ setopt magic_equal_subst                               # Enable completion after
 setopt complete_in_word                                # Complete at cursor position, even in the middle of a word
 setopt print_eight_bit                                 # Enable display of Japanese filenames
 setopt no_beep
+setopt auto_cd                                         # Enable change director without `cd`
 
 # Filter commands from history after partially typing
 autoload -Uz history-search-end
@@ -82,7 +83,9 @@ alias ll='ls -1 --color=auto'
 alias lg='lazygit'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias dots="cd ~/dotfiles"
+
+hash -d dots=~/dotfiles
+hash -d c=~/.config
 
 ################ fzf #################
 
