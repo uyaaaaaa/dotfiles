@@ -1,3 +1,5 @@
+keypress_delay_ms: 20
+
 modmap:
   - name: Global
     remap:
@@ -7,4 +9,23 @@ modmap:
         alone: Space
         free_hold: true
       RightShift: Grave
+
+  - name: Not Mistel
+    device:
+      not: "MD600 Alpha"
+    remap:
+      LeftAlt: LeftCtrl
+
+  - name: Mistel Specific
+    device:
+      only: "MD600 Alpha"
+    remap:
+      LeftAlt:
+        held: LeftCtrl
+        alone: Muhenkan
+        free_hold: true
+      RightAlt:
+        held: RightCtrl
+        alone: Henkan
+        free_hold: true
 
