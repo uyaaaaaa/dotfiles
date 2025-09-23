@@ -1,0 +1,10 @@
+modmap:
+  - name: Global
+    remap:
+      CapsLock: LeftCtrl
+      Space:  # Space as Shift
+        held: Shift_L
+        alone: Space
+        free_hold: true
+      RightShift: Grave
+

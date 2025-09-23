@@ -2,11 +2,9 @@
 Description=xremap service
 
 [Service]
+ExecStart=/usr/bin/xremap /home/uedayasuto/.config/xremap/config.yml
 # restart periodically
 Restart=always
-ExecStart=/usr/bin/xremap /home/uedayasuto/.config/xremap/config.yml
-User=root
-Group=root
 
 [Install]
 WantedBy=default.target
