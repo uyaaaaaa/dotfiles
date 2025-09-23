@@ -8,6 +8,7 @@ window-padding-balance = true
 window-theme = ghostty
 
 resize-overlay = never
+shell-integration-features = no-cursor
 cursor-style = block
 
 macos-titlebar-proxy-icon = hidden
