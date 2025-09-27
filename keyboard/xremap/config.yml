@@ -30,6 +30,15 @@ modmap:
         free_hold: true
 
 keymap:
+  - name: Global
+    remap:
+      Super-Left: C-Left
+      Super-Right: C-Right
+      C-Left: Home
+      C-Right: End
+      C-Up: C-Home
+      C-Down: C-End
+
   - name: Mistel Specific
     device:
       only: "MD600 Alpha"
