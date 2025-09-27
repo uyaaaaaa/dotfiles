@@ -29,3 +29,12 @@ modmap:
         alone: Henkan
         free_hold: true
 
+keymap:
+  - name: Mistel Specific
+    device:
+      only: "MD600 Alpha"
+    remap:
+      Control_R-h: left
+      Control_R-l: right
+      Control_R-k: up
+      Control_R-j: down
