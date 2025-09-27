@@ -84,8 +84,9 @@ alias lg='lazygit'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
-hash -d dots=$HOME/dotfiles
-hash -d c=$HOME/.config
+hash -d dots=$HOME/dotfiles/
+hash -d c=$HOME/.config/
+hash -d w=$HOME/work/
 
 ################ fzf #################
 
