@@ -32,12 +32,12 @@ modmap:
 keymap:
   - name: Global
     remap:
-      Super-Left: C-Left
-      Super-Right: C-Right
       C-Left: Home
       C-Right: End
       C-Up: C-Home
       C-Down: C-End
+
+      Super-Backspace: C-Backspace
 
   - name: Mistel Specific
     device:
