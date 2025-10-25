@@ -61,7 +61,6 @@
       "z f": "editor::ToggleFold",
       "z m": "editor::FoldAll",
       "z r": "editor::UnfoldAll",
-      // git
       "g [": "editor::GoToHunk",
       "g ]": "editor::GoToPreviousHunk",
       "space g i": "editor::ToggleSelectedDiffHunks",
@@ -83,6 +82,18 @@
       "d": "project_panel::Delete",
       "l": "project_panel::OpenPermanent",
       "h": "project_panel::CollapseSelectedEntry"
+    }
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == visual) || vim_mode == operator)",
+    "bindings": {
+      "ctrl-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == visual) || vim_mode == operator)",
+    "bindings": {
+      "ctrl-j": "editor::MoveLineDown"
     }
   }
 ]
