@@ -57,6 +57,7 @@ return {
             code = {
                 sign = false,
                 width = "block",
+                border = "thick",
                 left_pad = 2,
                 right_pad = 2,
                 min_width = 50,

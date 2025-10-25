@@ -10,6 +10,7 @@ autocmd("TextYankPost", {
         (vim.hl or vim.highlight).on_yank()
     end,
 })
+
 -- Open with cursor focusing on the line at last time
 autocmd("BufRead", {
     group = augroup("last_row", { clear = true }),
@@ -19,6 +20,12 @@ autocmd("BufRead", {
             vim.cmd('normal g`"')
         end
     end,
+})
+
+-- Apply Changes made outside of neovim When focused.
+autocmd({ "WinEnter", "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  command = "checktime",
 })
 
 -- Open Neotree at first

@@ -162,6 +162,8 @@ return {
                         renamed = require("utils.icons").renamed,
                         untracked = require("utils.icons").added,
                         ignored = require("utils.icons").ignored,
+                        unstaged = "",
+                        staged = "",
                     },
                 },
             },
