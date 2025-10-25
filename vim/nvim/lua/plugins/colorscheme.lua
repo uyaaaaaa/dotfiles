@@ -80,7 +80,7 @@ return {
     -- nordic
     {
         "AlexvZyl/nordic.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("nordic").setup({
@@ -94,18 +94,20 @@ return {
                     theme = "light",
                 },
             })
-            vim.cmd.colorscheme("nordic")
+            -- vim.cmd.colorscheme("nordic")
         end,
     },
 
     -- oldworld
     {
         "dgox16/oldworld.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
-            require("oldworld").setup() -- Set options if needed.
-            -- vim.cmd.colorscheme("oldworld")
+            require("oldworld").setup({
+                variant = "cooler",  -- default, oled, cooler
+            })
+            vim.cmd.colorscheme("oldworld")
         end,
     },
 }

@@ -23,7 +23,6 @@ M.formatters = {
     "djlint",
     "black",
     "isort",
-    "stylua",
     "shfmt",
     "prettier",
     "rubocop",
