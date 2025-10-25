@@ -23,9 +23,3 @@ normal = { family = "JetBrainsMono Nerd Font"}
 [mouse]
 hide_when_typing = false
 
-[keyboard]
-bindings = [
-    { key = "C", mods = "Control", action = "Copy" },
-    { key = "V", mods = "Control", action = "Paste" },
-    { key = "W", mods = "SUPER", action = "Quit" },
-]
