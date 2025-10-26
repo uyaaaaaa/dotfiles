@@ -24,12 +24,26 @@ return {
             },
             snippets = { preset = "luasnip" },
             keymap = {
-                preset = "super-tab",
+                preset = "enter",
                 ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
                 ["<C-j>"] = { "select_next", "fallback_to_mappings" },
                 ["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(2) end },
                 ["<C-f>"] = { function(cmp) cmp.scroll_documentation_down(2) end },
                 ["<Esc>"] = { "hide", "fallback" },
+                ["<Tab>"] = {
+                    function(cmp)
+                        if cmp.snippet_active() then
+                            require("copilot.suggestion").clear_preview()
+                            return cmp.accept()
+                        end
+                        if (require("copilot.suggestion").is_visible()) then
+                            return require("copilot.suggestion").accept()
+                        end
+                        return cmp.select_and_accept()
+                    end,
+                    "snippet_forward",
+                    "fallback",
+                }
             },
             sources = {
                 default = { "snippets", "lsp", "path", "buffer" },

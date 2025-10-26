@@ -25,6 +25,7 @@ require("lazy").setup({
         { import = "plugins.lspconfig" },
         { import = "plugins.picker" },
         { import = "plugins.languages" },
+        { import = "plugins.agent" },
     },
     diff = {
         cmd = "terminal_git",
