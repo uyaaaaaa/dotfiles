@@ -15,6 +15,10 @@ return {
                         treesitter = { "lsp" },
                     },
                     winblend = 5,
+                    auto_show = function(ctx)
+                        -- Disable in cmdline for SEARCH mode('/' or '?')
+                        return ctx.mode ~= "cmdline" or not vim.tbl_contains({ '/', '?' }, vim.fn.getcmdtype())
+                    end,
                 },
                 documentation = {
                     auto_show = true,
@@ -45,12 +49,24 @@ return {
                     "fallback",
                 }
             },
+            cmdline = {
+                keymap = {
+                    ["<CR>"] = { "accept_and_enter", "fallback" },
+                },
+            },
             sources = {
                 default = { "snippets", "lsp", "path", "buffer" },
                 per_filetype = {
                     markdown = { "snippets", "lsp", "path" },
                     mdx = { "snippets", "lsp", "path" },
                 },
+                min_keyword_length = function(ctx)
+                    -- Enable completion over 3 characters for command line mode
+                    if ctx.mode == "cmdline" and ctx.line:find("^%l+$") ~= nil then
+                        return 3
+                    end
+                    return 0
+                end,
             },
         },
         opts_extend = { "sources.default" },
