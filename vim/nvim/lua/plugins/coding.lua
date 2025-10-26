@@ -64,6 +64,7 @@ return {
         end,
     },
 
+    -- live command
     {
         "smjonas/live-command.nvim",
         event = { "CmdlineEnter" },
@@ -76,5 +77,12 @@ return {
             require("live-command").setup(opts)
             vim.cmd("cnoreabbrev norm Norm")
         end,
+    },
+
+    -- todo comments
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        event = "VeryLazy",
     },
 }

@@ -4,42 +4,12 @@ return {
         "folke/snacks.nvim",
         lazy = true,
         keys = {
-            {
-                "g/",
-                mode = "n",
-                function()
-                    Snacks.picker.grep({
-                        finder = "grep",
-                        format = "file",
-                    })
-                end,
-                desc = "Grep"
-            },
-            {
-                "g/",
-                mode = "x",
-                function()
-                    Snacks.picker.grep_word({
-                        finder = "grep",
-                        format = "file",
-                        search = function(picker)
-                            return picker:word()
-                        end,
-                    })
-                end,
-                desc = "Grep"
-            },
-            {
-                "<C-p>",
-                function()
-                    Snacks.picker.files({
-                        finder = "files",
-                        format = "file",
-                        layout = "vscode",
-                    })
-                end,
-                desc = "Find Files",
-            },
+            { "g/", mode = "n", function() Snacks.picker.grep({ finder = "grep", format = "file", }) end, desc = "Grep" },
+            { "g/", mode = "x", function() Snacks.picker.grep_word({ finder = "grep", format = "file", search = function(picker) return picker:word() end, }) end, desc = "Grep" },
+            { "<C-p>", function() Snacks.picker.files({ finder = "files", format = "file", layout = "vscode", }) end, desc = "Find Files", },
+            { "<leader>t", mode = "n", function() Snacks.picker.todo_comments({ keywords = { "TODO" } }) end,         desc = "Search Todo Comments" },
+            { "<leader>f", mode = "n", function() Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } }) end, desc = "Search Fix Comments" },
+            { "<leader>n", mode = "n", function() Snacks.picker.todo_comments({ keywords = { "NOTE" } }) end,         desc = "Search Note Comments" },
         },
         opts = {
             picker = {
