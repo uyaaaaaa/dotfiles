@@ -62,6 +62,9 @@ keymap.set("n", "+", "<C-a>", opts)
 keymap.set("n", "-", "<C-x>", opts)
 -- Toggle csv format
 keymap.set("n", "<C-CR>", function() require("utils.fn").ToggleCsvFormat() end, opts)
+-- Adjust indent when pasting
+keymap.set("n", "p", "]p", opts)
+keymap.set("n", "P", "]P", opts)
 
 -- INSERT MODE --
 -- Delete character
