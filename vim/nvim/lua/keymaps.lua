@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Esc
-keymap.set("i", "jk", "<Esc>:w<CR>", opts)
+keymap.set("i", "jk", "<Esc>", opts)
 
 -- NORMAL MODE --
 keymap.set("n", "j", "gj", opts)

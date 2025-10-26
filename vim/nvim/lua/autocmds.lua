@@ -23,6 +23,13 @@ autocmd("BufRead", {
 })
 
 -- Apply Changes made outside of neovim When focused.
+autocmd({ "InsertLeave", "TextChanged" }, {
+    desc = "Save on Change",
+    pattern = "*",
+    command = ":w",
+})
+
+-- Apply Changes made outside of neovim When focused.
 autocmd({ "WinEnter", "FocusGained", "BufEnter" }, {
   pattern = "*",
   command = "checktime",
