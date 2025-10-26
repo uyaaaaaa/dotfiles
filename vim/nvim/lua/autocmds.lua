@@ -22,11 +22,18 @@ autocmd("BufRead", {
     end,
 })
 
--- Apply Changes made outside of neovim When focused.
+-- Auto Save
 autocmd({ "InsertLeave", "TextChanged" }, {
     desc = "Save on Change",
     pattern = "*",
-    command = ":w",
+    callback = function()
+        if vim.bo[vim.api.nvim_get_current_buf()].buftype ~= '' then
+            return
+        end
+
+        vim.notify(vim.fn.expand("%:t"), "info", { title = "Auto Save" })  -- notify filename
+        vim.cmd("silent! write")
+    end,
 })
 
 -- Apply Changes made outside of neovim When focused.

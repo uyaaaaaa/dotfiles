@@ -1,6 +1,17 @@
 ---@class lazyvim.util.noice
 local M = {
-    routes = {},
+    routes = {
+        {
+            view = "mini",
+            filter = {
+                event = "notify",
+                kind = "info",
+                cond = function(message)
+                    return message.opts and message.opts.title and message.opts.title:find("Auto Save")
+                end,
+            },
+        },
+    },
 }
 
 local filters = {
