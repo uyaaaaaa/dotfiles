@@ -32,14 +32,13 @@ return {
             filetypes = {
                 markdown = false,
                 help = false,
-                sh = function ()
-                    if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.*') then
-                        return false
-                    end
-
-                    return true
-                end,
             },
+            should_attach = function(_, bufname)
+                if string.match(bufname, "env") then
+                    return false
+                end
+                return true
+            end
         },
     },
 }
