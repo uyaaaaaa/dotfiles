@@ -26,7 +26,7 @@ return {
             --     keymap = {
             --         accept_and_goto = "<C-CR>",
             --         accept = false,
-            --         dismiss = "<Esc>",
+            --         dismiss = "<C-e>",
             --     },
             -- },
             filetypes = {
