@@ -66,6 +66,11 @@ keymap.set("n", "<C-CR>", function() require("utils.fn").ToggleCsvFormat() end, 
 -- INSERT MODE --
 -- Delete character
 keymap.set("i", "<C-d>", "<Del>", opts)
+-- Emacs like keybindings
+keymap.set("i", "<C-f>", "<Right>", opts)
+keymap.set("i", "<C-b>", "<Left>", opts)
+keymap.set("i", "<C-p>", "<Up>", opts)
+keymap.set("i", "<C-n>", "<Down>", opts)
 
 -- VISUAL MODE --
 -- Move selected line

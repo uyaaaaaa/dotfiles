@@ -66,6 +66,8 @@ return {
                 win = {
                     input = {
                         keys = {
+                            ["<C-f>"] = false,
+                            ["<C-b>"] = false,
                             ["<Esc>"] = { "close", mode = { "n", "i" } },
                             ["<C-e>"] = { "close", mode = { "n", "i" } },
                             ["<S-j>"] = { "preview_scroll_down", mode = { "i", "n" } },
