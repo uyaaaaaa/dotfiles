@@ -86,4 +86,13 @@ return {
         event = "VeryLazy",
         opts = {},
     },
+
+    -- numb.nvim
+    {
+        "nacro90/numb.nvim",
+        event = "CmdlineEnter",
+        opts = {
+            number_only = true,
+        },
+    },
 }
