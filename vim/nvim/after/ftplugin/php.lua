@@ -31,20 +31,12 @@ vim.filetype.add({
 require("blink.cmp").setup({
     sources = {
         providers = {
-            -- ["blade-nav"] = {
-            --     module = "blade-nav.blink",
-            --     opts = {
-            --         cmp_close_tag = true,
-            --         close_tag_on_complete = true,
-            --     },
-            -- },
             laravel = {
                 name = "laravel",
                 module = "laravel.blink_source",
             },
         },
         per_filetype = {
-            -- php = { "snippets", "laravel", "lsp", "blade-nav", "path", "buffer" },
             php = { "snippets", "laravel", "lsp", "path", "buffer" },
         },
     }
