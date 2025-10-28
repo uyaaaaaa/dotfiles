@@ -115,7 +115,7 @@ return {
                     ["h"] = "close_node",
                     ["r"] = "rename",
                     ["b"] = "rename_basename",
-                    ["p"] = { "toggle_preview", config = { use_float = false, use_image_nvim = false } },
+                    ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = false } },
                     ["<C-j>"] = { "scroll_preview", config = { direction = -10 } },
                     ["<C-k>"] = { "scroll_preview", config = { direction = 10 } },
                 },
