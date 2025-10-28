@@ -17,7 +17,7 @@ return {
                     accept_line = "<C-l>",
                     next = "<C-]>",
                     prev = "<C-[>",
-                    dismiss = false,
+                    dismiss = "<C-e>",
                 },
             },
             -- nes = {
