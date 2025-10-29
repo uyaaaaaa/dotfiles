@@ -1,7 +1,5 @@
----@class lazyvim.util.treesitter
-local M = {}
-
-M.list = {
+---@class config.constants.treesitter
+return {
     "bash",
     "jsdoc",
     "json",
@@ -30,4 +28,3 @@ M.list = {
     "go",
 }
 
-return M

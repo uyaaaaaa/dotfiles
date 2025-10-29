@@ -1,4 +1,4 @@
----@class lazyvim.util.fn
+---@class core.util
 local M = {}
 
 -- remap `gd`

@@ -1,0 +1,28 @@
+---@class config.constants.icons
+return {
+    error = " ",
+    warn = " ",
+    hint = "󰌵 ",
+    info = " ",
+    github = "",
+    copilot = "",
+    repository = "",
+    branch = "",
+    modified = " ",
+    added = " ",
+    removed = " ",
+    deleted = "",
+    renamed = "󰛂 ",
+    untracked = " ",
+    ignored = " ",
+    unstaged = " ",
+    staged = " ",
+    conflict = "",
+    code = " ",
+    windows = " ",
+    linux = " ",
+    mac = " ",
+    readonly = "󰌾 ",
+    blade = "󰫐 ",
+}
+

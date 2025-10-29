@@ -11,7 +11,7 @@ return {
             highlight = { enable = true },
             indent = { enable = true },
             sync_install = false,
-            ensure_installed = require("utils.treesitter").list
+            ensure_installed = require("config.constants.treesitter"),
         },
     },
 
@@ -157,11 +157,11 @@ return {
                 },
                 git_status = {
                     symbols = {
-                        modified = require("utils.icons").modified,
-                        deleted = require("utils.icons").removed,
-                        renamed = require("utils.icons").renamed,
-                        untracked = require("utils.icons").added,
-                        ignored = require("utils.icons").ignored,
+                        modified = require("config.constants.icons").modified,
+                        deleted = require("config.constants.icons").removed,
+                        renamed = require("config.constants.icons").renamed,
+                        untracked = require("config.constants.icons").added,
+                        ignored = require("config.constants.icons").ignored,
                         unstaged = "",
                         staged = "",
                     },
@@ -309,12 +309,53 @@ return {
                     ["cmp.entry.get_documentation"] = true,
                 },
             },
-            routes = require("utils.noice").routes,
+            routes = {
+                {
+                    view = "mini",
+                    filter = {
+                        event = "notify",
+                        kind = "info",
+                        cond = function(message)
+                            return message.opts and message.opts.title and message.opts.title:find("Auto Save")
+                        end,
+                    },
+                },
+            },
             presets = {
                 command_palette = true,
                 lsp_doc_border = true,
             },
         },
+        config = function(_, opts)
+            local filters = {
+                { "msg_show", "%d+L, %d+B" },
+                { "msg_show", "; after #%d+" },
+                { "msg_show", "; before #%d+" },
+                { "msg_show", "more lines" },
+                { "msg_show", "fewer lines" },
+                { "msg_show", "No information available" },
+                { "msg_show", "1 time" },
+                { "msg_show", "Cannot write, \'buftype\' option is set" },
+                { "notify", "hover is not supported by the servers of the current buffer" },
+                { "notify", "No information available" },
+                { "notify", "vim.ui.open: command timeout " },
+            }
+
+            local function noiceWrapper(event, pattern)
+                return {
+                    filter = {
+                        event = event,
+                        find = pattern,
+                    },
+                }
+            end
+
+            for _, values in pairs(filters) do
+                table.insert(opts.routes, noiceWrapper(values[1], values[2]))
+            end
+
+            require("noice").setup(opts)
+        end,
     },
 
     -- trouble
@@ -425,7 +466,7 @@ return {
         opts = function()
             require("lualine_require").require = require
             vim.o.laststatus = vim.g.lualine_laststatus
-            local icons = require("utils.icons")
+            local icons = require("config.constants.icons")
             local git_repo = vim.fn.fnamemodify(vim.fn.systemlist("git rev-parse --show-toplevel")[1], ":t") or ""
 
             local opts = {
