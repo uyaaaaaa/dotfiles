@@ -1,4 +1,3 @@
----@class config.constants.treesitter
 return {
     "bash",
     "jsdoc",
