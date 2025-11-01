@@ -47,7 +47,6 @@ return {
             },
             dash = { width = 80 },
             heading = {
-                sign = false,
                 width = "block",
                 left_pad = 0,
                 right_pad = 1,
