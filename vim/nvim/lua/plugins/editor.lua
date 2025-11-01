@@ -1,3 +1,5 @@
+local icons = require("config.constants.icons")
+
 return {
     -- treesitter
     {
@@ -13,6 +15,19 @@ return {
             sync_install = false,
             ensure_installed = require("config.constants.treesitter"),
         },
+        config = function()
+            local parsers = require("nvim-treesitter.parsers")
+            local blade = {
+                install_info = {
+                    url = "https://github.com/EmranMR/tree-sitter-blade",
+                    files = { "src/parser.c" },
+                    branch = "main",
+                },
+                filetype = "blade",
+            }
+
+            table.insert(parsers.get_parser_configs(), blade)
+        end,
     },
 
     -- treesitter-context
@@ -80,6 +95,22 @@ return {
         opts = {
             switch_branch_or_commit_upon_ingestion = "ask_first",
         },
+    },
+
+    -- nvim-web-devicons"
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+        config = function()
+            require("nvim-web-devicons").set_icon({
+                ["blade.php"] = {
+                    icon = icons.blade,
+                    color = "#f9322c",
+                    cterm_color = "Red",
+                    name = "Blade",
+                },
+            })
+        end,
     },
 
     -- NeoTree
@@ -157,11 +188,11 @@ return {
                 },
                 git_status = {
                     symbols = {
-                        modified = require("config.constants.icons").modified,
-                        deleted = require("config.constants.icons").removed,
-                        renamed = require("config.constants.icons").renamed,
-                        untracked = require("config.constants.icons").added,
-                        ignored = require("config.constants.icons").ignored,
+                        modified = icons.modified,
+                        deleted = icons.removed,
+                        renamed = icons.renamed,
+                        untracked = icons.added,
+                        ignored = icons.ignored,
                         unstaged = "",
                         staged = "",
                     },
@@ -466,7 +497,6 @@ return {
         opts = function()
             require("lualine_require").require = require
             vim.o.laststatus = vim.g.lualine_laststatus
-            local icons = require("config.constants.icons")
             local git_repo = vim.fn.fnamemodify(vim.fn.systemlist("git rev-parse --show-toplevel")[1], ":t") or ""
 
             local opts = {

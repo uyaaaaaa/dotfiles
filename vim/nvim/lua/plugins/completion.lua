@@ -59,6 +59,13 @@ return {
                 per_filetype = {
                     markdown = { "snippets", "lsp", "path" },
                     mdx = { "snippets", "lsp", "path" },
+                    php = { "snippets", "laravel", "lsp", "path", "buffer" },
+                },
+                providers = {
+                    laravel = {
+                        name = "laravel",
+                        module = "laravel.blink_source",
+                    },
                 },
                 min_keyword_length = function(ctx)
                     -- Enable completion over 3 characters for command line mode
