@@ -15,19 +15,6 @@ return {
             sync_install = false,
             ensure_installed = require("config.constants.treesitter"),
         },
-        config = function()
-            local parsers = require("nvim-treesitter.parsers")
-            local blade = {
-                install_info = {
-                    url = "https://github.com/EmranMR/tree-sitter-blade",
-                    files = { "src/parser.c" },
-                    branch = "main",
-                },
-                filetype = "blade",
-            }
-
-            table.insert(parsers.get_parser_configs(), blade)
-        end,
     },
 
     -- treesitter-context
