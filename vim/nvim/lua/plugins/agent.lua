@@ -6,8 +6,8 @@ return {
             "copilotlsp-nvim/copilot-lsp",
         },
         build = ":Copilot auth",
+        lazy = true,
         cmd = "Copilot",
-        event = "BufReadPost",
         opts = {
             suggestion = {
                 enabled = true,
