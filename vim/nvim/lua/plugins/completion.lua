@@ -5,6 +5,21 @@ return {
         dependencies = { "L3MON4D3/LuaSnip" },
         version = "*",
         event = { "InsertEnter", "CmdLineEnter" },
+        init = function ()
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "BlinkCmpMenuOpen",
+                callback = function()
+                    vim.b.copilot_suggestion_hidden = true
+                end,
+            })
+
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "BlinkCmpMenuClose",
+                callback = function()
+                    vim.b.copilot_suggestion_hidden = false
+                end,
+            })
+        end,
         opts = {
             completion = {
                 trigger = { show_on_keyword = true },
@@ -28,26 +43,12 @@ return {
             },
             snippets = { preset = "luasnip" },
             keymap = {
-                preset = "enter",
+                preset = "super-tab",
                 ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
                 ["<C-j>"] = { "select_next", "fallback_to_mappings" },
                 ["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(2) end },
                 ["<C-f>"] = { function(cmp) cmp.scroll_documentation_down(2) end },
                 ["<Esc>"] = { "hide", "fallback" },
-                ["<Tab>"] = {
-                    function(cmp)
-                        if cmp.snippet_active() then
-                            require("copilot.suggestion").clear_preview()
-                            return cmp.accept()
-                        end
-                        if (require("copilot.suggestion").is_visible()) then
-                            return require("copilot.suggestion").accept()
-                        end
-                        return cmp.select_and_accept()
-                    end,
-                    "snippet_forward",
-                    "fallback",
-                }
             },
             cmdline = {
                 keymap = {
