@@ -17,6 +17,10 @@ local function getCorrectName(fileBaseName)
         return nil
     end
 
+    if server_config.name then
+        return server_config.name
+    end
+
     if not server_config.cmd or type(server_config.cmd) ~= "table" then
         return nil
     end

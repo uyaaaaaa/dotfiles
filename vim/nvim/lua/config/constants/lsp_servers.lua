@@ -10,9 +10,9 @@ return {
     "intelephense",    -- php
     "taplo",           -- toml
     "rust-analyzer",   -- rust
-    "marksman",        -- markdown
+    "markdown-oxide",  -- markdown
     "gopls",           -- go
-    "json-lsp",        -- json
+    "json-ls",         -- json
     "html-ls",         -- html
     "css-ls",          -- css
     "lua-ls",          -- lua

@@ -1,5 +1,6 @@
 return {
-    cmd = { "html-lsp", "--stdio" },
+    name = "html-lsp",
+    cmd = { "vscode-html-language-server", "--stdio" },
     filetypes = {
         "html",
         "blade",
