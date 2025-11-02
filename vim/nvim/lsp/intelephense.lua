@@ -1,7 +1,7 @@
 return {
     cmd = { "intelephense", "--stdio" },
     filetypes = { "php", "php_only", "blade" },
-    root_markers = { "composer.json", ".git" },
+    root_markers = { "composer.lock", ".git" },
     settings = {
         intelephense = {
             files = {
