@@ -538,7 +538,26 @@ return {
                             always_visible = true,
                             separator = "",
                         },
-                        "encoding",
+                        {
+                            "encoding",
+                            separator = ""
+                        },
+                        {
+                            function() return icons.github end,
+                            cond = function ()
+                                local bufnr = vim.api.nvim_get_current_buf()
+                                local clients = vim.lsp.get_clients({ bufnr = bufnr })
+
+                                for _, client in ipairs(clients) do
+                                    if client.name == "copilot" then
+                                        return true
+                                    end
+                                end
+
+                                return false
+                            end,
+                            color = function() return { fg = "#92b3d5" } end,
+                        },
                     },
                     lualine_y = {
                         { "progress", separator = " ", padding = { left = 1, right = 0 } },

@@ -7,7 +7,6 @@ return {
         },
         build = ":Copilot auth",
         lazy = true,
-        cmd = "Copilot",
         keys = {
             { "tt", mode = { "n", "v", "i" }, function() return require("copilot.suggestion").toggle_auto_trigger() end, desc = "Toggle copilot" },
         },
