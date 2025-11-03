@@ -20,7 +20,8 @@ return {
     -- treesitter-context
     {
         "nvim-treesitter/nvim-treesitter-context",
-        event = "BufRead",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        event = "WinScrolled",
         opts = {
             mode = "topline",
             max_lines = 3,
@@ -283,7 +284,7 @@ return {
     -- scrollbar
     {
         "petertriho/nvim-scrollbar",
-        event = { "BufRead", "BufNewFile" },
+        event = { "WinScrolled" },
         opts = {
             handlers = {
                 cursor = false,

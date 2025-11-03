@@ -26,41 +26,6 @@ local function get_capabilities()
     end
 end
 
-
--- ============================================================================
--- LSP Attach Handler
--- ============================================================================
-
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
-    callback = function(args)
-        local bufnr = args.buf
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-        if not client then return end
-
-        -- Enable inlay hints if supported (Neovim 0.10+)
-        if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        end
-
-        if not client.server_capabilities.documentHighlightProvider then return end
-
-        -- Document highlight on cursor hold
-        local highlight_group = vim.api.nvim_create_augroup("LspDocumentHighlight_" .. bufnr, { clear = true })
-        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-            buffer = bufnr,
-            group = highlight_group,
-            callback = vim.lsp.buf.hover,
-        })
-        vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-            buffer = bufnr,
-            group = highlight_group,
-            callback = vim.lsp.buf.clear_references,
-        })
-    end,
-})
-
 -- ============================================================================
 -- Diagnostic Configuration
 -- ============================================================================
@@ -109,7 +74,7 @@ for _, server_name in ipairs(servers) do
                 server_config.capabilities or {}
             )
 
-            vim.lsp.enable(server_name, server_config)  -- Enable the LSP with the loaded config
+            vim.lsp.enable(server_name, server_config)
         else
             -- If config load failed, enable with default config
             vim.notify(
@@ -119,12 +84,13 @@ for _, server_name in ipairs(servers) do
             vim.lsp.enable(server_name, { capabilities = capabilities })
         end
     else
-        vim.lsp.enable(server_name, { capabilities = capabilities })  -- No config file, use default config
+        -- No config file, use default config
+        vim.lsp.enable(server_name, { capabilities = capabilities })
     end
 end
 
 -- ============================================================================
--- Utility Commands
+-- Custom LSP Commands
 -- ============================================================================
 
 -- LspRestart: Restart LSP clients for current buffer
@@ -223,26 +189,6 @@ vim.api.nvim_create_user_command("LspCapabilities", function()
         print("")
     end
 end, { desc = "Show all LSP capabilities" })
-
--- LspDiagnostics: Show diagnostic counts
-vim.api.nvim_create_user_command("LspDiagnostics", function()
-    local bufnr = vim.api.nvim_get_current_buf()
-    local diagnostics = vim.diagnostic.get(bufnr)
-
-    local counts = { ERROR = 0, WARN = 0, INFO = 0, HINT = 0 }
-
-    for _, diagnostic in ipairs(diagnostics) do
-        local severity = vim.diagnostic.severity[diagnostic.severity]
-        counts[severity] = counts[severity] + 1
-    end
-
-    print("󰒡 Diagnostics for current buffer:")
-    print("  Errors: " .. counts.ERROR)
-    print("  Warnings: " .. counts.WARN)
-    print("  Info: " .. counts.INFO)
-    print("  Hints: " .. counts.HINT)
-    print("  Total: " .. #diagnostics)
-end, { desc = "Show diagnostic counts for current buffer" })
 
 -- LspInfo: Comprehensive LSP information
 vim.api.nvim_create_user_command("LspInfo", function()
