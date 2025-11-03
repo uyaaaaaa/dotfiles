@@ -33,15 +33,6 @@ return {
             link = {
                 email = ' ',
                 custom = {
-                --     web = { pattern = '^http', icon = '󰖟 ' },
-                --     discord = { pattern = 'discord%.com', icon = '󰙯 ' },
-                --     github = { pattern = 'github%.com', icon = '󰊤 ' },
-                --     google = { pattern = 'google%.com', icon = '󰊭 ' },
-                --     neovim = { pattern = 'neovim%.io', icon = ' ' },
-                --     reddit = { pattern = 'reddit%.com', icon = '󰑍 ' },
-                --     stackoverflow = { pattern = 'stackoverflow%.com', icon = '󰓌 ' },
-                --     wikipedia = { pattern = 'wikipedia%.org', icon = '󰖬 ' },
-                --     youtube = { pattern = 'youtube%.com', icon = '󰗃 ' },
                     linkedin = { pattern = "%linkedin%.com", icon = " " },
                 },
             },
