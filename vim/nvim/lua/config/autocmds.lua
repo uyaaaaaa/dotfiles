@@ -23,8 +23,8 @@ autocmd("BufRead", {
 })
 
 -- Auto Save
-autocmd({ "InsertLeave", "TextChanged" }, {
-    desc = "Save on Change",
+autocmd({ "InsertLeave", "FocusLost", "BufLeave" }, {
+    desc = "Save on Leave",
     pattern = "*",
     callback = function()
         if vim.bo[vim.api.nvim_get_current_buf()].buftype ~= '' then
