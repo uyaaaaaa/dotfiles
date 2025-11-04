@@ -47,7 +47,7 @@ return {
             },
             snippets = { preset = "luasnip" },
             keymap = {
-                preset = "super-tab",
+                preset = "enter",
                 ["<C-k>"] = { "select_prev", "fallback_to_mappings" },
                 ["<C-j>"] = { "select_next", "fallback_to_mappings" },
                 ["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(2) end },
