@@ -1,10 +1,4 @@
 return {
-    -- luaSnip
-    {
-        "L3MON4D3/LuaSnip",
-        event = { "InsertEnter" },
-    },
-
     -- blink.cmp
     {
         "saghen/blink.cmp",
