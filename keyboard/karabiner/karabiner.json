@@ -74,7 +74,7 @@
                                     "key_code": "left_command",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
+                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 1 },
                                 "to": [
                                     {
                                         "key_code": "left_command",
@@ -90,7 +90,7 @@
                                     "key_code": "right_command",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
+                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 1 },
                                 "to": [
                                     {
                                         "key_code": "right_command",
