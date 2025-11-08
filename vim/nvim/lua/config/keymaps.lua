@@ -13,6 +13,8 @@ keymap.set("n", "j", "gj", opts)
 keymap.set("n", "k", "gk", opts)
 -- execute command
 keymap.set("n", "<leader><CR>", ":.!sh<CR>", opts)
+-- launch IDE
+keymap.set("n", "<leader><leader>", function() require("core.util").LaunchExternalEditor() end, opts)
 -- Split
 keymap.set("n", "sv", ":split<Return><C-w>w", opts)
 keymap.set("n", "ss", ":vsplit<Return><C-w>w", opts)

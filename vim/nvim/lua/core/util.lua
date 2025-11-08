@@ -38,4 +38,14 @@ function M.ToggleCsvFormat()
     vim.api.nvim_buf_set_lines(0, 0, -1, false, {marged})
 end
 
+function M.LaunchExternalEditor()
+    local editor = "cursor"
+    local path = vim.fn.expand('%:.')
+    local output = vim.fn.system(editor .. " . " .. path)
+
+    if output then
+        vim.notify(output, vim.log.levels.ERROR)
+    end
+end
+
 return M
