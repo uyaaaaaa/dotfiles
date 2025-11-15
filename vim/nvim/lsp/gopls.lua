@@ -92,7 +92,6 @@ return {
                 unmarshal = false,
                 unsafeptr = false,
                 unusedfunc = false,
-                unusedvariable = false,
                 waitgroup = false,
                 yield = false,
             },
