@@ -8,22 +8,9 @@ return {
 
             require("neomodern").setup({
                 theme = theme,
-                transparent = true,
+                transparent = false,
             })
             -- vim.cmd.colorscheme(theme)
-        end,
-    },
-
-    -- night-owl
-    {
-        "oxfist/night-owl.nvim",
-        lazy = true,
-        config = function()
-            require("night-owl").setup({
-                itaric = false,
-                transparent_background = true,
-            })
-            -- vim.cmd.colorscheme("night-owl")
         end,
     },
 
@@ -36,7 +23,7 @@ return {
         config = function()
             require("nightfox").setup({
                 options = {
-                    transparent = true,
+                    transparent = false,
                     styles = {
                         comments = "italic",
                         conditionals = "italic",
@@ -49,52 +36,15 @@ return {
         end,
     },
 
-    -- onedark
     {
-        "navarasu/onedark.nvim",
-        lazy = true,
-        config = function()
-            require("onedark").setup({
-                -- dark | darker | cool | deep | warm | warmer
-                style = "darker",
-                transparent = true,
-            })
-            -- vim.cmd.colorscheme("onedark")
-        end,
-    },
-
-    -- cyberdream
-    {
-        "scottmckendry/cyberdream.nvim",
+        "ribru17/bamboo.nvim",
         lazy = true,
         priority = 1000,
         config = function()
-            require("cyberdream").setup({
-                transparent = true,
-                italic_comments = true,
+            require("bamboo").setup({
+                style = "vulgaris", -- "vulgaris" | "multiplex" | "light"
             })
-            -- vim.cmd.colorscheme("cyberdream")
-        end,
-    },
-
-    -- nordic
-    {
-        "AlexvZyl/nordic.nvim",
-        lazy = true,
-        priority = 1000,
-        config = function()
-            require("nordic").setup({
-                transparent = {
-                    bg = true,
-                    float = true,
-                },
-                bright_border = true,
-                cursorline = {
-                    bold = false,
-                    theme = "light",
-                },
-            })
-            -- vim.cmd.colorscheme("nordic")
+            require("bamboo").load()
         end,
     },
 
@@ -103,16 +53,15 @@ return {
         "dgox16/oldworld.nvim",
         lazy = false,
         priority = 1000,
-        opts = {
-            variant = "cooler",  -- "default" | "oled" | "cooler"
-            highlight_overrides = {
-                Constant = { fg = "#c8c7cd" },
-                Define = { fg = "#c8c7cd" },
-                Structure = { fg = "#c8c7cd" },
-            },
-        },
-        config = function(_, opts)
-            require("oldworld").setup(opts)
+        config = function()
+            require("oldworld").setup({
+                variant = "cooler", -- "default" | "oled" | "cooler"
+                highlight_overrides = {
+                    Constant = { fg = "#c8c7cd" },
+                    Define = { fg = "#c8c7cd" },
+                    Structure = { fg = "#c8c7cd" },
+                },
+            })
             vim.cmd.colorscheme("oldworld")
         end,
     },

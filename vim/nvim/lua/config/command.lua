@@ -23,3 +23,4 @@ end
 command("SnipEdit", edit_snippet, { desc = "Edit snippet" })
 command("Fm", function() vim.lsp.buf.format() end, { desc = "Format" })
 command("Indent", function(opts) changeIndent(opts.args) end, { nargs = 1, desc = "Change indent" })
+command("Color", function(opts) Snacks.picker.colorschemes() end, { desc = "Choose colorschemes" })
