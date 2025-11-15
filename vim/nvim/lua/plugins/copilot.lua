@@ -13,7 +13,7 @@ return {
             enabled = true,
             auto_trigger = true,
             keymap = {
-                accept = "<C-CR>",
+                accept = "<C-CR>",  -- memo: やっぱり<Tab>にしたい...
                 accept_line = "<C-l>",
                 next = "<C-]>",
                 prev = "<C-[>",
