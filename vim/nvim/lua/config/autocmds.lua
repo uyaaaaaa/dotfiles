@@ -68,7 +68,6 @@ autocmd("FileType", {
     callback = function()
         local opts = { buffer = true, silent = true }
         vim.keymap.set("v", "p", utils.InsertMarkdownLink, opts)
-        vim.keymap.set("n", "<CR>", utils.FollowLink, opts)
     end,
 })
 
