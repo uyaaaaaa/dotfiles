@@ -66,11 +66,9 @@ autocmd("FileType", {
     pattern = "markdown",
     group = "MarkdownInsertLink",
     callback = function()
-        vim.keymap.set("v", "p", utils.InsertMarkdownLink, {
-            buffer = true,
-            silent = true,
-            desc = "Insert Markdown Link"
-        })
+        local opts = { buffer = true, silent = true }
+        vim.keymap.set("v", "p", utils.InsertMarkdownLink, opts)
+        vim.keymap.set("n", "<CR>", utils.FollowLink, opts)
     end,
 })
 

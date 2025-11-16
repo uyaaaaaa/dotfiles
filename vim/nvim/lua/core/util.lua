@@ -66,4 +66,24 @@ function M.InsertMarkdownLink()
     vim.fn.setreg("z", old)
 end
 
+function M.FollowLink()
+    local line = vim.api.nvim_get_current_line()
+    local col = vim.api.nvim_win_get_cursor(0)[2] + 1
+
+    local url_to_open = nil
+
+    for start_pos, url, end_pos in line:gmatch("()%[[^]]-%]%(([^)]+)%)()") do
+        if col >= start_pos and col < end_pos then
+            url_to_open = url
+            break
+        end
+    end
+
+    if not url_to_open then
+        return
+    end
+
+    vim.ui.open(url_to_open)
+end
+
 return M
