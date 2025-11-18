@@ -15,7 +15,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup({ import = "plugins" }, {
+require("lazy").setup({
+    spec = {
+        { import = "plugins.colorscheme" },
+        { import = "plugins.markdown" },
+        { import = "plugins.coding" },
+        { import = "plugins.editor" },
+        { import = "plugins.util" },
+    },
     diff = {
         cmd = "terminal_git",
     },
