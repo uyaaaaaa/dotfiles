@@ -1,6 +1,6 @@
 return {
     "dgox16/oldworld.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
         require("oldworld").setup({
@@ -11,6 +11,6 @@ return {
                 Structure = { fg = "#c8c7cd" },
             },
         })
-        vim.cmd.colorscheme("oldworld")
+        -- vim.cmd.colorscheme("oldworld")
     end,
 }
