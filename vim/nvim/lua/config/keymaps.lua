@@ -65,6 +65,8 @@ keymap.set("n", "<C-CR>", function() require("core.util").ToggleCsvFormat() end,
 -- Adjust indent when pasting
 keymap.set("n", "p", "]p", opts)
 keymap.set("n", "P", "]P", opts)
+-- Auto Indent
+keymap.set("n", "<Tab>", "cc", opts)
 
 -- INSERT MODE --
 -- Delete character

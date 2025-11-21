@@ -45,6 +45,22 @@ return {
             ["<C-b>"] = { function(cmp) cmp.scroll_documentation_up(2) end },
             ["<C-f>"] = { function(cmp) cmp.scroll_documentation_down(2) end },
             ["<Esc>"] = { "hide", "fallback" },
+            ["<Tab>"] = {
+                function(cmp)
+                    local suggestion = require("copilot.suggestion")
+
+                    if suggestion.is_visible() and not vim.b.copilot_suggestion_hidden then
+                        return suggestion.accept()
+                    elseif cmp.snippet_active() then
+                        return cmp.accept()
+
+                    elseif cmp.is_active() then
+                        return cmp.select_and_accept()
+                    end
+                end,
+                "snippet_forward",
+                "fallback",
+            },
         },
         cmdline = {
             keymap = {
