@@ -52,12 +52,9 @@ return {
                     if suggestion.is_visible() and not vim.b.copilot_suggestion_hidden then
                         cmp.hide()
                         return suggestion.accept()
-                    elseif cmp.snippet_active() then
-                        return cmp.accept()
-                    elseif cmp.is_active() then
-                        return cmp.select_and_accept()
                     end
                 end,
+                "select_and_accept",
                 "snippet_forward",
                 "fallback",
             },
