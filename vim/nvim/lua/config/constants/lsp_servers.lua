@@ -23,7 +23,6 @@ return {
     -- Linter
     "selene",          -- lua
     "ruff",            -- python
-    "rubocop",         -- ruby
 
     -- Formatter
     "prettier",        -- html/css

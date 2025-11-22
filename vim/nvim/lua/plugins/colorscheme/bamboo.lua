@@ -6,8 +6,8 @@ return {
         require("bamboo").setup({
             style = "vulgaris", -- "vulgaris" | "multiplex" | "light"
             highlights = {
-                ['@comment'] = { fg = '$grey' },
-            }
+                ["@comment"] = { fg = "$grey" },
+            },
         })
         require("bamboo").load()
         vim.cmd.colorscheme("bamboo")
