@@ -13,5 +13,5 @@ local function edit_snippet()
 end
 
 command("SnipEdit", edit_snippet, { desc = "Edit snippet" })
-command("Fm", function() vim.lsp.buf.format() end, { desc = "Format" })
-command("Color", function(opts) Snacks.picker.colorschemes() end, { desc = "Choose colorschemes" })
+command("Fm", vim.lsp.buf.format, { desc = "Format" })
+command("Color", function() Snacks.picker.colorschemes() end, { desc = "Choose colorschemes" })

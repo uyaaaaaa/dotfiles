@@ -48,7 +48,7 @@ keymap.set("n", "ce", '"_ce', opts)
 -- Copy active buffer path(relative)
 keymap.set("n", "<C-c>", "<Cmd>let @+ = expand('%:.')<CR>", opts)
 -- Jump By Lsp
-keymap.set("n", "gd", function() require("core.util").GD() end, opts)
+keymap.set("n", "gd", require("core.util").GD, opts)
 keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, opts)
 -- Replace current word in buffer
 keymap.set("n", "#", function()
@@ -61,7 +61,7 @@ keymap.set({ "n", "i", "v" }, "<Esc>", "<Cmd>noh<CR>", opts)
 keymap.set("n", "+", "<C-a>", opts)
 keymap.set("n", "-", "<C-x>", opts)
 -- Toggle csv format
-keymap.set("n", "<C-CR>", function() require("core.util").ToggleCsvFormat() end, opts)
+keymap.set("n", "<C-CR>", require("core.util").ToggleCsvFormat, opts)
 -- Adjust indent when pasting
 keymap.set("n", "p", "]p", opts)
 keymap.set("n", "P", "]P", opts)
