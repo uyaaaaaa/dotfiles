@@ -1,24 +1,9 @@
 ---@class core.util
 local M = {}
 
-
----@return string?
-local function GetMarkdownLink()
-    local line = vim.api.nvim_get_current_line()
-    local col = vim.api.nvim_win_get_cursor(0)[2] + 1
-
-    for start_pos, url, end_pos in line:gmatch("()%[[^]]-%]%(([^)]+)%)()") do
-        if col >= start_pos and col < end_pos then
-            return url
-        end
-    end
-
-    return nil
-end
-
 -- remap `gd`
 function M.GD()
-    local md_link = GetMarkdownLink()
+    local md_link = require("markdown-util").get_link_string()
 
     if md_link then
         vim.ui.open(md_link)
@@ -51,34 +36,6 @@ function M.ToggleCsvFormat()
 
     local marged = table.concat(non_empty_lines, ", ")
     vim.api.nvim_buf_set_lines(0, 0, -1, false, { marged })
-end
-
-local clipboard_register = (vim.fn.has("linux") == 1 or vim.fn.has("unix") == 1) and "+" or "*"
-
-function M.InsertMarkdownLink()
-    local old = vim.fn.getreg("z")
-
-    local link = vim.fn.trim(vim.fn.getreg(clipboard_register))
-
-    if not link:match("^http.*") then
-        vim.api.nvim_feedkeys("P", "n", false)
-        return
-    end
-
-    -- Yank selected area to `z` register.
-    vim.cmd('normal! gV"zy')
-    local word = vim.fn.getreg("z")
-
-    -- Create link string.
-    local new_text = string.format("[%s](%s)", word, link)
-    -- Set new text to `z` register.
-    vim.fn.setreg("z", new_text)
-
-    -- Put `z` register to selected area
-    vim.cmd('normal! gv"zP')
-
-    -- Recover old register
-    vim.fn.setreg("z", old)
 end
 
 return M

@@ -2,8 +2,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
-local utils = require("core.util")
-
 -- Highlight on yank
 autocmd("TextYankPost", {
     group = augroup("highlight_yank", { clear = true }),
@@ -58,16 +56,6 @@ autocmd("BufEnter", {
                 require("neo-tree")
             end
         end
-    end,
-})
-
-augroup("MarkdownInsertLink", { clear = true })
-autocmd("FileType", {
-    pattern = "markdown",
-    group = "MarkdownInsertLink",
-    callback = function()
-        local opts = { buffer = true, silent = true }
-        vim.keymap.set("v", "p", utils.InsertMarkdownLink, opts)
     end,
 })
 
