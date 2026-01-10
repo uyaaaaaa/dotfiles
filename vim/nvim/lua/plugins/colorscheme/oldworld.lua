@@ -11,6 +11,6 @@ return {
                 Structure = { fg = "#c8c7cd" },
             },
         })
-        vim.cmd.colorscheme("oldworld")
+        -- vim.cmd.colorscheme("oldworld")
     end,
 }
