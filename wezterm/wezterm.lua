@@ -10,6 +10,7 @@ config.font_size = 14.0
 config.color_scheme = 'Palenight (Gogh)'
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 15
+config.default_cwd = "/Volumes/casesensitive/work"
 
 ----------------------------------------------------
 -- Tab
@@ -23,9 +24,13 @@ config.show_close_tab_button_in_tabs = false
 config.window_frame = { inactive_titlebar_bg = "none", active_titlebar_bg = "none" }
 config.window_background_gradient = { colors = { "#000000" } }
 config.colors = { tab_bar = { inactive_tab_edge = "none" } }
+config.tab_max_width = 40
 
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+
+-- Cache for tab title(key: pane_id, value: title)
+local g_tab_titles = {}
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local background = "#5c6d74"
@@ -36,8 +41,20 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     foreground = "#FFFFFF"
   end
   local edge_foreground = background
-  local title_string = tab.active_pane.title
-  local title = "   " .. wezterm.truncate_right(title_string, max_width - 1) .. "   "
+  local process_icons = {
+    ['nvim'] = wezterm.nerdfonts.custom_neovim,
+    ['vim'] = wezterm.nerdfonts.custom_vim,
+    ['node'] = wezterm.nerdfonts.fa_node_js,
+    ['python'] = wezterm.nerdfonts.fa_python,
+    ['zsh'] = wezterm.nerdfonts.dev_terminal,
+    ['bash'] = wezterm.nerdfonts.dev_terminal,
+    ['git'] = wezterm.nerdfonts.fa_git_alt,
+    ['docker'] = wezterm.nerdfonts.fa_docker,
+  }
+  local raw_process_name = tab.active_pane.foreground_process_name:gsub("(.*[/\\])(.*)", "%2")
+  local icon = process_icons[raw_process_name] or '󰇄'
+
+  local title = icon .. " " .. wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
 
   return {
     { Background = { Color = edge_background } },
@@ -45,11 +62,30 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Text = SOLID_LEFT_ARROW },
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
-    { Text = title },
+    { Text = "   " .. title .. "   " },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_RIGHT_ARROW },
   }
+end)
+
+wezterm.on("update-status", function(window, pane)
+  local cwd = pane:get_current_working_dir()
+  local dir = ""
+
+  if cwd then
+    dir = cwd.file_path
+    local home = wezterm.home_dir
+    local work_path = "/Volumes/casesensitive/work/"
+
+    if dir:find(work_path, 1, true) == 1 then
+      dir = "~w/" .. dir:sub(#work_path + 1)
+    elseif dir:find(home, 1, true) == 1 then
+      dir = "~" .. dir:sub(#home + 1)
+    end
+
+    g_tab_titles[pane:pane_id()] = dir
+  end
 end)
 
 config.window_close_confirmation = "NeverPrompt"
