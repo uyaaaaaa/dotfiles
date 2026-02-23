@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 ----------------------------------------------------
 config.automatically_reload_config = true
 config.use_ime = true
-config.font = wezterm.font("JetBrains Mono", {})
+config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "ExtraLight" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font_size = 14.0
 config.color_scheme = "Oxocarbon Dark (Gogh)"
