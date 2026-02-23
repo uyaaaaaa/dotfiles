@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 config.use_ime = true
 config.font_size = 14.0
-config.color_scheme = 'Palenight (Gogh)'
+config.color_scheme = "Palenight (Gogh)"
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 15
 config.default_cwd = "/Volumes/casesensitive/work"
@@ -42,17 +42,17 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
   local edge_foreground = background
   local process_icons = {
-    ['nvim'] = wezterm.nerdfonts.custom_neovim,
-    ['vim'] = wezterm.nerdfonts.custom_vim,
-    ['node'] = wezterm.nerdfonts.fa_node_js,
-    ['python'] = wezterm.nerdfonts.fa_python,
-    ['zsh'] = wezterm.nerdfonts.dev_terminal,
-    ['bash'] = wezterm.nerdfonts.dev_terminal,
-    ['git'] = wezterm.nerdfonts.fa_git_alt,
-    ['docker'] = wezterm.nerdfonts.fa_docker,
+    ["nvim"] = wezterm.nerdfonts.custom_neovim,
+    ["vim"] = wezterm.nerdfonts.custom_vim,
+    ["node"] = wezterm.nerdfonts.fa_node_js,
+    ["python"] = wezterm.nerdfonts.fa_python,
+    ["zsh"] = wezterm.nerdfonts.dev_terminal,
+    ["bash"] = wezterm.nerdfonts.dev_terminal,
+    ["git"] = wezterm.nerdfonts.fa_git_alt,
+    ["docker"] = wezterm.nerdfonts.fa_docker,
   }
   local raw_process_name = tab.active_pane.foreground_process_name:gsub("(.*[/\\])(.*)", "%2")
-  local icon = process_icons[raw_process_name] or '󰇄'
+  local icon = process_icons[raw_process_name] or "󰇄"
 
   local title = icon .. " " .. wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
 
