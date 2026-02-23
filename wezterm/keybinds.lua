@@ -10,5 +10,15 @@ return {
     { key = "]", mods = "SUPER", action = act.ActivatePaneDirection("Next") },
     { key = "p", mods = "SUPER", action = act.ActivateCommandPalette },
     { key = "Enter", mods = "SUPER", action = act.ToggleFullScreen },
+    {
+      key = "LeftArrow",
+      mods = "META",
+      action = act.SendKey { key = "b", mods = "META" },
+    },
+    {
+      key = "RightArrow",
+      mods = "META",
+      action = act.SendKey { key = "f", mods = "META" },
+    },
   }
 }
