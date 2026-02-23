@@ -6,6 +6,8 @@ local config = wezterm.config_builder()
 ----------------------------------------------------
 config.automatically_reload_config = true
 config.use_ime = true
+config.font = wezterm.font("JetBrains Mono", {})
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font_size = 14.0
 config.color_scheme = "Oxocarbon Dark (Gogh)"
 config.window_background_opacity = 0.75
@@ -49,12 +51,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     ["zsh"] = wezterm.nerdfonts.dev_terminal,
     ["bash"] = wezterm.nerdfonts.dev_terminal,
     ["git"] = wezterm.nerdfonts.fa_git_alt,
+    ["lazygit"] = wezterm.nerdfonts.fa_git_alt,
     ["docker"] = wezterm.nerdfonts.fa_docker,
   }
   local raw_process_name = tab.active_pane.foreground_process_name:gsub("(.*[/\\])(.*)", "%2")
-  local icon = process_icons[raw_process_name] or "󰇄"
+  local icon = process_icons[raw_process_name] or wezterm.nerdfonts.fa_desktop
 
-  local title = icon .. " " .. wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
+  local title = icon .. "  " .. wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
 
   return {
     { Background = { Color = edge_background } },
@@ -75,13 +78,11 @@ wezterm.on("update-status", function(window, pane)
 
   if cwd then
     dir = cwd.file_path
-    local home = wezterm.home_dir
-    local work_path = "/Volumes/casesensitive/work/"
 
-    if dir:find(work_path, 1, true) == 1 then
-      dir = "~w/" .. dir:sub(#work_path + 1)
-    elseif dir:find(home, 1, true) == 1 then
-      dir = "~" .. dir:sub(#home + 1)
+    if dir == wezterm.home_dir then
+      dir = "~"
+    else
+      dir = dir:gsub("/$", ""):match("([^/]+)$") or "/"
     end
 
     g_tab_titles[pane:pane_id()] = dir
