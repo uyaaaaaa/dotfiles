@@ -11,6 +11,7 @@ return {
     { key = "d", mods = "SUPER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { key = "d", mods = "SHIFT|SUPER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
     { key = "w", mods = "SUPER", action = act({ CloseCurrentPane = { confirm = false } }) },
+    { key = "q", mods = "SUPER", action = act.QuitApplication },
     { key = "t", mods = "SUPER", action = act.SpawnTab("CurrentPaneDomain")},
     { key = "p", mods = "SUPER", action = act.ActivateCommandPalette },
     { key = "[", mods = "SUPER", action = act.ActivatePaneDirection("Prev") },
