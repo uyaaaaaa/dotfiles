@@ -89,6 +89,26 @@ wezterm.on("update-status", function(window, pane)
   end
 end)
 
+wezterm.on("update-right-status", function(window, pane)
+  local name = window:active_key_table()
+  local status = ""
+
+  local mode_icons = {
+    ["copy_mode"] = wezterm.nerdfonts.fa_copy,
+    ["resize_pane"] = wezterm.nerdfonts.md_move_resize_variant,
+  }
+
+  if name then
+    status = wezterm.format({
+      { Attribute = { Intensity = "Bold" } },
+      { Foreground = { AnsiColor = "Red" } },
+      { Text = "  " .. mode_icons[name] .. "  " .. name:upper() .. "  " },
+    })
+  end
+
+  window:set_right_status(status)
+end)
+
 config.window_close_confirmation = "NeverPrompt"
 config.skip_close_confirmation_for_processes_named = {
   "bash",
