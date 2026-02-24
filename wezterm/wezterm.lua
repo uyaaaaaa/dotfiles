@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 ----------------------------------------------------
 -- Base
 ----------------------------------------------------
-config.automatically_reload_config = true
+config.automatically_reload_config = false
 config.use_ime = true
 config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "ExtraLight" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
@@ -105,7 +105,7 @@ config.skip_close_confirmation_for_processes_named = {
 ----------------------------------------------------
 -- keybinds
 ----------------------------------------------------
-config.disable_default_key_bindings = false
+config.disable_default_key_bindings = true
 config.keys = require("keybinds").keys
 config.key_tables = require("keybinds").key_tables
 config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
