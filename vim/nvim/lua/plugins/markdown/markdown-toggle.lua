@@ -8,8 +8,8 @@ return {
             list_table = { "-", "*" },
             list_before_box = false,
         })
-        vim.keymap.set("n", "<C-l>", require("markdown-toggle").checkbox_dot,
+        vim.keymap.set("n", "<C-S-l>", require("markdown-toggle").checkbox_dot,
             { silent = true, noremap = true, expr = true })
-        vim.keymap.set("v", "<C-l>", require("markdown-toggle").checkbox, { silent = true, noremap = true, expr = false })
+        vim.keymap.set("v", "<C-S-l>", require("markdown-toggle").checkbox, { silent = true, noremap = true, expr = false })
     end,
 }
