@@ -6,25 +6,34 @@ local config = wezterm.config_builder()
 ----------------------------------------------------
 config.automatically_reload_config = false
 config.use_ime = true
+config.color_scheme = "Night Owl (Gogh)"
+config.default_cursor_style = "BlinkingBlock"
+config.default_cwd = "/Volumes/casesensitive/work"
+
+----------------------------------------------------
+-- Font
+----------------------------------------------------
 config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "ExtraLight" })
-config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font_size = 14.0
-config.color_scheme = "Oxocarbon Dark (Gogh)"
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
+
+----------------------------------------------------
+-- Window
+----------------------------------------------------
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 15
-config.default_cwd = "/Volumes/casesensitive/work"
+config.window_decorations = "TITLE|RESIZE"
+config.window_frame = { inactive_titlebar_bg = "none", active_titlebar_bg = "none" }
+config.window_background_gradient = { colors = { "#000000" } }
 
 ----------------------------------------------------
 -- Tab
 ----------------------------------------------------
-config.window_decorations = "TITLE|RESIZE"
 config.show_tabs_in_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = true
 config.show_new_tab_button_in_tab_bar = false
 config.show_close_tab_button_in_tabs = false
-config.window_frame = { inactive_titlebar_bg = "none", active_titlebar_bg = "none" }
-config.window_background_gradient = { colors = { "#000000" } }
 config.colors = { tab_bar = { inactive_tab_edge = "none" } }
 config.tab_max_width = 40
 
