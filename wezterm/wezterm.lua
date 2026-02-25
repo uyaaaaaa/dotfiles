@@ -101,19 +101,21 @@ wezterm.on("update-status", function(window, pane)
 end)
 
 wezterm.on("update-right-status", function(window, pane)
+  local modes = {
+    ["copy_mode"]   = { icon = wezterm.nerdfonts.fa_copy,                color = "Yellow" },
+    ["search_mode"] = { icon = wezterm.nerdfonts.fa_search,              color = "Green" },
+    ["resize_pane"] = { icon = wezterm.nerdfonts.md_move_resize_variant, color = "Blue" },
+  }
+
   local name = window:active_key_table()
   local status = ""
-
-  local mode_icons = {
-    ["copy_mode"] = wezterm.nerdfonts.fa_copy,
-    ["resize_pane"] = wezterm.nerdfonts.md_move_resize_variant,
-  }
+  local mode = modes[name]
 
   if name then
     status = wezterm.format({
       { Attribute = { Intensity = "Bold" } },
-      { Foreground = { AnsiColor = "Red" } },
-      { Text = "  " .. mode_icons[name] .. "  " .. name:upper() .. "  " },
+      { Foreground = { AnsiColor = mode.color } },
+      { Text = "  " .. mode.icon .. "  " .. name:upper() .. "  " },
     })
   end
 
