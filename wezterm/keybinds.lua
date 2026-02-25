@@ -22,7 +22,7 @@ return {
     { key = "-",     mods = "SUPER",       action = act.DecreaseFontSize },
     { key = "Enter", mods = "SUPER",       action = act.ToggleFullScreen },
     { key = "l",     mods = "SUPER",       action = act.SendKey({ key = "l", mods = "SHIFT|CTRL" }) },
-    { key = "x",     mods = "SUPER",       action = act.ActivateCopyMode },
+    { key = "x",     mods = "LEADER",      action = act.ActivateCopyMode },
     { key = "f",     mods = "LEADER",      action = act.Search("CurrentSelectionOrEmptyString") },
     { key = "r",     mods = "LEADER",      action = act.ActivateKeyTable({ name =  "resize_pane", one_shot = false }) },
     { key = "Space", mods = "LEADER",      action = act.QuickSelect },
