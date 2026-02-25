@@ -37,8 +37,8 @@ config.show_close_tab_button_in_tabs = false
 config.colors = { tab_bar = { inactive_tab_edge = "none" } }
 config.tab_max_width = 40
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_left_half_circle_thick
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_right_half_circle_thick
 
 -- Cache for tab title(key: pane_id, value: title)
 local g_tab_titles = {}
@@ -52,31 +52,33 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     foreground = "#FFFFFF"
   end
   local edge_foreground = background
-  local process_icons = {
-    ["nvim"] = wezterm.nerdfonts.custom_neovim,
-    ["vim"] = wezterm.nerdfonts.custom_vim,
-    ["node"] = wezterm.nerdfonts.fa_node_js,
-    ["python"] = wezterm.nerdfonts.fa_python,
-    ["zsh"] = wezterm.nerdfonts.dev_terminal,
-    ["bash"] = wezterm.nerdfonts.dev_terminal,
-    ["git"] = wezterm.nerdfonts.fa_git_alt,
-    ["lazygit"] = wezterm.nerdfonts.fa_git_alt,
-    ["docker"] = wezterm.nerdfonts.fa_docker,
-    ["claude"] = wezterm.nerdfonts.fa_robot,
-    ["gemini"] = wezterm.nerdfonts.fa_robot,
+  local processes = {
+    ["nvim"] = { icon = wezterm.nerdfonts.custom_neovim, color = "#5FB950" },
+    ["vim"] = { icon = wezterm.nerdfonts.custom_vim, color = "#6666CC" },
+    ["node"] = { icon = wezterm.nerdfonts.fa_node_js, color = "#84BA64" },
+    ["python"] = { icon = wezterm.nerdfonts.fa_python, color = "#75A8D3" },
+    ["zsh"] = { icon = wezterm.nerdfonts.dev_terminal, color = "#8733F5" },
+    ["bash"] = { icon = wezterm.nerdfonts.dev_terminal, color = "#8733F5" },
+    ["git"] = { icon = wezterm.nerdfonts.fa_git_alt, color = "#8733F5" },
+    ["lazygit"] = { icon = wezterm.nerdfonts.fa_git_alt, color = "#8733F5" },
+    ["docker"] = { icon = wezterm.nerdfonts.fa_docker, color = "#8733F5" },
+    ["claude"] = { icon = wezterm.nerdfonts.fa_robot, color = "#8733F5" },
+    ["gemini"] = { icon = wezterm.nerdfonts.fa_robot, color = "#8733F5" },
   }
   local raw_process_name = tab.active_pane.foreground_process_name:gsub("(.*[/\\])(.*)", "%2")
-  local icon = process_icons[raw_process_name] or wezterm.nerdfonts.fa_desktop
-
-  local title = icon .. "  " .. wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
+  local process = processes[raw_process_name]
+  local title = wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
 
   return {
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = process.color } },
+    { Text = (process.icon or wezterm.nerdfonts.fa_desktop) .. "  " },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_LEFT_ARROW },
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
-    { Text = "   " .. title .. "   " },
+    { Text = " " .. title .. " " },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_RIGHT_ARROW },
