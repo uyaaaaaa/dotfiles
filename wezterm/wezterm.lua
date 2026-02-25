@@ -62,6 +62,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     ["git"] = wezterm.nerdfonts.fa_git_alt,
     ["lazygit"] = wezterm.nerdfonts.fa_git_alt,
     ["docker"] = wezterm.nerdfonts.fa_docker,
+    ["claude"] = wezterm.nerdfonts.fa_robot,
+    ["gemini"] = wezterm.nerdfonts.fa_robot,
   }
   local raw_process_name = tab.active_pane.foreground_process_name:gsub("(.*[/\\])(.*)", "%2")
   local icon = process_icons[raw_process_name] or wezterm.nerdfonts.fa_desktop
