@@ -49,5 +49,23 @@ return {
       { key = "UpArrow",    action = act.AdjustPaneSize({ "Up", 1 }) },
       { key = "DownArrow",  action = act.AdjustPaneSize({ "Down", 1 }) },
     },
+    search_mode = {
+      {
+        key = "Escape",
+        mods = "NONE",
+        action = act.Multiple({
+          act.CopyMode("ClearPattern"),
+          act.CopyMode("Close"),
+        }),
+      },
+      {
+        key = "c",
+        mods = "CTRL",
+        action = act.Multiple({
+          act.CopyMode("ClearPattern"),
+          act.CopyMode("Close"),
+        }),
+      },
+    },
   }
 }
