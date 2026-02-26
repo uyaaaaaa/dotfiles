@@ -39,15 +39,15 @@ return {
   },
   key_tables = {
     resize_pane = {
-      { key = "Escape", mods = "NONE", action = act.PopKeyTable },
-      { key = "h",          action = act.AdjustPaneSize({ "Left", 1 }) },
-      { key = "l",          action = act.AdjustPaneSize({ "Right", 1 }) },
-      { key = "k",          action = act.AdjustPaneSize({ "Up", 1 }) },
-      { key = "j",          action = act.AdjustPaneSize({ "Down", 1 }) },
-      { key = "LeftArrow",  action = act.AdjustPaneSize({ "Left", 1 }) },
-      { key = "RightArrow", action = act.AdjustPaneSize({ "Right", 1 }) },
-      { key = "UpArrow",    action = act.AdjustPaneSize({ "Up", 1 }) },
-      { key = "DownArrow",  action = act.AdjustPaneSize({ "Down", 1 }) },
+      { key = "Escape",     mods = "NONE", action = act.PopKeyTable },
+      { key = "h",          mods = "CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
+      { key = "l",          mods = "CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
+      { key = "j",          mods = "CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
+      { key = "k",          mods = "CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
+      { key = "LeftArrow",  mods = "CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
+      { key = "RightArrow", mods = "CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
+      { key = "UpArrow",    mods = "CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
+      { key = "DownArrow",  mods = "CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
     },
     search_mode = {
       {
