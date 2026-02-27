@@ -13,7 +13,10 @@ config.default_cwd = "/Volumes/casesensitive/work"
 ----------------------------------------------------
 -- Font
 ----------------------------------------------------
-config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "ExtraLight" })
+config.font = wezterm.font_with_fallback({
+  { family = "JetBrainsMonoNL Nerd Font" },
+  { family = "HackGen Console NF" },
+})
 config.font_size = 14.0
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
