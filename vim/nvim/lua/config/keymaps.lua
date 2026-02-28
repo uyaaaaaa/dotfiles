@@ -8,7 +8,9 @@ vim.g.maplocalleader = " "
 -- Esc
 keymap.set("i", "jk", "<Esc>", opts)
 
--- NORMAL MODE --
+-----------------------------------------
+--- NORMAL MODE
+-----------------------------------------
 keymap.set("n", "j", "gj", opts)
 keymap.set("n", "k", "gk", opts)
 -- execute command
@@ -68,16 +70,15 @@ keymap.set("n", "P", "]P", opts)
 -- Auto Indent
 keymap.set("n", "<Tab>", "cc", opts)
 
--- INSERT MODE --
+-----------------------------------------
+--- INSERT MODE
+-----------------------------------------
 -- Delete character
 keymap.set("i", "<C-d>", "<Del>", opts)
--- Emacs like keybindings
-keymap.set("i", "<C-f>", "<Right>", opts)
-keymap.set("i", "<C-b>", "<Left>", opts)
-keymap.set("i", "<C-p>", "<Up>", opts)
-keymap.set("i", "<C-n>", "<Down>", opts)
 
--- VISUAL MODE --
+-----------------------------------------
+--- VISUAL MODE
+-----------------------------------------
 -- Move selected line
 keymap.set("v", "<C-j>", ":move'>+1<CR>gv=gv", opts)
 keymap.set("v", "<C-k>", ":move'<-2<CR>gv=gv", opts)
@@ -93,10 +94,14 @@ keymap.set("v", "p", "P", opts)
 keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<", "<gv", opts)
 
--- COMMAND MODE --
+-----------------------------------------
+--- COMMAND MODE
+-----------------------------------------
 -- Select command history
 keymap.set("c", "<C-p>", "<Up>")
 keymap.set("c", "<C-n>", "<PageDown>")
 
--- TERMINAL MODE
+-----------------------------------------
+--- TERMINAL MODE
+-----------------------------------------
 keymap.set("t", "<leader>q", "<C-\\><C-n>", opts)
