@@ -1,6 +1,6 @@
 return {
     "rebelot/kanagawa.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {
         theme = "dragon",
@@ -10,6 +10,6 @@ return {
     },
     config = function(_, opts)
         require("kanagawa").setup(opts)
-        vim.cmd.colorscheme("kanagawa")
+        -- vim.cmd.colorscheme("kanagawa")
     end,
 }
