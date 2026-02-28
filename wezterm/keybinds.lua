@@ -36,6 +36,8 @@ return {
       mods = "META",
       action = act.SendKey({ key = "f", mods = "META" }),
     },
+    { key = "/", mods = "SUPER", action = act.SendString("\x1f") },
+    { key = "s", mods = "SUPER", action = act.SendKey({ key = "s", mods = "SHIFT|CTRL" }) },
   },
   key_tables = {
     resize_pane = {

@@ -105,3 +105,16 @@ keymap.set("c", "<C-n>", "<PageDown>")
 --- TERMINAL MODE
 -----------------------------------------
 keymap.set("t", "<leader>q", "<C-\\><C-n>", opts)
+
+-----------------------------------------
+--- OTHER
+-----------------------------------------
+-- CommentOut like IDE
+keymap.set("n", "<C-_>", "gcc", { remap = true })
+keymap.set("n", "<D-/>", "gcc", { remap = true })
+keymap.set("v", "<C-_>", "gc",  { remap = true })
+keymap.set("v", "<D-/>", "gc",  { remap = true })
+-- Save like IDE
+keymap.set({"n", "v"}, "<C-S-s>", ":w<CR>", opts)
+keymap.set({"n", "v"}, "<D-s>", ":w<CR>", opts)
+
