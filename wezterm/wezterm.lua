@@ -3,6 +3,7 @@ local config = wezterm.config_builder()
 
 local keybinds = require("keybinds")
 local p = require("utilities.pane")
+local t = require("utilities.tab")
 local w = require("utilities.window")
 
 ----------------------------------------------------
@@ -63,22 +64,19 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_right_half_circle_thick
 local g_tab_titles = {}
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-    local background = "#5c6d74"
-    local foreground = "#FFFFFF"
+    local colors = t.getTabColors(tab)
+    local foreground = colors.foreground
+    local background = colors.background
+    local edge_foreground = colors.background
     local edge_background = "none"
-    if tab.is_active then
-        background = "#8733f5"
-        foreground = "#FFFFFF"
-    end
 
-    local edge_foreground = background
     local process = p.getProcess(tab.active_pane)
     local title = wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
 
     return {
         { Background = { Color = edge_background } },
         { Foreground = { Color = process.color } },
-        { Text = (process.icon or wezterm.nerdfonts.fa_desktop) .. "  " },
+        { Text = process.icon .. "  " },
         { Background = { Color = edge_background } },
         { Foreground = { Color = edge_foreground } },
         { Text = SOLID_LEFT_ARROW },
