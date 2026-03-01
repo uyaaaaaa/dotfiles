@@ -3,7 +3,8 @@ return {
     branch = "v0.1",
     cmd = { "LaunchIDE" },
     keys = {
-        { "<leader><leader>", mode = "n", function() return require("launch-ide").exec() end, desc = "Open Editor" },
+        { "<leader>zed",  mode = "n", function() return require("launch-ide").exec({ name = "zed" }) end,  desc = "Open Zed" },
+        { "<leader>code", mode = "n", function() return require("launch-ide").exec({ name = "vscode" }) end, desc = "Open VSCode" },
     },
     opts = {
         name = "zed",
