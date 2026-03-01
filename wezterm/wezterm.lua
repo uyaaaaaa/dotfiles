@@ -59,18 +59,15 @@ config.tab_max_width = 40
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_left_half_circle_thick
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_right_half_circle_thick
 
--- Cache for tab title(key: pane_id, value: title)
-local g_tab_titles = {}
-
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
     local colors = t.getTabColors(tab)
+    local title = t.getTitle(tab, max_width)
+    local process = p.getProcess(tab.active_pane)
+
     local foreground = colors.foreground
     local background = colors.background
     local edge_foreground = colors.background
     local edge_background = "none"
-
-    local process = p.getProcess(tab.active_pane)
-    local title = wezterm.truncate_right(g_tab_titles[tab.active_pane.pane_id] or tab.active_pane.title, max_width - 1)
 
     return {
         { Background = { Color = edge_background } },
@@ -89,7 +86,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 wezterm.on("update-status", function(window, pane)
-    g_tab_titles[pane:pane_id()] = p.getDirectory(pane)
+    t.setTitle(pane, p.getDirectory(pane))
 end)
 
 wezterm.on("update-right-status", function(window, pane)
