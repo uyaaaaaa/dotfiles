@@ -12,7 +12,7 @@ local PROCESSES = {
     ["docker"]  = { icon = wezterm.nerdfonts.fa_docker,     color = "#2560FF" },
     ["claude"]  = { icon = wezterm.nerdfonts.fa_robot,      color = "#B46102" },
     ["gemini"]  = { icon = wezterm.nerdfonts.fa_robot,      color = "#2560FF" },
-    ["none"]    = { icon = wezterm.nerdfonts.dev_terminal,  color = "#4D5156" }, 
+    ["none"]    = { icon = wezterm.nerdfonts.dev_terminal,  color = "#4D5156" },
 }
 
 function M.getProcess(pane)
@@ -20,20 +20,33 @@ function M.getProcess(pane)
     return PROCESSES[raw_process_name] or PROCESSES["none"]
 end
 
-function M.getDirectory(pane)
-    local cwd = pane:get_current_working_dir()
+-- Get the top-level directory of the Git repository. If it not exists, use the current directory
+local function getGitRootOrCurrent(cwd)
+    local success, stdout, _ = wezterm.run_child_process({
+        "git", "-C", cwd, "rev-parse", "--show-toplevel"
+    })
 
-    if not cwd then
+    if not success then
+        return cwd
+    end
+
+    return stdout:gsub("\n$", "")
+end
+
+function M.getDirectory(pane)
+    local cwd_uri = pane:get_current_working_dir()
+
+    if not cwd_uri then
         return ""
     end
 
-    local dir = cwd.file_path
+    local dir = getGitRootOrCurrent(cwd_uri.file_path):gsub("/$", "")
 
     if dir == wezterm.home_dir then
         return "~"
     end
 
-    return dir:gsub("/$", ""):match("([^/]+)$") or "/"
+    return dir:match("([^/]+)$") or ""
 end
 
 return M

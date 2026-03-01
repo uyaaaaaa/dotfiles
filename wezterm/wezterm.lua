@@ -13,7 +13,6 @@ config.automatically_reload_config = false
 config.use_ime = true
 config.color_scheme = "Night Owl (Gogh)"
 config.default_cursor_style = "BlinkingBlock"
-config.default_cwd = "/Volumes/casesensitive/work"
 
 ----------------------------------------------------
 -- Font
