@@ -47,14 +47,18 @@ return {
             ["<Esc>"] = { "hide", "fallback" },
             ["<Tab>"] = {
                 function(cmp)
+                    if cmp.is_visible() then
+                        return cmp.select_and_accept()
+                    end
+
                     local suggestion = require("copilot.suggestion")
 
                     if suggestion.is_visible() and not vim.b.copilot_suggestion_hidden then
-                        cmp.hide()
                         return suggestion.accept()
                     end
+
+                    return nil
                 end,
-                "select_and_accept",
                 "snippet_forward",
                 "fallback",
             },
