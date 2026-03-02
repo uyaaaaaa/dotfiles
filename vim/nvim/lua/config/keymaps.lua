@@ -117,4 +117,6 @@ keymap.set("v", "<D-/>", "gc",  { remap = true })
 -- Save like IDE
 keymap.set({"n", "v"}, "<C-S-s>", ":w<CR>", opts)
 keymap.set({"n", "v"}, "<D-s>", ":w<CR>", opts)
+-- Specify `Ctrl+i` to avoid conflict with `Tab`
+vim.keymap.set("n", "<C-i>", "<C-i>", { noremap = true })
 
