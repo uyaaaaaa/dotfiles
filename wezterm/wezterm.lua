@@ -33,17 +33,6 @@ config.window_decorations = "TITLE|RESIZE"
 config.window_frame = { font_size = 14.0, inactive_titlebar_bg = "none", active_titlebar_bg = "none" }
 config.window_background_gradient = { colors = { "#000000" } }
 config.window_close_confirmation = "NeverPrompt"
-config.skip_close_confirmation_for_processes_named = {
-    "bash",
-    "sh",
-    "zsh",
-    "fish",
-    "tmux",
-    "nu",
-    "cmd.exe",
-    "pwsh.exe",
-    "powershell.exe",
-}
 
 ----------------------------------------------------
 -- Tab

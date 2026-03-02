@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
+local k = require("utilities.key")
+
 return {
   keys = {
     { key = "c",     mods = "SUPER",       action = act.CopyTo("Clipboard") },
@@ -9,7 +11,7 @@ return {
     { key = "r",     mods = "SUPER",       action = act.ReloadConfiguration },
     { key = "d",     mods = "SUPER",       action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { key = "d",     mods = "SHIFT|SUPER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { key = "w",     mods = "SUPER",       action = act.CloseCurrentPane({ confirm = false }) },
+    { key = "w",     mods = "SUPER",       action = wezterm.action_callback(k.closePaneWithProtect) },
     { key = "q",     mods = "SUPER",       action = act.QuitApplication },
     { key = "t",     mods = "SUPER",       action = act.SpawnTab("CurrentPaneDomain")},
     { key = "p",     mods = "SUPER",       action = act.ActivateCommandPalette },
