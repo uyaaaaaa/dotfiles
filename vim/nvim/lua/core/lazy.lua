@@ -17,10 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        { import = "plugins.colorscheme" },
-        { import = "plugins.markdown" },
+        { import = "plugins.agent" },
         { import = "plugins.coding" },
+        { import = "plugins.colorscheme" },
         { import = "plugins.editor" },
+        { import = "plugins.markdown" },
         { import = "plugins.util" },
     },
     diff = {

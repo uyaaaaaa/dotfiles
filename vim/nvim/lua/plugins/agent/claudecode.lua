@@ -1,4 +1,3 @@
--- lua/plugins/claudecode.lua
 return {
     "coder/claudecode.nvim",
     event = "BufRead",
