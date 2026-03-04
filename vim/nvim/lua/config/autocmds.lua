@@ -23,7 +23,7 @@ autocmd("BufRead", {
 })
 
 -- Auto Save
-autocmd({ "InsertLeave", "FocusLost", "BufLeave" }, {
+autocmd({ "InsertLeave" }, {
     desc = "Save on Leave",
     pattern = "*",
     callback = function()
