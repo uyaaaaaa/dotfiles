@@ -10,18 +10,23 @@ local MODES = {
 
 function M.getRightStatus(window)
     local name = window:active_key_table()
+    local elements = {}
 
-    if not name then
-        return ""
+    if name then
+        local mode = MODES[name]
+        table.insert(elements, { Attribute = { Intensity = "Bold" } })
+        table.insert(elements, { Foreground = { AnsiColor = mode.color } })
+        table.insert(elements, { Background = { Color = "none" } })
+        table.insert(elements, { Text = "  " .. mode.icon .. "  " .. name:upper() .. "  " })
+        table.insert(elements, { Foreground = { Color = "#666666" } })
+        table.insert(elements, { Text = " | " })
     end
 
-    local mode = MODES[name]
+    table.insert(elements, { Foreground = { Color = "#cccccc" } })
+    table.insert(elements, { Background = { Color = "none" } })
+    table.insert(elements, { Text = " " .. wezterm.strftime("󰃭   %a. %b %d  󱑎  %H:%M") .. "    " })
 
-    return wezterm.format({
-        { Attribute = { Intensity = "Bold" } },
-        { Foreground = { AnsiColor = mode.color } },
-        { Text = "  " .. mode.icon .. "  " .. name:upper() .. "  " },
-    })
+    return wezterm.format(elements)
 end
 
 return M
