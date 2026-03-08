@@ -10,25 +10,6 @@ return {
             end,
             desc = "Open Terminal",
         },
-        {
-            "<leader>gg",
-            mode = { "n" },
-            function()
-                local lg = require("toggleterm.terminal").Terminal:new({
-                    cmd = "lazygit",
-                    dir = "git_dir",
-                    direction = "float",
-                    hidden = true,
-                    float_opts = {
-                        border = "curved",
-                        winblend = 20,
-                    },
-                })
-
-                lg:toggle()
-            end,
-            desc = "Open lazygit",
-        },
     },
     opts = {
         size = function(term)

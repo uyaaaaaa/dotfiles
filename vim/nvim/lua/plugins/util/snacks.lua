@@ -8,6 +8,7 @@ return {
         { "<leader>t", mode = "n", function() Snacks.picker.todo_comments({ keywords = { "TODO" } }) end,         desc = "Search Todo Comments" },
         { "<leader>f", mode = "n", function() Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } }) end, desc = "Search Fix Comments" },
         { "<leader>n", mode = "n", function() Snacks.picker.todo_comments({ keywords = { "NOTE" } }) end,         desc = "Search Note Comments" },
+        { "<leader>gg", mode = "n", function() Snacks.lazygit() end, desc = "Search Note Comments" },
     },
     opts = {
         picker = {
