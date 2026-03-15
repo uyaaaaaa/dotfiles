@@ -12,6 +12,7 @@ return {
             email = ' ',
             custom = {
                 linkedin = { pattern = "%linkedin%.com", icon = " " },
+                notion   = { pattern = "%notion%.so",    icon = " " },
             },
         },
         dash = { width = 80 },
