@@ -9,6 +9,7 @@ local TARGET_PROCESSES = {
     "docker",
     "node",
     "python",
+    "claude",
 }
 
 ---@param process_name string
