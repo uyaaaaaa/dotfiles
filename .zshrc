@@ -106,9 +106,14 @@ function fd() {
     cd "$dir"
 }
 
-alias vf='nvim $(fzf --preview "bat  --color=always --style=numbers {}")'
-alias fgg='_fgg'
+alias nv="_nv"
+alias fgg="_fgg"
 
+function _nv() {
+  local file
+  file=$(find . -maxdepth 5 -not -path '*/.*' -o -path './.*' -not -name '.' | fzf --preview 'bat  --color=always --style=numbers {}')
+  [ -n "$file" ] && nvim "$file"
+}
 function _fgg() {
     wc=$(jobs | wc -l | tr -d ' ')
     if [ $wc -ne 0 ]; then
