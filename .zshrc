@@ -93,10 +93,30 @@ hash -d w=$HOME/work/
 # You should install fzf
 # Github: `https://github.com/junegunn/fzf?tab=readme-ov-file#installation`
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-export FZF_DEFAULT_OPTS="--height 40% --layout reverse --border"
+export FZF_DEFAULT_OPTS="
+    --height 40%
+    --layout reverse
+    --border
+    --preview 'bat --color=always {}'
+    --preview-window=right:65%
+"
 source $HOME/dotfiles/fzf/key-bindings.zsh
 function fd() {
     local dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) &&
     cd "$dir"
+}
+
+alias vf='nvim $(fzf --preview "bat  --color=always --style=numbers {}")'
+alias fgg='_fgg'
+
+function _fgg() {
+    wc=$(jobs | wc -l | tr -d ' ')
+    if [ $wc -ne 0 ]; then
+        job=$(jobs | awk -F "suspended" "{print $1 $2}"|sed -e "s/\-//g" -e "s/\+//g" -e "s/\[//g" -e "s/\]//g" | grep -v pwd | fzf | awk "{print $1}")
+        wc_grep=$(echo $job | grep -v grep | grep 'suspended')
+        if [ "$wc_grep" != "" ]; then
+            fg %$job
+        fi
+    fi
 }
 
