@@ -1,5 +1,9 @@
 {
+  "git_panel": {
+    "dock": "left"
+  },
   "agent": {
+    "dock": "right",
     "always_allow_tool_actions": false,
     "default_model": {
       "provider": "copilot_chat",
@@ -27,6 +31,7 @@
     "calt": false
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false
   },
   "notification_panel": {
@@ -37,6 +42,7 @@
     "file_icons": true
   },
   "project_panel": {
+    "dock": "left",
     "hide_gitignore": false
   },
   "inlay_hints": {
@@ -62,6 +68,7 @@
     }
   },
   "outline_panel": {
+    "dock": "left",
     "button": false,
     "git_status": true,
     "indent_guides": {
