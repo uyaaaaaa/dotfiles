@@ -32,7 +32,7 @@ config.macos_window_background_blur = 15
 config.window_decorations = "TITLE|RESIZE"
 config.window_frame = { font_size = 12.0, inactive_titlebar_bg = "none", active_titlebar_bg = "none" }
 config.window_background_gradient = { colors = { "#000000" } }
-config.window_close_confirmation = "NeverPrompt"
+config.window_close_confirmation = "AlwaysPrompt"
 
 ----------------------------------------------------
 -- Tab
