@@ -1,3 +1,5 @@
+-- /tmp is cleaned up periodically (e.g. on macOS reboot), so recreate the log dir
+vim.fn.mkdir("/tmp/nvim", "p")
 vim.env.NVIM_LOG_FILE = "/tmp/nvim/log"
 vim.lsp.log._set_filename("/tmp/nvim/lsp.log")
 
