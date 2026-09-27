@@ -2,7 +2,7 @@ return {
     "coder/claudecode.nvim",
     event = "BufRead",
     opts = {
-        terminal_cmd = "/opt/homebrew/bin/claude --ide",
+        terminal_cmd = "claude --ide",
         auto_start = true,
         terminal = {
             provider = "none",
