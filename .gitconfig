@@ -1,6 +1,6 @@
 [user]
   name = uyaaaaaa
-  email = xxx@gmail.com
+  email = 116883446+uyaaaaaa@users.noreply.github.com
 [core]
   editor = nvim
   pager = delta
@@ -32,3 +32,6 @@
   navigate = true
   line-numbers = true
   wrap = true
+# Machine-specific overrides (e.g. work email). Not tracked; must stay last to take precedence.
+[include]
+  path = ~/.gitconfig.local
